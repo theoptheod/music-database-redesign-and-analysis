@@ -3,7 +3,7 @@
 -- 1. Who is the most senior employee based on job title?
 
 -- NOTE: There are multiple ways to find the most senior employee.
--- We can use columns "title", "report_to", "levels", "hire_date".
+-- We can use the columns "title", "report_to", "levels" or "hire_date".
 
 -- Solution 1: Using "title".
 SELECT
@@ -33,6 +33,7 @@ LIMIT 1;
 
 -- 2. Which countries have the most invoices?
 
+-- Solution:
 SELECT
 	"billing_country",
 	COUNT(*) AS "count_of_invoices_per_country"
@@ -45,6 +46,8 @@ ORDER BY COUNT(*) DESC;
 -- NOTE: The "total" column has the 'double precision' datatype,
 -- which can't be used alongside the ROUND() function.
 -- I needed to CAST the values into a decimal number using either DECIMAL() or NUMERIC().
+
+-- Solution:
 SELECT
 	ROUND(CAST("total" AS DECIMAL), 2) AS "rounded_total_of_invoice"
 FROM "invoice"
@@ -57,6 +60,7 @@ LIMIT 3;
 -- highest sum of invoice totals. The query should return the city's name
 -- and its invoice totals.
 
+-- Solution 1:
 SELECT
 	"billing_city",
 	SUM(CAST("total" AS DECIMAL)) AS "total_city_earnings"
@@ -66,6 +70,7 @@ ORDER BY "total_city_earnings" DESC
 LIMIT 1;
 
 -- We can also get the same output using an uncorrelated subquery and CTE:
+-- Solution 2:
 SELECT
 	"billing_city",
 	SUM(CAST("total" AS DECIMAL)) AS "total_city_earnings"
@@ -87,6 +92,7 @@ HAVING SUM(CAST("total" AS DECIMAL)) = (WITH "cte_city_max_earnings" AS(
 -- Write a query that returns the name of that customer and the sum amount
 -- he or she has spent.
 
+-- Solution 1:
 SELECT
     "customer"."customer_id",
     TRIM("customer"."first_name") AS "customer_first_name",
@@ -99,7 +105,9 @@ GROUP BY "customer"."customer_id", "customer"."first_name", "customer"."last_nam
 ORDER BY "customer_spendings" DESC
 LIMIT 1;
 
--- We can also get the same output using uncorrelated subqueries:
+-- We can also get the same output using uncorrelated subqueries.
+
+-- Solution 2:
 SELECT
     "customer"."customer_id",
     TRIM("customer"."first_name") AS "customer_first_name",
@@ -125,6 +133,8 @@ HAVING SUM(CAST("total" AS DECIMAL)) = (SELECT
 -- starting with 'A'.
 
 -- Instead of using DISTINCT, I remove duplicate values using GROUP BY.
+
+-- Solution:
 SELECT
 	"customer"."email",
     "customer"."first_name",
@@ -147,6 +157,7 @@ ORDER BY "customer"."email" ASC;
 -- appearing on our database. Write a query that returns the Artist's name
 -- and total track count of the top 10 rock bands.
 
+-- Solution:
 SELECT
 	"artist"."artist_id",
 	"artist"."name",
@@ -167,6 +178,7 @@ LIMIT 10;
 -- song length. Return the Name and Milliseconds for each track. Order by the
 -- song length with the longest songs listed first.
 
+-- Solution:
 SELECT
 	"track_id",
 	"name" AS "track_name", 
@@ -182,7 +194,7 @@ ORDER BY "milliseconds" DESC;
 -- 1. Find how much money was spend by each customer on the top selling artist.
 -- Write a query to return customer name, artist name and total spent.
 
--- My solution.
+-- Solution 1:
 SELECT
 	"customer"."customer_id",
 	"customer"."first_name" || ' ' || "customer"."last_name" AS "customer_name",
@@ -218,7 +230,9 @@ WHERE "artist"."artist_id" = (SELECT
 GROUP BY "customer"."customer_id", "top_selling_artist"
 ORDER BY "total_amount_spent" DESC;
 
--- Solution without LIMIT.
+-- We can also solve this without using LIMIT.
+
+-- Solution 2:
 SELECT
 	"customer"."customer_id",
 	"customer"."first_name" || ' ' || "customer"."last_name" AS "customer_name",
@@ -262,7 +276,9 @@ WHERE "artist"."artist_id" = (SELECT
 GROUP BY "customer"."customer_id", "top_selling_artist"
 ORDER BY "total_amount_spent" DESC;
 
--- Tutorial's solution.
+-- We can also use a CTE.
+
+-- Solution 3:
 WITH "top_selling_artist_cte" AS(
 	SELECT
 		"artist"."artist_id",
@@ -304,8 +320,9 @@ ORDER BY "total_amount_spent" DESC;
 -- of purchases. Write a query that returns each country along with the top Genre.
 -- For countries where the maximum number of puchases is shares, return all genres.
 
--- My solution.
 -- Using multiple CTEs and RANK().
+
+-- Solution:
 WITH "earnings_cte" AS(
     SELECT
         "invoice"."billing_country" AS "country",
@@ -340,7 +357,7 @@ WHERE "ranked_country_earnings_cte"."ranking" = 1;
 -- customer and how much they spent. For countries where the top amount spent is
 -- shared, provide all customers who spent this amount. 
 
--- My solution.
+-- Solution:
 WITH "customer_spendings_per_country" AS(
 	SELECT
     	"invoice"."billing_country" AS "country",
@@ -361,4 +378,5 @@ SELECT
 	"cspc"."total_spendings"
 FROM "customer_spendings_per_country" AS "cspc"
 WHERE "ranking" = 1
+
 ORDER BY "total_spendings" DESC, "country" ASC;
