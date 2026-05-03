@@ -416,3 +416,13 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+# Edited the .gitignore file so that I use environment variables.
+.env
+*.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Python cache
+__pycache__/
