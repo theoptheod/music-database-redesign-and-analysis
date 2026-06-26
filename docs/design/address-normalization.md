@@ -29,13 +29,14 @@ Customers and employees now reference normalized addresses, while invoices retai
 
 2. **No geographic hierarchy**  
     Countries, states, cities, and postal codes were not modeled as entities.
+   
     This prevented:
     * joining customers by region
     * aggregating revenue by country
     * validating postal codes
     * enforcing relationships between cities and states
 
-3. **Invoice addresses were mutable**  
+4. **Invoice addresses were mutable**  
     In the legacy schema, invoice billing fields were tied to the customer’s current address.
     If a customer moved, historical invoices could appear to change — which is legally incorrect.
     
