@@ -114,9 +114,7 @@ This provides a reusable, validated address entity.
 ## Customer and Employee Address Handling
 
 ### Customer
-Customers now reference:
-* address_id -> normalized address
-* representative_id -> employee
+Customers through `address_id` reference a normalized address.
 
 This replaces the legacy free‑form fields:
 * address
@@ -175,7 +173,7 @@ This ensured both data quality and legal correctness.
 Consistency: All geographic entities are validated and deduplicated
 Referential integrity: Countries, states, cities, and postal codes are linked correctly
 Analytics: Revenue by country, customer distribution by region, employee location reporting
-Extensibility: Future geocoding, timezone mapping, or region‑level analytics
+Extensibility: Future geocoding, timezone mapping, or analytics based on geographical regions
 Legal correctness: Invoice addresses remain immutable snapshots
 
 ## Future Considerations
