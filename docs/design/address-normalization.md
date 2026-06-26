@@ -2,6 +2,7 @@
 
 ## Overview
 The legacy schema stored address information directly on the customer, employee, and invoice tables as free‑form text fields (`address`, `city`, `state`, `country`, `postal_code`).  
+
 This approach resulted in:
 * inconsistent spelling and casing
 * duplicated locations across rows
