@@ -38,7 +38,7 @@ Customers and employees now reference normalized addresses, while invoices retai
 
 4. **Invoice addresses were mutable**  
     In the legacy schema, invoice billing fields were tied to the customer’s current address.
-    If a customer moved, historical invoices could appear to change — which is legally incorrect.
+    If a customer moved, historical invoices would change, which is legally incorrect.
     
 ## Normalized Geographic Model
 The redesigned schema introduces a fully normalized geographic hierarchy:
