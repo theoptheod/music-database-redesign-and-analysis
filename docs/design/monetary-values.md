@@ -1,16 +1,16 @@
 # Monetary Values — Design Notes
 
 ## Overview
-The normalized database stores all monetary values as integer cents rather than floating‑point numbers.
+The normalized database stores all monetary values as integer cents rather than floating‑point numbers.  
 This design ensures exact arithmetic for revenue reporting, customer lifetime value calculations, and any BI workflows that aggregate financial data.
 
-The original dataset stored prices using `DOUBLE PRECISION`, a binary floating‑point type that cannot represent values like 0.1 or 19.99 exactly.
+The original dataset stored prices using `DOUBLE PRECISION`, a binary floating‑point type that cannot represent values like 0.1 or 19.99 exactly.  
 This produces artifacts like:
 ```
 19.99 -> 19.989999999999998
 1.29  -> 1.2899999999999999
 ```
-These errors accumulate during aggregations, exports, and transformations.
+These errors accumulate during aggregations, exports, and transformations.  
 Storing monetary values as integer cents eliminates these issues entirely and guarantees consistent, repeatable financial calculations.
 
 ## Schema Implementation
@@ -34,7 +34,7 @@ All monetary columns end with `_cents` to make the unit explicit and avoid ambig
 ## Migration Logic
 
 ### Source Data Handling
-The new schema expects integer cents, and the ETL pipeline inserted the values directly into the `_cents` columns without applying rounding or currency formatting.
+The new schema expects integer cents, and the ETL pipeline inserted the values directly into the `_cents` columns without applying rounding or currency formatting.  
 This approach ensures:
 * No floating‑point operations during ETL
 * No rounding or formatting applied prematurely
