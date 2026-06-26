@@ -11,7 +11,7 @@ To ensure consistent behavior across SQL engines, Python workflows, and BI tools
 ### Ambiguity in the Source Data
 The presence of `billing_country` information does not resolve the timezone problem.
 
-Since the original application did not record timezone offsets, we cannot know if:
+Since the original application did not record timezone offsets, we have no way to know whether:
 * The timestamp reflects the customer’s local time
 * The timestamp reflects the server’s timezone
 * The timestamp was already normalized by the application
@@ -52,7 +52,7 @@ This approach ensures:
 * Preservation of the original event sequence
 
 ### Why Billing Country Was Not Used
-Although customer billing locations exist, they cannot be used to infer timezone because:
+Although customer billing locations exist, they cannot be used to infer timezone data because:
 * Billing country can differ from customer's timezone
 * Customers may purchase while traveling
 * The original application may have used server time
