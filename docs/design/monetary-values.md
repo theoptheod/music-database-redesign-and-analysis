@@ -21,7 +21,7 @@ All monetary fields use `INTEGER NOT NULL` with explicit non‑negative constrai
 unit_price_cents = Column(Integer, nullable=False)
 CheckConstraint("unit_price_cents >= 0", name="ck_unit_price_cents_non_negative")
 ```
-to ensure that the an integer value of at least 0 is stored in each of these fields.
+to ensure that the an integer with a value of at least 0, is stored in each of these fields.
 
 This pattern is applied to:
 * `track.unit_price_cents`
