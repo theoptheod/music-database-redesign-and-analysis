@@ -27,20 +27,20 @@ Attempting to enforce strict formatting or rewrite numbers using a specific stan
 ## Why Phone Numbers Are Not Normalized
 Several factors make normalization impractical and potentially misleading:
 
-**1. International Variation**
+**1. International Variation**  
 The dataset includes numbers from North America, Europe, Australia, and other regions. Without reliable country metadata, it is impossible to apply a consistent formatting rule.
 
-**2. Lack of Context**
+**2. Lack of Context**  
 The legacy data does not include:
 * country codes for all records
 * region‑specific numbering rules
 * metadata indicating whether numbers are mobile, landline, or office extensions
 
-**3. Not Used as Identifiers**
+**3. Not Used as Identifiers**  
 Unlike email addresses, phone numbers are not used as unique identifiers in this project.  
 They are simply contact fields. Enforcing uniqueness or strict validation would create unnecessary constraints.
 
-**4. Avoiding False Precision**
+**4. Avoiding False Precision**  
 Normalizing phone numbers without complete information can create the illusion of accuracy while actually introducing errors.  
 Preserving the original values avoids this problem entirely.
 
