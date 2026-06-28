@@ -1,8 +1,8 @@
 # Invoice Line Design — Design Notes
 
 ## Overview
-The original database records each purchased track as its own row in the `invoice_line table`.  
-When a customer buys the same track multiple times within a single invoice, the system creates  multiple rows, each one representing a separate purchase event with a quantity of 1.  
+The original database records each purchased track as its own row in the `invoice_line` table.  
+When a customer buys the same track multiple times within a single invoice, the system creates multiple rows, each one representing a separate purchase event with a quantity of 1.  
 This reflects an event‑based model rather than an aggregated one.
 
 The redesigned schema preserves this behavior to maintain the original meaning of the data and avoid introducing assumptions about how purchases should be grouped or summarized.
@@ -49,7 +49,7 @@ Each row continues to represent a distinct purchase event exactly as in the orig
 The only changes are the conversions needed to make the data accurate and consistent.
 
 ## Summary
-The invoice‑line design maintains the original event‑based purchase model:
+The invoice line design maintains the original event‑based purchase model:
 * Each row equates to one purchase
 * Duplicate track purchases remain separate
 * Quantity is stored as an integer
