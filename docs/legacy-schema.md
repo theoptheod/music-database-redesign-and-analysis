@@ -44,10 +44,8 @@ Each table is documented using the following format:
 * Field definitions (datatype, description, example, notes)
 * Additional notes
 * Sample rows
-
 ---
-
-> ### `album`
+### `album`
 ```
 | name      | datatype         | description                                                                    | example raw value | notes                                                                 |
 | :-------- | :--------------- | :----------------------------------------------------------------------------- | :---------------- | :-------------------------------------------------------------------- |
@@ -66,8 +64,8 @@ album_id,title,artist_id
 "9","Plays Metallica By Four Cellos","7"
 "10","Audioslave","8"
 ```
-
-**artist**
+---
+### `artist`
 ```
 | name      | datatype         | description                                             | example raw value | notes                                                        |
 | :-------- | :--------------- | :------------------------------------------------------ | :---------------- | :----------------------------------------------------------- |
@@ -85,8 +83,8 @@ artist_id,name
 "100","Lenny Kravitz"
 "101","Lulu Santos"
 ```
-
-**media_type**
+---
+### `media_type`
 ```
 | name          | datatype         | description                            | example raw value        | notes                                                        |
 | :------------ | :--------------- | :------------------------------------- | :----------------------- | :----------------------------------------------------------- |
@@ -103,8 +101,8 @@ media_type_id,name
 "4","Purchased AAC audio file"
 "5","AAC audio file"
 ```
-
-**genre**
+---
+### `genre`
 ```
 | name     | datatype         | description                             | example raw value | notes                                                        |
 | :------- | :--------------- | :-------------------------------------- | :---------------- | :----------------------------------------------------------- |
@@ -122,8 +120,8 @@ genre_id,name
 "1","Rock"
 "2","Jazz"
 ```
-
-**track**
+---
+### `track`
 ```
 | name          | datatype         | description                                                                           | example raw value | notes                                                                                      |
 | :------------ | :--------------- | :------------------------------------------------------------------------------------ | :---------------- | :----------------------------------------------------------------------------------------- |
@@ -150,8 +148,8 @@ track_id,name,album_id,media_type_id,genre_id,composer,milliseconds,bytes,unit_p
 551,"The Rover","44","1","1","Jimmy Page/Robert Plant",337084,11011286,"0.99"
 552,"In My Time Of Dying","44","1","1","John Bonham/John Paul Jones",666017,21676727,"0.99"
 ```
-
-**playlist**
+---
+### `playlist`
 ```
 | name        | datatype         | description                          | example raw value | notes                                                        |
 | :---------- | :--------------- | :----------------------------------- | :---------------- | :----------------------------------------------------------- |
@@ -169,7 +167,7 @@ playlist_id,name
 "4","Audiobooks"
 ```
 
-**playlist_track**
+### `playlist_track`
 ```
 | name        | datatype    | description                                                         | example raw value | notes                                                                       |
 | :---------- | :---------- | :------------------------------------------------------------------ | :---------------- | :-------------------------------------------------------------------------- |
@@ -187,8 +185,8 @@ playlist_id,track_id
 "1",657
 "1",650
 ```
-
-**invoice**
+---
+### `invoice`
 ```
 | name            | datatype                    | description                                                         | example raw value   |notes                                                                                               |
 | :-------------- | :-------------------------- | :------------------------------------------------------------------ | :------------------ |:---------------------------------------------------------------------------------------------------|
@@ -214,8 +212,8 @@ invoice_id,customer_id,invoice_date,billing_address,billing_city,billing_state,b
 25,39,"2017-02-11 00:00:00","4, Rue Milton","Paris","None","France","75009","7.92"
 26,55,"2017-02-15 00:00:00","421 Bourke Street","Sidney","NSW","Australia","2010","1.98"
 ```
-
-**invoice_line**
+---
+### `invoice_line`
 ```
 | name            | datatype         | description                                                        | example raw value | notes                                                                     |
 | :-------------- | :--------------- | :----------------------------------------------------------------- | :---------------- | :------------------------------------------------------------------------ |
@@ -238,7 +236,7 @@ invoice_line_id,invoice_id,track_id,unit_price, quantity
 "2",1,1159,"0.99","1"
 ```
 
-**employee**
+### `employee`
 ```
 | name        | datatype                    | description                                                                   | example raw value     | notes                                                                                       |
 | :---------- | :-------------------------- | :---------------------------------------------------------------------------- | :-------------------- | :--------------------------------------------------------------------------------------- |
@@ -275,8 +273,8 @@ employee_id,last_name,first_name,title,reports_to,levels,birthdate,hire_date,add
 "1","Adams","Andrew","General Manager","9","L6","1962-02-18 00:00:00","2016-08-14 00:00:00","11120 Jasper Ave NW","Edmonton","AB","Canada","T5K 2N1","+1 (780) 428-9482","+1 (780) 428-3457","andrew@chinookcorp.com"
 "2","Edwards","Nancy","Sales Manager","1","L4","1958-12-08 00:00:00","2016-05-01 00:00:00","825 8 Ave SW","Calgary","AB","Canada","T2P 2T3","+1 (403) 262-3443","+1 (403) 262-3322","nancy@chinookcorp.com"
 ```
-
-**customer**
+---
+### `customer`
 ```
 | name           | datatype      | description                                                                       | example raw value     | notes                                                                                    |
 | :------------- | :------------ | :-------------------------------------------------------------------------------- | :-------------------- | :--------------------------------------------------------------------------------------- |
