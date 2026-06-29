@@ -31,11 +31,11 @@ The legacy database uses:
 This document captures the exact structure of the original schema for comparison with the redesigned model.
 
 ## 2. Diagram
-Below is the original ERD used in the tutorial dataset.
-Note: The tutorial diagram uses PascalCase (e.g., ArtistId), while the normalized PostgreSQL database uses snake_case (e.g., artist_id).
+Below is the ERD of the original database schema.
+Note: The original diagram uses PascalCase (e.g., ArtistId), while the normalized PostgreSQL database uses snake_case (e.g., artist_id).
 This documentation reflects the real database schema.
 
-![Tutorial Database Diagram](images/database-diagrams/original_db_diagram.png)
+![Original Database Diagram]([images/database-diagrams/original_db_diagram.png](https://github.com/theoptheod/music-database-redesign-and-analysis/blob/main/images/database-diagrams/original_db_diagram.png?raw=true)
 
 ## 3. Tables
 Each table is documented using the following format:
