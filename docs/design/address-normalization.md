@@ -1,20 +1,11 @@
 # Address Normalization — Design Notes
 
-## Overview
-The legacy schema stored address information directly on the customer, employee, and invoice tables as free‑form text fields (`address`, `city`, `state`, `country`, `postal_code`).  
+## Summary
+The legacy schema stored addresses as free‑form text across customers, employees, and invoices.
+This led to inconsistent spelling, duplicated locations, and unreliable geographic grouping that undermine revenue per region reporting, customer segmentation, and Power BI mapping.
 
-This approach resulted in:
-* inconsistent spelling and casing
-* duplicated locations across rows
-* no referential integrity
-* no ability to validate geographic data
-* limited support for geographic analytics
-
-For example, the legacy `customer` table mixed street, city, state, country, and postal code into a single row, with no constraints ensuring correctness or consistency.  
-The `employee` table followed the same pattern.
-
-To address these issues, the normalized schema introduces a structured geographic hierarchy and a dedicated address entity.
-Customers and employees now reference normalized addresses, while invoices retain embedded billing fields to preserve legal immutability.
+The redesigned schema introduces a normalized geographic hierarchy for customers and employees, while invoices retain embedded billing fields to preserve legal immutability.
+This hybrid approach ensures clean, validated geographic data for analytics while maintaining historically accurate billing information for financial records.
 
 ## Legacy Schema Limitations
 1. **Free‑form text fields**  
