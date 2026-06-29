@@ -5,21 +5,21 @@ This document provides a detailed breakdown of the original database schema, inc
 It serves as the technical reference for understanding the legacy system prior to normalization.
 
 ## Table of Contents
-1. Overview
-2. Diagram
-3. Tables
-    * album
-    * artist
-    * customer
-    * employee
-    * invoice
-    * invoice_line
-    * track
-    * genre
-    * media_type
-    * playlist
-    * playlist_track
-    
+1. [Overview](#overview)
+2. [Diagram](#diagram)
+3. [Tables](#tables)
+    * [album](#album)
+    * [artist](#artist)
+    * [media_type](#media-type)
+    * [genre](#genre)
+    * [track](#track)
+    * [playlist](#playlist)
+    * [playlist_track](#playlist-track)
+    * [invoice](#invoice)
+    * [invoice_line](#invoice-line)
+    * [employee](#employee)
+    * [customer](#customer) 
+
 ## 1. Overview
 The legacy database uses:
 * denormalized tables
