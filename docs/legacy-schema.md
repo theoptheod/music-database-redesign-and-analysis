@@ -35,9 +35,8 @@ Below is the ERD of the original database schema.
 Note: The original diagram uses PascalCase (e.g., ArtistId), while the normalized PostgreSQL database uses snake_case (e.g., artist_id).
 This documentation reflects the real database schema.
 
-![Original Database Diagram]([images/database-diagrams/original_db_diagram.png](https://github.com/theoptheod/music-database-redesign-and-analysis/blob/main/images/database-diagrams/original_db_diagram.png?raw=true)
+![Original Database Diagram](../images/database-diagrams/original_db_diagram.png)
 
-![Original Database Diagram](images/database-diagrams/original_db_diagram.png)
 
 ## 3. Tables
 Each table is documented using the following format:
