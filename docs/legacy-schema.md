@@ -37,6 +37,8 @@ This documentation reflects the real database schema.
 
 ![Original Database Diagram]([images/database-diagrams/original_db_diagram.png](https://github.com/theoptheod/music-database-redesign-and-analysis/blob/main/images/database-diagrams/original_db_diagram.png?raw=true)
 
+![Original Database Diagram](images/database-diagrams/original_db_diagram.png)
+
 ## 3. Tables
 Each table is documented using the following format:
 * Table name
