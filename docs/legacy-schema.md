@@ -45,7 +45,9 @@ Each table is documented using the following format:
 * Additional notes
 * Sample rows
 
-**album**
+---
+
+### `album`
 ```
 | name      | datatype         | description                                                                    | example raw value | notes                                                                 |
 | :-------- | :--------------- | :----------------------------------------------------------------------------- | :---------------- | :-------------------------------------------------------------------- |
