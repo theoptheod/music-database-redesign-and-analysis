@@ -1,7 +1,7 @@
 # Legacy Schema — Design Notes
 
 ## Legacy Schema Documentation
-This document provides a detailed breakdown of the original database schema, including the ERD diagram, table structures, field definitions, and sample rows.  
+This document provides a detailed breakdown of the original database schema, including its ERD diagram, table structures, field definitions, and sample rows.  
 It serves as the technical reference for understanding the legacy system prior to normalization.
 
 ## Table of Contents
@@ -31,12 +31,11 @@ The legacy database uses:
 This document captures the exact structure of the original schema for comparison with the redesigned model.
 
 ## Diagram
-Below is the ERD of the original database schema.
-Note: The original diagram uses PascalCase (e.g., ArtistId), while the normalized PostgreSQL database uses snake_case (e.g., artist_id).
+Below is the ERD of the original database schema.  
+Note: The original diagram uses PascalCase (e.g. ArtistId), while the normalized PostgreSQL database uses snake_case (e.g. artist_id).  
 This documentation reflects the real database schema.
 
 ![Original Database Diagram](../images/database-diagrams/original_db_diagram.png)
-
 
 ## Tables
 Each table is documented using the following format:
@@ -93,7 +92,7 @@ artist_id,name
 ```
 Notes:
 * `media_type_id` will be converted to an INT surrogate key.
-* `name` will be expanded to VARCHAR(255) to support more descriptive media type names.
+* `name` will be expanded to VARCHAR(255) to support more descriptive mediatype names.
 
 Sample rows:
 ```
@@ -112,7 +111,7 @@ media_type_id,name
 Notes:
 * `genre_id` will be converted to an INT surrogate key.
 * `name` will be expanded to VARCHAR(255) to support longer genre descriptions.
-* Tracks may belong to multiple genres, so the final schema introduces a genre_track junction table.
+* Tracks may belong to multiple genres, so the final schema introduces a `genre_track` junction table.
 
 Sample rows:
 ```
@@ -138,8 +137,8 @@ genre_id,name
 Notes:
 * `track_id` will be converted to a BIGINT surrogate key to accommodate large datasets.
 * `name` will be expanded to VARCHAR(255) to support longer track titles.
-* The legacy `album_id` and `genre_id` columns will be removed. Tracks may appear on multiple albums and belong to multiple genres, so these relationships will be modeled using album_track and genre_track junction tables.
-* The `composer` column violates 1NF by storing multiple names in a delimited string. The final schema introduces a `composer` table and a `composer_track` junction table.
+* The legacy `album_id` and `genre_id` columns will be removed. Tracks may appear on multiple albums and belong to multiple genres, so these relationships will be modeled using the `album_track` and `genre_track` junction tables.
+* The `composer` column violates 1NF by storing multiple names in a delimited string. The final schema introduces a `composer` table and a `composer_track` junction table to deal with this issue.
 * `unit_price` will be stored as an INT representing price in cents to avoid floating‑point precision issues.
 
 Sample rows:
@@ -177,7 +176,7 @@ playlist_id,name
 Notes:
 * A new surrogate key `playlist_track_id` will be introduced to uniquely identify each row.
 * `playlist_id` and `track_id` will become foreign keys referencing their respective tables.
-* This table models the many‑to‑many relationship between playlists and tracks.
+* This table models the many‑to‑many relationship between the various playlists and tracks that are stored in the databases.
 
 Sample rows:
 ```
@@ -202,7 +201,7 @@ playlist_id,track_id
 ```
 Notes:
 * `invoice_id` remains an INT surrogate key.
-* `invoice_date` will be converted to TIMESTAMPTZ to preserve timezone‑aware purchase timestamps.
+* `invoice_date` will be converted to TIMESTAMPTZ so that the recorded purchase time stays accurate across different regions.
 * Billing address fields remain denormalized by design, since invoices must preserve the customer’s address at the time of purchase.
 * `total` will be stored as an INT representing price in cents to avoid floating‑point precision issues.
 
@@ -293,7 +292,7 @@ employee_id,last_name,first_name,title,reports_to,levels,birthdate,hire_date,add
 | support_rep_id | INT           | Identifier of the support representative, currently not enforced as a foreign key | 3                     | Will become an INT FK referencing employee(employee_id)                                  |
 ```
 Notes:
-* Any fields that may be missing in the source data (such as company or fax) will be populated with a default placeholder value (e.g., “Unknown”) during import.
+* Any fields that may be missing in the source data (such as company or fax) are preserved as NULL.
 * `last_name` and `first_name` will be modernized from fixed‑length CHARACTER to VARCHAR(255).
 * The `address`, `city`, `state`, and `country` columns will be removed. Customers will reference the normalized address table through `address_id`.
 * `postal_code` will be normalized into the `postal_zip_code` table.
