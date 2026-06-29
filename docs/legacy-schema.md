@@ -45,7 +45,7 @@ Each table is documented using the following format:
 * Additional notes
 * Sample rows
 ---
-### album
+## album
 ```
 | name      | datatype         | description                                                                    | example raw value | notes                                                                 |
 | :-------- | :--------------- | :----------------------------------------------------------------------------- | :---------------- | :-------------------------------------------------------------------- |
@@ -65,7 +65,7 @@ album_id,title,artist_id
 "10","Audioslave","8"
 ```
 ---
-### artist
+### **artist**
 ```
 | name      | datatype         | description                                             | example raw value | notes                                                        |
 | :-------- | :--------------- | :------------------------------------------------------ | :---------------- | :----------------------------------------------------------- |
@@ -84,7 +84,7 @@ artist_id,name
 "101","Lulu Santos"
 ```
 ---
-### media_type
+## media_type
 ```
 | name          | datatype         | description                            | example raw value        | notes                                                        |
 | :------------ | :--------------- | :------------------------------------- | :----------------------- | :----------------------------------------------------------- |
