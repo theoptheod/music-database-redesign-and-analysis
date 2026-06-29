@@ -1,10 +1,11 @@
 # Timezone Normalization — Design Notes
 
-## Overview
-The legacy database stored invoice timestamps using `TIMESTAMP WITHOUT TIME ZONE`, meaning all values were naive datetimes with no indication of whether they represented server time, customer local time, or any other standardized reference.
-Although the dataset includes customer billing locations, there are no data linking those locations to the recorded timestamps. As a result, it is impossible to determine the original timezone context of any event.
+## Summary
+The original dataset stored timestamps without timezone information, making it impossible to determine whether events were recorded in server time, customer local time, or `UTC`.
+This ambiguity does not affect day or week based analysis, but it makes hour‑level behavior and local time insights unreliable.
 
-To ensure consistent behavior across SQL engines, Python workflows, and BI tools, the normalized schema stores all timestamps as `UTC` using `TIMESTAMPTZ`. The values themselves are preserved exactly as they appeared in the source data, but the new type guarantees stable, predictable handling during analysis.
+To ensure consistent interpretation across SQL, Python, and BI tools, all timestamps in the redesigned schema are stored as `UTC` using `TIMESTAMPTZ`.
+The values are preserved exactly as they appeared in the source data, but the new type guarantees stable, predictable handling during analysis and avoids introducing assumptions the dataset cannot support.
 
 ## Why UTC Normalization Was Necessary
 
@@ -80,7 +81,7 @@ Because timestamps contain valid calendar dates, the following analyses remain f
 The dataset does not support analyses that depend on the local time of day, such as:
 * Hour‑of‑day behavior
 * Local peak purchase times
-* Region‑specific seasonality tied to local hours
+* Regional seasonality tied to local hours
 * Time‑of‑day churn indicators
 
 These require original timezone offsets, which the dataset does not contain.

@@ -1,9 +1,7 @@
 # Monetary Values — Design Notes
 
-## Overview
-The normalized database stores all monetary values as integer cents rather than floating‑point numbers.  
-This design ensures exact arithmetic for revenue reporting, customer lifetime value calculations, and any BI workflows that aggregate financial data.
-
+## Summary
+Accurate financial reporting is a core requirement for any analytical system.
 The original dataset stored prices using `DOUBLE PRECISION`, a binary floating‑point type that cannot represent values like 0.1 or 19.99 exactly.  
 
 This produces artifacts like:
@@ -12,7 +10,10 @@ This produces artifacts like:
 1.29  -> 1.2899999999999999
 ```
 These errors accumulate during aggregations, exports, and transformations.  
-Storing monetary values as integer cents eliminates these issues entirely and guarantees consistent, repeatable financial calculations.
+These inconsistencies directly affect revenue reporting, customer lifetime value calculations, and any BI workflow that relies on precise monetary values.
+
+To ensure consistent and accurate financial insights across SQL, Python, and Power BI, all monetary values in the redesigned schema are stored as integer cents.
+This eliminates floating‑point ambiguity entirely and guarantees that financial metrics remain stable across tools and environments.
 
 ## Schema Implementation
 

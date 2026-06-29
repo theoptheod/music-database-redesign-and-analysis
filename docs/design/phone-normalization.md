@@ -1,10 +1,11 @@
 # Phone Number Normalization — Design Notes
 
-## Overview
-Phone numbers in the original dataset originate from multiple countries and appear with variations in country codes, formatting patterns and included characters.  
-Because of these variations, the redesigned schema preserves each phone number exactly as it appeared in the original system, without attempting to reformat or validate it.
+## Summary
+The legacy dataset contains phone numbers from multiple countries, written in inconsistent formats and without reliable country codes or numbering standards.
+Because of this, any attempt to standardize or validate phone numbers would introduce assumptions the data cannot support and risk altering real customer information.
 
-This approach avoids introducing incorrect assumptions about country or numbering standards and keeps the data faithful to the source.
+The redesigned schema therefore preserves phone numbers exactly as they appear in the source system.
+This approach prioritizes data fidelity, avoids false precision, and keeps the contact information honest and transparent for analytical use.
 
 ## Schema Design
 The redesigned schema stores phone numbers as simple text fields:
