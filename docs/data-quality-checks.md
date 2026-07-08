@@ -1,23 +1,23 @@
 # Data Quality Checks — Design Notes
 
 ## Summary
-This document provides a technical breakdown of the data‑quality checks performed on the legacy schema.
+This document provides a technical breakdown of the data‑quality checks performed on the legacy schema.  
 Each check includes methodology, findings, and BI implications.
 
-### 1. Null Value Checks
+#### 1. Null Value Checks
 Objective: Identify missing values in key fields that could compromise referential integrity or analytical completeness.
 * Methodology:
     - Scanned all primary keys and foreign keys for nulls.
     - Profiled descriptive fields.
 * Findings:
     - No nulls in primary keys.
-    - Several optional descriptive fields (e.g., phone numbers, addresses) showed inconsistent population.
+    - Several optional descriptive fields (e.g., phone numbers, addresses) showed inconsistencies.
 * BI Impact:
     - Sparse attributes reduce segmentation accuracy.
     - Optional fields create unpredictable slicer behavior in Power BI.
     - Missing contact/location data weakens customer analytics.
     
-### 2. Duplicate Detection
+#### 2. Duplicate Detection
 Objective: Identify duplicate records that distort counts, KPIs, and catalog analytics.
 
 * Methodology:
@@ -31,7 +31,7 @@ Objective: Identify duplicate records that distort counts, KPIs, and catalog ana
     - Misleading catalog KPIs.
     - Incorrect trend analysis when duplicates appear across time.
     
-### 3. Referential Integrity Validation
+#### 3. Referential Integrity Validation
 Objective: Ensure relationships between entities are complete, consistent, and enforceable.
 
 * Methodology:
@@ -45,7 +45,7 @@ Objective: Ensure relationships between entities are complete, consistent, and e
     - Power BI may infer incorrect relationships or create ambiguous joins.
     - Analysts are forced to rely on assumptions instead of guaranteed structure.
 
-### 4. Formatting & Standardization Checks
+#### 4. Formatting & Standardization Checks
 Objective: Identify inconsistent formatting that affects joins, grouping, and geographic/financial analysis.
 
 * Methodology:
