@@ -11,7 +11,7 @@ Objective: Identify genre labels that violate 1NF and cannot be represented clea
     - Checked for multi‑genre combinations.
     - Assessed feasibility of splitting values into atomic components.
 * Findings:  
-Several genre names contained multiple genres combined into a single string.
+Several genre names contained multiple genres combined into a single string.  
 Since the following values violate 1NF, they cannot be represented cleanly in a normalized schema:
     - "Alternative & Punk"
     - "Hip Hop/Rap"
