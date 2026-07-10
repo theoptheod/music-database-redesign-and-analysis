@@ -1,7 +1,7 @@
 # Data Issues — Design Notes
 
 ## Summary
-This document provides a technical breakdown of structural issues identified in the legacy dataset.
+This document provides a technical breakdown of structural issues identified in the legacy dataset.  
 Each issue includes methodology, findings, and BI implications.
 
 #### 1. Duplicate Records
