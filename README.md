@@ -75,7 +75,7 @@ With the analytical challenges clearly defined, the next step is to establish th
 ## Objectives
 The main goal of this project is to redesign the original music store database into a clean, analysis‑ready model that supports reliable analysis and modern BI workflows.
 
-Key objectives include:
+Key objectives:
 * Evaluate the original schema to identify structural issues that reduce analytical accuracy.
 * Redesign the data model using a 3NF approach that improves consistency and integrity.
 * Standardize and migrate data with Python and SQLAlchemy to enforce constraints and consistent values.
