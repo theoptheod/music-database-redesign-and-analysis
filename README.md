@@ -205,8 +205,7 @@ For an analyst, this means inconsistent KPIs and unreliable financial reporting.
 * Reliable inputs for churn, CLV, and cohort analysis
 * No discrepancies between analytical tools
 
-Additional implementation details are documented in
-`<a href="/docs/design/monetary-values.md" target="_blank">Monetary Values Design Doc</a>`
+Additional implementation details are documented in <a href="/docs/design/monetary-values.md" target="_blank">Monetary Values Design Doc</a>
 
 ### Timezones
 
