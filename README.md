@@ -325,14 +325,13 @@ This model mirrors real‑world financial systems, where historical transactions
 * Provides stable, trustworthy inputs for BI dashboards and analytical models
 
 More details about this decision are available in <a href="/docs/design/data-integrity.md" target="_blank">Data Integrity Design Doc</a>.
-`/docs/design/data-integrity.md.`
 
 ##### Additional Implementation Details
-The full technical specification of this deletion‑proof model is documented in <a href="/docs/design/financial-integrity.md" target="_blank">FInancial Integrity Design Doc</a>.
-- [financial-integrity.md](docs/financial-integrity.md)  
+The full technical specification of this deletion‑proof model is documented in:
+- <a href="/docs/design/financial-integrity.md" target="_blank">FInancial Integrity Design Doc</a>
 Covers invoice immutability, track protection, and the customer–employee–invoice dependency chain.
 
-- [deletion-policy.md](docs/deletion-policy.md)  
+- <a href="/docs/design/deletion-policy.md" target="_blank">Deletion Policy Design Doc</a>
 Explains the global RESTRICT‑based deletion rules applied across all entities in the schema.
   
 These documents expand the architectural reasoning behind the deletion model and describe the exact constraints used to enforce financial safety.
