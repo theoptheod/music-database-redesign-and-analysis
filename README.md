@@ -101,7 +101,7 @@ This project connects to two PostgreSQL databases:
 To keep credentials secure, the project uses a local .env file that is not committed to the repository.
 
 ### 1. Create the .env file
-In the project root directory, create a file named `.env`
+In the project root directory, create a file named `.env`  
 You can use the `.env.example` file provided in the repository as a template.
 
 ### 2. Add your database connection details
