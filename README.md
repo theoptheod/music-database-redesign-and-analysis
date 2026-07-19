@@ -204,7 +204,7 @@ For an analyst, this means inconsistent KPIs and unreliable financial reporting.
 * Reliable inputs for churn, CLV, and cohort analysis
 * No discrepancies between analytical tools
 
-Additional implementation details are documented in <a href="/docs/design/monetary-values.md" target="_blank">Monetary Values Design Doc</a>
+Additional implementation details are documented in <a href="/docs/design/monetary-values.md" target="_blank">Monetary Values Design Doc</a>.
 
 ### Timezones
 
@@ -212,7 +212,7 @@ Additional implementation details are documented in <a href="/docs/design/moneta
 Store all timestamps as `UTC` using `TIMESTAMPTZ`, preserving original values but enforcing a consistent reference point.
 
 #### Analytical Reasoning  
-The legacy schema used naive timestamps with no timezone context.
+The legacy schema used naive timestamps with no timezone context.  
 This makes it impossible to know whether whether the timestamps represent server time, customer local time, or any other standardized reference.
 
 For analysts, this ambiguity breaks:
@@ -229,21 +229,20 @@ For analysts, this ambiguity breaks:
 
 This decision ensures that time‑based insights are consistent and interpretable, regardless of tool or workflow.
 
-Additional implementation details are documented in
-`/docs/design/timezone-normalization.md`
+Additional implementation details are documented in <a href="/docs/design/timezone-normalization.md" target="_blank">Timezone Normalization Design Doc</a>.
 
 ### Address Data Normalization & Invoice Billing Address Exception
 
 #### Decision  
-Normalize all customer and employee address data into a structured geographic hierarchy
-(Country -> Postal Zip Code -> Division -> City -> Address), but preserve invoice billing addresses as embedded fields (`billing_address`, `billing_city`, `billing_administrative_division`, `billing_country`, `billing_postal`) to maintain historical accuracy.
+Normalize all customer and employee address data into a structured geographic hierarchy (Country -> Postal Zip Code -> Division -> City -> Address),  
+but preserve invoice billing addresses as embedded fields (`billing_address`, `billing_city`, `billing_administrative_division`, `billing_country`, `billing_postal`) to maintain historical accuracy.
 
 #### Analytical Reasoning  
-The original schema stored addresses as free‑form text, leading to inconsistent spelling, duplicated locations, and unreliable geographic grouping.
+The original schema stored addresses as free‑form text, leading to inconsistent spelling, duplicated locations, and unreliable geographic grouping.  
 Normalizing customer and employee addresses eliminates these issues and creates a clean, validated geographic dimension suitable for BI analysis.
 
-However, invoices represent legal, historical documents.
-If billing addresses were normalized, any future customer address update would retroactively alter past invoices — corrupting historical reporting, breaking auditability, and distorting geographic revenue trends.
+However, invoices represent legal, historical documents.  
+If billing addresses were normalized, any future customer address update would retroactively alter past invoices, corrupting historical reporting, breaking auditability, and distorting geographic revenue trends.
 
 To balance analytical clarity with historical integrity, the redesign applies normalization everywhere except invoice billing fields, which remain immutable snapshots of the original transaction.
 
@@ -256,8 +255,7 @@ To balance analytical clarity with historical integrity, the redesign applies no
 
 This hybrid approach ensures that geographic data remain strict and predictable, creating a trustworthy foundation for BI and reporting.
 
-Additional implementation details are documented in
-`/docs/design/address‑normalization.md`
+Additional implementation details are documented in <a href="/docs/design/address‑normalization.md" target="_blank">Address Normalization Design Doc</a>.
 
 ### Phone Number Normalization
 
@@ -265,8 +263,8 @@ Additional implementation details are documented in
 Retain phone numbers exactly as they appear in the original dataset, without enforcing strict formatting or uniqueness rules.
 
 #### Analytical Reasoning  
-The source data contains phone numbers in many formats, with no consistent standard.
-Any attempt to standardize them would introduce assumptions about country codes, formatting rules, or number validity and could risk altering real customer information.
+The source data contains phone numbers in many formats, with no consistent standard.  
+Any attempt to standardize them would introduce assumptions about country codes, formatting rules, or number validity and could risk altering real customer information.  
 Phone numbers also aren’t reliable unique identifiers, and enforcing constraints would create false errors.
 
 #### Business Impact
@@ -277,7 +275,7 @@ Phone numbers also aren’t reliable unique identifiers, and enforcing constrain
 
 This approach keeps the data authentic, practical, and minimally altered, which is often the safest choice for real‑world datasets.
 
-More details about this decision are available in
+More details about this decision are available in <a href="/docs/design/phone-normalization.md" target="_blank">Phone Normalization Design Doc</a>.
 `/docs/design/phone-normalization.md`
 
 ### Invoice Line Design
