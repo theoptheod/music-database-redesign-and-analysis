@@ -73,7 +73,7 @@ Key reasons this redesign matters:
 With the analytical challenges clearly defined, the next step is to establish the project's objectives.
 
 ## Objectives
-The objective of this project is to redesign the original music store database into a clean, analysis‑ready model that supports reliable analysis and modern BI workflows.
+The main goal of this project is to redesign the original music store database into a clean, analysis‑ready model that supports reliable analysis and modern BI workflows.
 
 Key objectives include:
 * Evaluate the original schema to identify structural issues that reduce analytical accuracy.
