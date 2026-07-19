@@ -1,4 +1,4 @@
-# Genre Normalization Issues & Resolution Strategy — Design Notes
+# Genre Normalization Issues & Resolution Strategy — Overview Notes
 
 ## Summary
 This document provides a technical breakdown of the structural and semantic issues identified in the  
