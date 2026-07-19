@@ -357,8 +357,7 @@ Analytical impact: weak constraints make relationships less reliable, which can 
 Formatting was generally consistent, but key fields (addresses, phone numbers, monetary values) lacked normalization or validation rules.
 Analytical impact: inconsistent formatting complicates geographic analysis, reduces join reliability, and introduces rounding/precision issues in financial reporting.
 
-A more detailed breakdown is available in
-`/docs/data-quality-checks.md`
+A more detailed breakdown is available in <a href="/docs/data/data-quality-checks.md" target="_blank">Data Quality Checks Doc</a>.
 
 ## Data Issues & Limitations
 During the exploration of the legacy dataset, several structural issues were revealed that cannot be fully resolved without access to the original source media.
@@ -385,8 +384,7 @@ Key issues include:
 * Future‑Proofing Through Constraints  
     The redesigned schema introduces normalization, atomic modeling, and enforced constraints to prevent these issues from being re-introduced.
 
-A detailed breakdown is available in
-`/docs/data-issues.md`
+A detailed breakdown is available in <a href="/docs/data/data-issues.md" target="_blank">Data Issues Doc</a>.
 
 ## Genre Normalization
 The performed normalization of the legacy `genre` table revealed structural inconsistencies that directly affected catalog analytics.
@@ -409,8 +407,7 @@ Key issues included:
     Mapping tables provide a deterministic path from legacy genres to normalized atomic genres.
     Analytical impact: guarantees auditability, prevents misclassification, and ensures correct BI reporting.
 
-A detailed breakdown is available in
-`/docs/genre-normalization.md`
+A detailed breakdown is available in <a href="/docs/data/genre-normalization.md" target="_blank">Genre Normalization Overview Doc</a>.
 
 ## Composer Normalization
 The legacy composer field was highly inconsistent, since it contained mixed separators, reordered names, non‑ASCII punctuation, and various edge cases of band/artist stage names.  
@@ -429,16 +426,16 @@ Normalization follows a predictable sequence:
 The created `composer_track` junction table links each track to its normalized composers.
 This ensures BI‑ready composer data: atomic identities, consistent formatting, and reliable relationships.
 
-A detailed breakdown is available in
+A detailed breakdown is available in <a href="/docs/data/composer-normalization.md" target="_blank">Composer Normalization Overview Doc</a>.
 `/docs/composer-normalization.md`
 
 ## Artist Normalization
 The legacy artist field suffered from the same non‑atomic formatting issues as the composer data.  
 To avoid duplicating logic, the Artist pipeline mirrors the Composer normalization workflow:
-* created the manual overrides first,
+* created the manual overrides first
 * implemented separator normalization
 * completed atomic name cleaning
-* assigned surrogate IDs to each artist.
+* assigned surrogate IDs to each artist
 
 The `artist_manual_split_dict` dictionary handles the multiple artist cases (e.g. band collaborations or compound artist strings).  
 All other values follow the same normalization rules described in the Composer section.  
@@ -469,8 +466,7 @@ Key characteristics:
 This pipeline is intentionally conservative, so that if any violation occurs (missing FK, malformed value, inconsistent type) the loading is stopped.  
 This protects any created BI models from broken hierarchies, and misleading metrics.
 
-The full implementation is available in
-/docs/etl-pipeline.md
+The full implementation is available in <a href="/docs/etl/etl-pipelinen.md" target="_blank">ETL Pipeline Overview Doc</a>.
   
 ## New Database Design Overview
 The redesigned PostgreSQL schema replaces the legacy structure with a fully normalized, analytics‑ready model.  
