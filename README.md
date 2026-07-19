@@ -427,7 +427,6 @@ The created `composer_track` junction table links each track to its normalized c
 This ensures BI‑ready composer data: atomic identities, consistent formatting, and reliable relationships.
 
 A detailed breakdown is available in <a href="/docs/data/composer-normalization.md" target="_blank">Composer Normalization Overview Doc</a>.
-`/docs/composer-normalization.md`
 
 ## Artist Normalization
 The legacy artist field suffered from the same non‑atomic formatting issues as the composer data.  
