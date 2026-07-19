@@ -42,7 +42,7 @@ The following sections outline the project’s context, methodology, and structu
 - [Acknowledgments](#acknowledgments)
 - [License](#license)
 
-With the structure in place, let's examining the background and motivation behind the project.
+With the structure in place, let's examine the background and motivation behind the project.
 
 ## Background
 The project began with an analytical assessment of a publicly available music store dataset. To evaluate the original schema, I ran a set of queries that tested its ability to support analytical tasks.
