@@ -206,7 +206,7 @@ For an analyst, this means inconsistent KPIs and unreliable financial reporting.
 * No discrepancies between analytical tools
 
 Additional implementation details are documented in
-`/docs/design/monetary-values.md`
+`<a href="/docs/design/monetary-values.md" target="_blank">Monetary Values Design Doc</a>`
 
 ### Timezones
 
