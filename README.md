@@ -255,7 +255,7 @@ To balance analytical clarity with historical integrity, the redesign applies no
 
 This hybrid approach ensures that geographic data remain strict and predictable, creating a trustworthy foundation for BI and reporting.
 
-Additional implementation details are documented in <a href="/docs/design/address‑normalization.md" target="_blank">Address Normalization Design Doc</a>.
+Additional implementation details are documented in <a href="/docs/design/address-normalization.md" target="_blank">Address Normalization Design Doc</a>.
 
 ### Phone Number Normalization
 
@@ -328,7 +328,7 @@ More details about this decision are available in <a href="/docs/design/data-int
 `/docs/design/data-integrity.md.`
 
 ##### Additional Implementation Details
-The full technical specification of this deletion‑proof model is documented in:
+The full technical specification of this deletion‑proof model is documented in <a href="/docs/design/financial-integrity.md" target="_blank">FInancial Integrity Design Doc</a>.
 - [financial-integrity.md](docs/financial-integrity.md)  
 Covers invoice immutability, track protection, and the customer–employee–invoice dependency chain.
 
