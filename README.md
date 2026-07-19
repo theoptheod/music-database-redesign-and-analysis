@@ -10,10 +10,11 @@ Theofilos P. Theodoridis
 Completed – Version 1.0
 
 ## Summary
-This project transforms a legacy music store database into a clean, analysis‑ready data model designed for modern BI tools. The original schema contained duplicated information, inconsistent relationships, and structural issues that made analytical work and business insights unreliable.
+This project transforms a legacy music store database into a clean, analysis‑ready data model designed for modern BI tools.  
+The original schema contained duplicated information, inconsistent relationships, and structural issues that made analytical work and business insights unreliable.
 
-A new normalized database was rebuilt in PostgreSQL using a Third Normal Form (3NF) approach, that focuses
-on analytical clarity, data quality, and business driven modeling decisions. It prepares the dataset for advanced reporting in Power BI, including revenue analysis, customer segmentation, product performance, and geographic insights.
+A new normalized database was rebuilt in PostgreSQL using a Third Normal Form (3NF) approach, that focuses on analytical clarity, data quality, and business driven modeling decisions.  
+It prepares the dataset for advanced reporting in Power BI, including revenue analysis, customer segmentation, product performance, and geographic insights.
 
 The following sections outline the project’s context, methodology, and structure.
 
@@ -45,12 +46,14 @@ The following sections outline the project’s context, methodology, and structu
 With the structure in place, let's examine the background and motivation behind the project.
 
 ## Background
-The project began with an analytical assessment of a publicly available music store dataset. To evaluate the original schema, I ran a set of queries that tested its ability to support analytical tasks.
+The project began with an analytical assessment of a publicly available music store dataset.  
+To evaluate the original schema, I ran a set of queries that tested its ability to support analytical tasks.
 
-The results exposed several structural issues that directly blocked meaningful analysis.
+The results exposed several structural issues that directly blocked meaningful analysis.  
 These were problems that would mislead dashboards, distort KPIs, and undermine any attempt to provide meaningful business decisions.
 
-With the limitations clearly identified, the project shifted from evaluation to analytical reconstruction. The redesigned schema now provides a stable foundation for BI work, enabling deeper insights such as churn indicators, cohort analysis, and customer lifetime value.
+With the limitations clearly identified, the project shifted from evaluation to analytical reconstruction.  
+The redesigned schema now provides a stable foundation for BI work, enabling deeper insights such as churn indicators, cohort analysis, and customer lifetime value.  
 These insights will be expanded further in a follow‑up Power BI dashboard project.
 
 Building on this context, we now move to the importance of the modeling changes.
