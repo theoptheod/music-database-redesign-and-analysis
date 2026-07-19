@@ -581,24 +581,13 @@ If you have questions or would like to connect, feel free to reach out through t
 - [Portfolio Projects Website](https://theoptheod.github.io/)
 
 ## Acknowledgments  
-This project was inspired by a [YouTube tutorial](https://www.youtube.com/watch?v=jdGJWloo-OU&t=2477s)
-created by [Absent Data](https://www.youtube.com/@absentdata).
+This project was inspired by a [YouTube tutorial](https://www.youtube.com/)
+created by [Youtyber NAme](https://www.youtube.com/@).
 
-While the tutorial provided valuable guidance, my implementation diverges in several key areas:
-- Built a PostgreSQL database using pgAdmin instead of SQL Server and SQL Server Management Studio (SSMS)
-- Exported the cleaned dataset to CSV for use in Power BI, rather than connecting directly to SQL Server
-- Addressed multiple data quality issues that were not covered in the tutorial
-- Designed a custom dashboard layout and visual set
-
-
-This project began with a spark from Absent Data and the original walkthrough available here:
-YouTube Tutorial.
-
-That tutorial was my starting point — the moment the idea clicked.
-From there, the project grew into something much larger: a full schema redesign, a deeper analytical story, and a performance study that went far beyond the initial example.
+That tutorial was my starting point, but from there, the project grew into something much larger: a full schema redesign, a deeper analytical story, and a performance study that went far beyond the initial example.
 
 I’m grateful for the inspiration, and for the push that set this whole journey in motion.
-Everything built here — the normalization work, the ETL pipeline, the benchmarks, the Power BI model, the storytelling — reflects my own interpretation of the dataset and the kind of analytical work I love doing.
+Everything built here, the normalization work, the ETL pipeline, the benchmarks, the Power BI model, the storytelling, reflects my own interpretation of the dataset and the kind of analytical work I love doing.
 
 ## License
 This project is released under the MIT License. See the LICENSE file for details.
