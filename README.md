@@ -276,7 +276,6 @@ Phone numbers also aren’t reliable unique identifiers, and enforcing constrain
 This approach keeps the data authentic, practical, and minimally altered, which is often the safest choice for real‑world datasets.
 
 More details about this decision are available in <a href="/docs/design/phone-normalization.md" target="_blank">Phone Normalization Design Doc</a>.
-`/docs/design/phone-normalization.md`
 
 ### Invoice Line Design
 
@@ -284,8 +283,8 @@ More details about this decision are available in <a href="/docs/design/phone-no
 Preserve the original event‑based purchase model where each invoice line represents a single purchase action, even if multiple identical tracks are bought within the same invoice.
 
 #### Analytical Reasoning  
-The legacy schema treats each purchase as a distinct event, not a grouped quantity.
-Changing this behavior (e.g. aggregating identical items into a single row with a quantity field) would introduce assumptions about how the store processes transactions.
+The legacy schema treats each purchase as a distinct event, not a grouped quantity.  
+Changing this behavior (e.g. aggregating identical items into a single row with a quantity field) would introduce assumptions about how the store processes transactions.  
 For analysts, altering this structure could distort purchase frequency, and event‑based metrics.
 
 #### Business Impact
@@ -296,16 +295,16 @@ For analysts, altering this structure could distort purchase frequency, and even
 
 This preserves the dataset’s behavioral integrity, which is essential for customer analytics and event‑based modeling.
 
-More details about this decision are available in
-`/docs/design/invoice-line-design.md`
+More details about this decision are available in <a href="/docs/design/invoice-line-design.md" target="_blank">Invoice Line Design Doc</a>.
 
 ### Data Integrity & Deletion Rules
 
 #### Decision
-Adopt a strict, reliable deletion model where all financial records are fully protected from accidental or cascading deletes. All entities that contribute to historical revenue are immutable and cannot be removed once created.
+Adopt a strict, reliable deletion model where all financial records are fully protected from accidental or cascading deletes.  
+All entities that contribute to historical revenue are immutable and cannot be removed once created.
 
 #### Analytical Reasoning
-Financial data forms the backbone of every analytical workflow: revenue reporting, cohort   analysis, churn modeling, customer lifetime value, and trend forecasting.
+Financial data form the backbone of every analytical workflow: revenue reporting, cohort analysis, churn modeling, customer lifetime value, and trend forecasting.  
 In the legacy schema, deletion behavior was ambiguous and relied on implicit assumptions.  
 ORMs could accidentally cascade deletes, and referential integrity was not consistently enforced.
 
@@ -325,7 +324,7 @@ This model mirrors real‑world financial systems, where historical transactions
 * Supports regulatory compliance and internal governance
 * Provides stable, trustworthy inputs for BI dashboards and analytical models
 
-More details about this decision are available in
+More details about this decision are available in <a href="/docs/design/data-integrity.md" target="_blank">Data Integrity Design Doc</a>.
 `/docs/design/data-integrity.md.`
 
 ##### Additional Implementation Details
@@ -334,7 +333,7 @@ The full technical specification of this deletion‑proof model is documented in
 Covers invoice immutability, track protection, and the customer–employee–invoice dependency chain.
 
 - [deletion-policy.md](docs/deletion-policy.md)  
-  Explains the global RESTRICT‑based deletion rules applied across all entities in the schema.
+Explains the global RESTRICT‑based deletion rules applied across all entities in the schema.
   
 These documents expand the architectural reasoning behind the deletion model and describe the exact constraints used to enforce financial safety.
 
