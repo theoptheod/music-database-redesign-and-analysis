@@ -195,7 +195,8 @@ Each decision in this section addresses a clear limitation in the original data 
 Store all monetary values as integer cents instead of floating‑point numbers.
 
 #### Analytical Reasoning  
-The original schema used `DOUBLE PRECISION`, which introduces rounding errors during aggregations. Even tiny inaccuracies compound when calculating revenue, customer lifetime value, or cohort monetization.
+The original schema used `DOUBLE PRECISION`, which introduces rounding errors during aggregations.  
+Even tiny inaccuracies compound when calculating revenue, customer lifetime value, or cohort monetization.  
 For an analyst, this means inconsistent KPIs and unreliable financial reporting.
 
 #### Business Impact
