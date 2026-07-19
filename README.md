@@ -52,8 +52,9 @@ To evaluate the original schema, I ran a set of queries that tested its ability 
 The results exposed several structural issues that directly blocked meaningful analysis.  
 These were problems that would mislead dashboards, distort KPIs, and undermine any attempt to provide meaningful business decisions.
 
-With the limitations clearly identified, the project shifted from evaluation to analytical reconstruction.  
-The redesigned schema now provides a stable foundation for BI work, enabling deeper insights such as churn indicators, cohort analysis, and customer lifetime value.  
+With the limitations clearly identified, the project shifted from evaluation to analytical reconstruction.
+
+The redesigned schema provides a stable foundation for BI work, enabling deeper insights such as churn indicators, cohort analysis, and customer lifetime value.  
 These insights will be expanded further in a follow‑up Power BI dashboard project.
 
 Building on this context, we now move to the importance of the modeling changes.
