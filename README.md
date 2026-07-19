@@ -70,7 +70,7 @@ Key reasons this redesign matters:
 
 * Business questions become easier to answer once the data is structured for analysis.
 
-With the analytical challenges clearly defined, the next step was to establish concrete objectives for the project
+With the analytical challenges clearly defined, the next step is to establish the project's objectives.
 
 ## Objectives
 The objective of this project is to redesign the original music store database into a clean, analysis‑ready model that supports reliable analysis and modern BI workflows.
