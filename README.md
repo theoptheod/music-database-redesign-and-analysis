@@ -60,7 +60,7 @@ These insights will be expanded further in a follow‑up Power BI dashboard proj
 Building on this context, we now move to the importance of the modeling changes.
 
 ## Why This Matters for Analysis
-Most datasets appear usable at first glance, until you try to answer real business questions.
+Most datasets appear usable at first glance, until you try to answer real business questions.  
 This project highlights the analytical judgment required to uncover hidden issues and reshape imperfect data into useful insights.
 
 Key reasons this redesign matters:
