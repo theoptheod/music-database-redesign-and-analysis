@@ -1,4 +1,4 @@
-# Data Quality Checks — Design Notes
+# Data Quality Checks — Overview Notes
 
 ## Summary
 This document provides a technical breakdown of the data‑quality checks performed on the legacy schema.  
