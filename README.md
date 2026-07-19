@@ -156,6 +156,8 @@ An overview of the repository layout:
 │   └── schema/                   # Final schema structure, diagrams, constraints
 │
 ├── images/                       # Diagrams and visuals used in the README
+│   ├── database-diagrams/
+│   │
 │   └── screenshots/
 │
 ├── original-database/            # Legacy schema and original dataset files
