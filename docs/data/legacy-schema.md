@@ -1,4 +1,4 @@
-# Legacy Schema — Design Notes
+# Legacy Schema - Overview Notes
 
 ## Legacy Schema Documentation
 This document provides a detailed breakdown of the original database schema, including its ERD diagram, table structures, field definitions, and sample rows.  
