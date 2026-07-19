@@ -1,4 +1,4 @@
-# ETL Pipeline — Design Notes
+# ETL Pipeline — Overview Notes
 
 ## Summary
 This document describes the complete ETL workflow used to migrate the old dataset into a fully normalized PostgreSQL schema.   
