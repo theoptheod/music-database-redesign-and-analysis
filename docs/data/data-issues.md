@@ -1,4 +1,4 @@
-# Data Issues — Design Notes
+# Data Issues — Overview Notes
 
 ## Summary
 This document provides a technical breakdown of structural issues identified in the legacy dataset.  
