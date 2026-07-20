@@ -485,11 +485,9 @@ Strong relational principles guide the schema:
 The result is a stable, extensible foundation that supports contributor analytics, geographic segmentation,  
 customer management, and invoice documentation without the inconsistencies of the original unnormalized dataset.
 
-A deeper architectural explanation of the redesign is available in
-`/docs/database-design-overview.md`
+A deeper architectural explanation of the redesign is available in <a href="/docs/schema/database-design-overview.md" target="_blank">New Database Design Overview Doc</a>.
 
-A full entity‑level documentation (attributes, relationships, constraints, integrity rules etc), is available in
-`/docs/database-schema.md`
+A full entity‑level documentation (attributes, relationships, constraints, integrity rules etc), is available in <a href="/docs/schema/database-schema.md" target="_blank">New Database Schema Doc</a>.
   
 ## New Database Schema
 The following diagram illustrates the final relational schema of the normalized PostgreSQL database.
@@ -516,7 +514,7 @@ A modern analytical schema must eliminate these issues and demonstrate measurabl
 * scalability under larger workloads
 
 ### Summary of Results
-Five benchmark queries were executed on both schemas using EXPLAIN ANALYZE, covering customer analytics, genre popularity, album/track revenue, and artist performance.
+Five benchmark queries were executed on both schemas using `EXPLAIN ANALYZE`, covering customer analytics, genre popularity, album/track revenue, and artist performance.
 
 Across the benchmark suite:
 * The normalized schema wins 4 out of 5 queries
