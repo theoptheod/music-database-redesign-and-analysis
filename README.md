@@ -585,8 +585,8 @@ If you have questions or would like to connect, feel free to reach out through t
 - [Portfolio Projects Website](https://theoptheod.github.io/)
 
 ## Acknowledgments  
-This project was inspired by a [YouTube tutorial]([https://www.youtube.com/](https://www.youtube.com/watch?v=SAWiIV12sU4))
-created by [Simplilearn]([https://www.youtube.com/@](https://www.youtube.com/@SimplilearnOfficial)).
+This project was inspired by a [YouTube tutorial](https://www.youtube.com/watch?v=SAWiIV12sU4)
+created by [Simplilearn](https://www.youtube.com/@SimplilearnOfficial).
 
 I’m grateful for the inspiration that set this whole journey in motion.  
 Everything built here, the normalization work, the ETL pipeline, the benchmarks, the Power BI model, the storytelling, reflects my own interpretation of the dataset and the kind of analytical work I love doing.
