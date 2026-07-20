@@ -91,7 +91,7 @@ The tools used in this project were selected for their ability to support data p
 * JupyterLab: Used to run Python scripts for schema generation and data adjustments prior to migration.
 * Git & GitHub: Version control, project tracking, and documentation.
 
-The following materials support the analysis, migration, and evaluation phases of the project.
+To run the migration scripts and reproduce the analysis, a minimal environment setup is required.
 
 ## Environment Configuration
 This project connects to two PostgreSQL databases:
@@ -555,25 +555,29 @@ The goal is to deliver richer visualizations, more accurate metrics, and a BI ex
 The work completed in Part 1 serves as the foundation for this next stage, ensuring that the analytical layer is built on top of high‑quality, well‑modeled data.
 
 ## Project Files & Reference Material
-This repository includes the original dataset, the redesigned schema, set of queries and performance outputs used during evaluation. These materials provide transparency into the transformation process and allow reproducibility of the results.
+This repository includes the original dataset, the redesigned schema, set of queries and performance outputs used during evaluation.  
+These materials provide transparency into the transformation process and allow reproducibility of the results.
 
 **- Original database files**  
-    The `./original-database/` folder contains the legacy schema (Music_Store_database.sql) and the original analytical queries, that are excluded from the README in order to avoid clutter but are preserved here for reference.
+    The `original-database/` folder contains the legacy schema (`Music_Store_database.sql`) and the original analytical queries,  
+    that are excluded from the README in order to avoid clutter, but are preserved here for reference.
 
 **- Baseline analytical queries and execution plans**  
-        * The `./analysis/benchmark-questions/.` folder contains the five benchmark questions used to evaluate both schemas: the three advanced queries from the original source and two additional queries designed to stress‑test joins and aggregations.
-        * The `./analysis/query-solutions/.` folder (split into `./old_schema/.` and `./new_schema/.`) contains the SQL implementations of all benchmark queries for both the legacy and redesigned schemas.
-        * The `./analysis/explain-analyze-outputs/.` folder *also split into `./old_schema/` and `./new_schema/.`) contains sample execution plans and performance metrics for the corresponding queries, that facilitate a direct comparison between the two models.
+        * The `analysis/benchmark-questions/` folder contains the five benchmark questions used to evaluate both schemas:  
+        the three advanced queries from the original source and two additional queries designed to stress‑test joins and aggregations.
+        * The `analysis/query-solutions` folder (split into `/old_schema/` and `/new_schema/`) contains the SQL implementations  
+        of all benchmark queries for both the legacy and redesigned schemas.
+        * The `analysis/explain-analyze-outputs` folder (also split into `/old_schema/` and `/new_schema/`) contains  
+        sample execution plans and performance metrics for the corresponding queries, that facilitate a direct comparison between the two models.
 
 **- Migration and schema scripts**  
-    The `./src/.` folder contains the Python script used to create the new schema with SQLAlchemy, adjusts the legacy data where needed, and performs the migration into the normalized model.
+    The `src/` folder contains the Python script used to create the new schema with SQLAlchemy, adjusts the legacy data where needed, and performs the migration into the normalized model.
 
 **- Documentation and diagrams**  
-    Stored in `./docs/` and `./images/` these folders include the ERD of the original database, the detailed `Mermaid.live` ERD of the normalized schema, and supporting notes and visuals used during the redesign process.
+    Stored in `docs/` and `images/` are the ERD of the original database, the detailed `Mermaid.live` ERD of the normalized schema,  
+    and supporting notes and visuals used during the redesign process.
 
 The above files provide clear guidance through every stage of the project, from understanding the original data all the way to completing the final implementation.
-
-To run the migration scripts and reproduce the analysis, a minimal environment setup is required.
 
 ## Contact
 If you have questions or would like to connect, feel free to reach out through the links below:
@@ -581,12 +585,10 @@ If you have questions or would like to connect, feel free to reach out through t
 - [Portfolio Projects Website](https://theoptheod.github.io/)
 
 ## Acknowledgments  
-This project was inspired by a [YouTube tutorial](https://www.youtube.com/)
-created by [Youtyber NAme](https://www.youtube.com/@).
+This project was inspired by a [YouTube tutorial]([https://www.youtube.com/](https://www.youtube.com/watch?v=SAWiIV12sU4))
+created by [Simplilearn]([https://www.youtube.com/@](https://www.youtube.com/@SimplilearnOfficial)).
 
-That tutorial was my starting point, but from there, the project grew into something much larger: a full schema redesign, a deeper analytical story, and a performance study that went far beyond the initial example.
-
-I’m grateful for the inspiration, and for the push that set this whole journey in motion.
+I’m grateful for the inspiration that set this whole journey in motion.  
 Everything built here, the normalization work, the ETL pipeline, the benchmarks, the Power BI model, the storytelling, reflects my own interpretation of the dataset and the kind of analytical work I love doing.
 
 ## License
