@@ -28,7 +28,7 @@ The following sections outline the project’s context, methodology, and structu
 - [Legacy Schema Overview](#legacy-schema-overview)
 - [Design Decisions](#design-decisions)
 - [Data Quality Checks Performed](#data-quality-checks-performed)
-- [Data Issues & Limitations](#data-issues-limitations)
+- [Data Issues & Limitations](#data-issues--limitations)
 - [Genre Normalization](#genre-normalization)
 - [Composer Normalization](#composer-normalization)
 - [Artist Normalization](#artist-normalization)
