@@ -89,7 +89,7 @@ The tools used in this project were selected for their ability to support data p
 * pgAdmin: Used for schema inspection, query execution, and debugging during development.
 * Python & SQLAlchemy: Enabled schema creation, data migration, and enforcement of constraints.
 * JupyterLab: Used to run Python scripts for schema generation and data adjustments prior to migration.
-* Git & GitHub: Version control, project tracking, and documentation.
+* GitHub: Version control, project tracking, and documentation.
 
 To run the migration scripts and reproduce the analysis, a minimal environment setup is required.
 
