@@ -595,7 +595,8 @@ I’m grateful for the inspiration that set this whole journey in motion.
 Everything built here, the normalization work, the ETL pipeline, the benchmarks, the Power BI model, the storytelling, reflects my own interpretation of the dataset and the kind of analytical work I love doing.
 
 ## License
-This project is released under the MIT License. See the LICENSE file for details.
+This project is released under the MIT License.  
+Check the LICENSE file for more details.
 
 
 
