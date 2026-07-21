@@ -1,4 +1,4 @@
-# Monetary Values — Design Notes
+# Monetary Values - Design Notes
 
 ## Summary
 Accurate financial reporting is a core requirement for any analytical system.
