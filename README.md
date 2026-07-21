@@ -231,7 +231,7 @@ During analysis, this ambiguity breaks:
 
 This decision ensures that time‑based insights are consistent and interpretable, regardless of tool or workflow.
 
-Additional implementation details are documented in <a href="/docs/design/timezone-normalization.md" target="_blank">Timezone Normalization Design Doc</a>.
+More details about this decision are available in <a href="/docs/design/timezone-normalization.md" target="_blank">Timezone Normalization Design Doc</a>.
 
 ### Address Data Normalization & Invoice Billing Address Exception
 
