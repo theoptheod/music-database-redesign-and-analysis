@@ -1,10 +1,10 @@
-# Invoice Line Design — Design Notes
+# Invoice Line Design - Design Notes
 
 ## Summary
 The legacy system records each purchased track as a separate event, even when the same track is bought multiple times within a single invoice.
 This event‑based structure provides a detailed view of customer behavior and purchase frequency, but it also means that duplicate (`invoice_id`, `track_id`) pairs are expected and meaningful.
 
-The redesigned schema preserves this behavior exactly.
+The redesigned schema maintains this behavior to ensure consistent timestamp handling.  
 Aggregating purchases into a single row (e.g. using `quantity` = 2) would introduce assumptions the dataset cannot support and would distort behavioral analytics.
 By keeping the event‑based model intact the schema remains faithful to the original system and analytically reliable.
 
@@ -38,7 +38,8 @@ Event‑based purchase logs make it easier to analyze customer behavior patterns
 These insights can be lost or distorted when data is aggregated prematurely.
 
 **3. Minimal Assumptions**
-The legacy system does not indicate whether multiple purchases were intentional, accidental, or part of a bundle. Preserving the original structure avoids making assumptions that the data cannot support.
+The legacy system does not indicate whether multiple purchases were intentional, accidental, or part of a bundle.  
+Preserving the original structure avoids making assumptions that the data cannot support.
 
 ## Migration Notes
 The migration process preserves the structure and meaning of each `invoice_line` record, but applies two important improvements:
