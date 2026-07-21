@@ -22,7 +22,7 @@ The following sections outline the project’s context, methodology, and structu
 - [Background](#background)
 - [Why This Matters for Analysis](#why-this-matters-for-analysis)
 - [Objectives](#objectives)
-- [Tools & Technologies](#tools-technologies)
+- [Tools & Technologies](#tools-&-technologies)
 - [Environment Configuration](#environment-configuration)
 - [Repository Structure](#repository-structure)
 - [Legacy Schema Overview](#legacy-schema-overview)
