@@ -75,7 +75,7 @@ album_id,title,artist_id
 Notes:
 * `artist_id` will be converted from VARCHAR to an INT surrogate key.
 * `name` will be expanded to VARCHAR(255) to support longer artist names.
-* THe Artist–album relationships will be represented through the `artist_album` junction table in the final schema.
+* The Artist–album relationships will be represented through the `artist_album` junction table in the final schema.
 
 Sample rows:
 ```
