@@ -41,7 +41,7 @@ This documentation reflects the real database schema.
 ## Tables
 Each table is documented using the following format:
 * Table name
-* Field definitions (datatype, description, example, notes)
+* Field definitions (column name, datatype, description, example, notes)
 * Additional notes
 * Sample rows
 ---
