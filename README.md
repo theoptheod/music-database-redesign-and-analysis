@@ -239,7 +239,8 @@ Additional implementation details are documented in <a href="/docs/design/timezo
 Normalize all customer and employee address data into a structured geographic hierarchy  
 (`country` -> `postal_zip_code` -> `division` -> `city` -> `address`),  
 but preserve invoice billing addresses as embedded fields  
-(`billing_address`, `billing_city`, `billing_administrative_division`, `billing_country`, `billing_postal`) to maintain historical accuracy.
+(`billing_address`, `billing_city`, `billing_administrative_division`, `billing_country`, `billing_postal`)  
+to maintain historical accuracy.
 
 #### Analytical Reasoning  
 The original schema stored addresses as free‑form text, leading to inconsistent spelling, duplicated locations, and unreliable geographic grouping.  
