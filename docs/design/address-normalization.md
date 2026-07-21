@@ -90,10 +90,10 @@ This prevents ambiguous duplicates (for example multiple cities with the same na
 The `address` table represents a complete physical address.
 
 Fields include:
-* address_line_1 (required)
-* address_line_2 (optional)
-* city_id
-* postal_zip_code_id
+* `address_line_1` (required)
+* `address_line_2` (optional)
+* `city_id`
+* `postal_zip_code_id`
 
 Key features:
 * Clean constraints on street lines
@@ -108,11 +108,11 @@ This provides a reusable, validated address entity.
 Customers through `address_id` reference a normalized address.
 
 This replaces the legacy free‑form fields:
-* address
-* city
-* state
-* country
-* postal_code
+* `address`
+* `city`
+* `state`
+* `country`
+* `postal_code`
 
 Benefits:
 * consistent geographic data
@@ -130,11 +130,11 @@ Benefits:
 
 ## Invoice Billing Addresses
 Invoices retain embedded billing fields:
-* billing_address
-* billing_city
-* billing_administrative_division
-* billing_country
-* billing_postal
+* `billing_address`
+* `billing_city`
+* `billing_administrative_division`
+* `billing_country`
+* `billing_postal`
 
 These fields are not normalized and do not reference the address table.
 
@@ -152,11 +152,11 @@ This separation ensures both:
 During migration:
 
 * All legacy address fields were trimmed and validated
-* Postal codes were normalized into the postal_zip_code table
+* Postal codes were normalized into the `postal_zip_code` table
 * Countries were mapped to ISO codes
 * Cities and administrative divisions were deduplicated
 * Customer and employee addresses were reconstructed into the normalized hierarchy
-* Invoice billing fields were preserved exactly as‑is
+* Invoice billing fields were preserved
 
 This ensured both data quality and legal correctness.
 
