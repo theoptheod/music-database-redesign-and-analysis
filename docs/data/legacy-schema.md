@@ -54,9 +54,9 @@ Each table is documented using the following format:
 | artist_id | VARCHAR(30)      | Identifier of the album’s artist/band, currently not enforced as a foreign key | 135               | Will be replaced by a artist_album junction table in the final schema |
 ```
 Notes:
-* `album_id` is stored as a VARCHAR in the legacy schema but represents numeric identifiers. It will be converted to an INT surrogate key.
-* `title` will be expanded to VARCHAR(255) to support longer album names.
-* The legacy `artist_id` column will be removed. Albums may have multiple artists, so the final schema introduces an artist_album junction table to model this many‑to‑many relationship.
+* `album_id` is stored as `VARCHAR` in the legacy schema but represents numeric identifiers. It will be converted to an `INT` surrogate key.
+* `title` will be expanded to `VARCHAR(255)` to support longer album names.
+* The legacy `artist_id` column will be removed. Albums may have multiple artists, so the final schema introduces an `artist_album` junction table to model this many‑to‑many relationship.
 
 Sample rows:
 ```
@@ -73,9 +73,9 @@ album_id,title,artist_id
 | name      | VARCHAR(120)     | Full artist or band name stored as a single-field value | Milton Nascimento | Will be expanded to VARCHAR(255) in the final schema         |
 ```
 Notes:
-* `artist_id` will be converted from VARCHAR to an INT surrogate key.
-* `name` will be expanded to VARCHAR(255) to support longer artist names.
-* The Artist–album relationships will be represented through the `artist_album` junction table in the final schema.
+* `artist_id` will be converted from `VARCHAR` to an `INT` surrogate key.
+* `name` will be expanded to `VARCHAR(255)` to support longer artist names.
+* The artist–album relationships will be represented through the `artist_album` junction table in the final schema.
 
 Sample rows:
 ```
@@ -92,8 +92,8 @@ artist_id,name
 | name          | VARCHAR(120)     | Descriptive name of the media type     | Protected AAC audio file | Will be expanded to VARCHAR(255) in the final schema         |
 ```
 Notes:
-* `media_type_id` will be converted to an INT surrogate key.
-* `name` will be expanded to VARCHAR(255) to support more descriptive mediatype names.
+* `media_type_id` will be converted to an `INT` surrogate key.
+* `name` will be expanded to `VARCHAR(255)` to support more descriptive mediatype names.
 
 Sample rows:
 ```
@@ -110,8 +110,8 @@ media_type_id,name
 | name     | VARCHAR(120)     | Descriptive name of the music genre     | Soundtrack        | Will be expanded to VARCHAR(255) in the final schema         |
 ```
 Notes:
-* `genre_id` will be converted to an INT surrogate key.
-* `name` will be expanded to VARCHAR(255) to support longer genre descriptions.
+* `genre_id` will be converted to an `INT` surrogate key.
+* `name` will be expanded to `VARCHAR(255)` to support longer genre descriptions.
 * Tracks may belong to multiple genres, so the final schema introduces a `genre_track` junction table.
 
 Sample rows:
@@ -136,11 +136,11 @@ genre_id,name
 | unit_price    | DOUBLE PRECISION | Price of track                                                                        | 0.99              | Will be converted to INT representing price in cents in the final schema                   |
 ```
 Notes:
-* `track_id` will be converted to a BIGINT surrogate key to accommodate large datasets.
-* `name` will be expanded to VARCHAR(255) to support longer track titles.
+* `track_id` will be converted to a `BIGINT` surrogate key to accommodate large datasets.
+* `name` will be expanded to `VARCHAR(255)` to support longer track titles.
 * The legacy `album_id` and `genre_id` columns will be removed. Tracks may appear on multiple albums and belong to multiple genres, so these relationships will be modeled using the `album_track` and `genre_track` junction tables.
 * The `composer` column violates 1NF by storing multiple names in a delimited string. The final schema introduces a `composer` table and a `composer_track` junction table to deal with this issue.
-* `unit_price` will be stored as an INT representing price in cents to avoid floating‑point precision issues.
+* `unit_price` will be stored as an `INT` representing price in cents to avoid floating‑point precision issues.
 
 Sample rows:
 ```
@@ -157,8 +157,8 @@ track_id,name,album_id,media_type_id,genre_id,composer,milliseconds,bytes,unit_p
 | name        | VARCHAR(120)     | Descriptive name of the playlist     | Brazilian Music   | Will be expanded to VARCHAR(255) in the final schema         |
 ```
 Notes:
-* `playlist_id` will be converted to an INT surrogate key.
-* `name` will be expanded to VARCHAR(255) to support longer playlist names.
+* `playlist_id` will be converted to an `INT` surrogate key.
+* `name` will be expanded to `VARCHAR(255)` to support longer playlist names.
 
 Sample rows:
 ```
@@ -201,10 +201,10 @@ playlist_id,track_id
 | total           | DOUBLE PRECISION            | Total amount paid for the invoice                                   | 8.91                | Will be converted to INT representing price in cents in the final schema                           |
 ```
 Notes:
-* `invoice_id` remains an INT surrogate key.
-* `invoice_date` will be converted to TIMESTAMPTZ so that the recorded purchase time stays accurate across different regions.
+* `invoice_id` remains an `INT` surrogate key.
+* `invoice_date` will be converted to `TIMESTAMPTZ` so that the recorded purchase time stays accurate across different regions.
 * Billing address fields remain denormalized by design, since invoices must preserve the customer’s address at the time of purchase.
-* `total` will be stored as an INT representing price in cents to avoid floating‑point precision issues.
+* `total` will be stored as an `INT` representing price in cents to avoid floating‑point precision issues.
 
 Sample rows:
 ```
@@ -224,10 +224,10 @@ invoice_id,customer_id,invoice_date,billing_address,billing_city,billing_state,b
 | quantity        | DOUBLE PRECISION | Quantity purchased                                                 | 1                 | Will be converted to INT in the final schema                              |
 ```
 Notes:
-* `invoice_line_id` will be converted to an INT surrogate key.
+* `invoice_line_id` will be converted to an `INT` surrogate key.
 * `invoice_id` and `track_id` will become foreign keys referencing their respective tables.
-* `unit_price` will be stored as an INT representing price in cents.
-* `quantity` will be converted to INT, as fractional quantities are not applicable to track purchases.
+* `unit_price` will be stored as an `INT` representing price in cents.
+* `quantity` will be converted to `INT`, as fractional quantities are not applicable to track purchases.
 
 Sample rows:
 ```
@@ -259,12 +259,12 @@ invoice_line_id,invoice_id,track_id,unit_price, quantity
 ```
 
 Notes:
-* The datatype of the `last_name` and `first_name` columns (CHARACTER(50)) is fixed‑length and will be modernized.
+* The datatype of the `last_name` and `first_name` columns (`CHARACTER(50)`) is fixed‑length and will be modernized.
 * The `levels` column contains a small, predefined set of employee classification codes. To eliminate redundancy and enforce valid values, the final schema will introduce a separate `employee_level` table.
 * The `title` column contains the titles assigned to employees based on their position. To eliminate redundancy and enforce valid values, the final schema will introduce a separate `employee_title` table.
-* The new address table will store the street address and include a foreign key linking to the appropriate administrative division.
+* The new `address` table will store the street address and include a foreign key linking to the appropriate administrative division.
 * The `city`, `state`, and `country` columns will be removed. In the final schema, all geographic information will be represented through `address_id`, which links to the `administrative_division` table.
-This structure supports flexible hierarchical geographic data without introducing unnecessary NULL values.
+  This structure supports flexible hierarchical geographic data without introducing unnecessary NULL values.
 * The `reports_to` column will be replaced by `manager_id`, a self‑referencing foreign key that points to `employee`.`employee_id`, allowing the schema to model organizational reporting hierarchies cleanly.
 
 Sample rows:
@@ -293,11 +293,11 @@ employee_id,last_name,first_name,title,reports_to,levels,birthdate,hire_date,add
 | support_rep_id | INT           | Identifier of the support representative, currently not enforced as a foreign key | 3                     | Will become an INT FK referencing employee(employee_id)                                  |
 ```
 Notes:
-* Any fields that may be missing in the source data (such as company or fax) are preserved as NULL.
-* `last_name` and `first_name` will be modernized from fixed‑length CHARACTER to VARCHAR(255).
+* Any fields that may be missing in the source data (such as company or fax) are preserved as `NULL`.
+* `last_name` and `first_name` will be modernized from fixed‑length `CHARACTER` to `VARCHAR(255)`.
 * The `address`, `city`, `state`, and `country` columns will be removed. Customers will reference the normalized address table through `address_id`.
 * `postal_code` will be normalized into the `postal_zip_code` table.
-* `company`, `phone`, `fax`, and `email` will be expanded to VARCHAR(255) to support longer values.
+* `company`, `phone`, `fax`, and `email` will be expanded to `VARCHAR(255)` to support longer values.
 * `support_rep_id` will become a foreign key referencing `employee`.`employee_id`, modeling the relationship between customers and their assigned support representatives.
 
 Sample rows:
