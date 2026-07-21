@@ -56,7 +56,7 @@ Key features:
 This provides a stable foundation for all geographic relationships.
 
 ### Postal/Zip Code
-The `postal_zip_code` table stores postal or zio codes that relate to a country.
+The `postal_zip_code` table stores postal or zip codes that relate to a country.
 
 Key features:
 * Unique per country
