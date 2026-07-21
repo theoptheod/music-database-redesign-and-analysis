@@ -55,6 +55,16 @@ Key features:
 
 This provides a stable foundation for all geographic relationships.
 
+### PostalZipCode
+The `postal_zip_code` table stores postal or zio codes that relate to a country.
+
+Key features:
+* Unique per country
+* Non‑blank codes
+* Indexed for efficient filtering
+
+This allows consistent postal code validation and reuse.
+
 ### Administrative Division
 The `administrative_division` table models states, provinces, or regions.
 
@@ -75,16 +85,6 @@ Key features:
 * Indexed for fast lookup
 
 This prevents ambiguous duplicates (for example multiple cities with the same name).
-
-### PostalZipCode
-The `postal_zip_code` table stores postal or zio codes that relate to a country.
-
-Key features:
-* Unique per country
-* Non‑blank codes
-* Indexed for efficient filtering
-
-This allows consistent postal code validation and reuse.
 
 ### Address
 The `address` table represents a complete physical address.
