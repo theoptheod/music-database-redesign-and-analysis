@@ -98,7 +98,7 @@ This project connects to two PostgreSQL databases:
 * the original (unnormalized) database
 * the normalized database created during migration
 
-To keep credentials secure, the project uses a local .env file that is not committed to the repository.
+To keep credentials secure, the project uses a local `.env` file that is not committed to the repository.
 
 ### 1. Create the .env file
 In the project root directory, create a file named `.env`  
