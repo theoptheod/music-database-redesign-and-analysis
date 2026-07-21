@@ -276,7 +276,7 @@ Phone numbers also aren’t reliable unique identifiers, and enforcing constrain
 * Preserves original customer and employee contact information
 * Avoids incorrect assumptions about international formats
 * Supports realistic scenarios where numbers change or are shared
-* Ensures analysts can use phone numbers for grouping or filtering without risking data loss
+* Ensures that phone numbers can be used for grouping or filtering without risking data loss
 
 This approach keeps the data authentic, practical, and minimally altered, which is often the safest choice for real‑world datasets.
 
