@@ -1,8 +1,8 @@
 # Monetary Values - Design Notes
 
 ## Summary
-Accurate financial reporting is a core requirement for any analytical system.
-The original dataset stored prices using `DOUBLE PRECISION`, a binary floating‑point type that cannot represent values like 0.1 or 19.99 exactly.  
+Accurate financial reporting is a core requirement for any analytical system.   
+The original dataset stored prices using `DOUBLE PRECISION`, a binary floating‑point type that introduces precision errors for values like 0.1 or 19.99.
 
 This produces artifacts like:
 ```
