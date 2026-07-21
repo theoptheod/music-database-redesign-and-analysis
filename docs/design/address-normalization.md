@@ -34,9 +34,9 @@ This hybrid approach ensures clean, validated geographic data for analytics whil
 ## Normalized Geographic Model
 The redesigned schema introduces a fully normalized geographic hierarchy:
 * Country
+* Postal/Zip Code
 * Administrative Division (state, province, region)
 * City
-* Postal/Zip Code
 * Address
 
 This structure ensures consistent, validated, reusable geographic data.
