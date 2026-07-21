@@ -1,7 +1,7 @@
-# Address Normalization — Design Notes
+# Address Normalization - Design Notes
 
 ## Summary
-The legacy schema stored addresses as free‑form text across customers, employees, and invoices.
+The legacy schema stored addresses as free‑form text across customers, employees, and invoices.  
 This led to inconsistent spelling, duplicated locations, and unreliable geographic grouping that undermine revenue per region reporting, customer segmentation, and Power BI mapping.
 
 The redesigned schema introduces a normalized geographic hierarchy for customers and employees, while invoices retain embedded billing fields to preserve legal immutability.
