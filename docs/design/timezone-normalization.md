@@ -38,7 +38,7 @@ TIMESTAMPTZ NOT NULL
 ```
 This ensures:
 * PostgreSQL stores all values in UTC internally
-* Timezone‑aware semantics are applied consistently
+* Timezone information is preserved correctly
 * Downstream tools receive unambiguous timestamps
 
 ## Migration Logic
