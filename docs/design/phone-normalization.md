@@ -1,4 +1,4 @@
-# Phone Number Normalization — Design Notes
+# Phone Number Normalization - Design Notes
 
 ## Summary
 The legacy dataset contains phone numbers from multiple countries, written in inconsistent formats and without reliable country codes or numbering standards.
@@ -29,13 +29,14 @@ Attempting to enforce strict formatting or rewrite numbers using a specific stan
 Several factors make normalization impractical and potentially misleading:
 
 **1. International Variation**  
-The dataset includes numbers from North America, Europe, Australia, and other regions. Without reliable country metadata, it is impossible to apply a consistent formatting rule.
+The dataset includes numbers from North America, Europe, Australia, and other regions.  
+Without reliable country metadata, it is impossible to apply a consistent formatting rule.
 
 **2. Lack of Context**  
 The legacy data does not include:
 * country codes for all records
 * region‑specific numbering rules
-* metadata indicating whether numbers are mobile, landline, or office extensions
+* information indicating whether numbers are mobile, landline, or office extensions
 
 **3. Not Used as Identifiers**  
 Unlike email addresses, phone numbers are not used as unique identifiers in this project.  
