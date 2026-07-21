@@ -44,7 +44,7 @@ This ensures:
 ## Migration Logic
 
 ### Source Data Handling
-During migration, timestamps were treated as `UTC` and inserted directly into `TIMESTAMPTZ` columns without modification.
+During migration, timestamps were treated as `UTC` and inserted directly into `TIMESTAMPTZ` columns without modification.  
 This decision reflects the absence of reliable timezone data in the source dataset.
 
 This approach ensures:
