@@ -182,7 +182,7 @@ Key issues included:
 * no deletion safeguards
 * limited support for geographic or analytical queries
 
-The full legacy schema, including table samples and structural analysis, is documented in <a href="/docs/data/legacy-schema.md" target="_blank">Legacy Schema – Technical Analysis</a>.
+The full legacy schema, including table samples and structural analysis, is documented in <a href="/docs/data/legacy-schema.md" target="_blank">Legacy Schema - Technical Analysis</a>.
 
 With these limitations clearly defined, the next step was to establish the design decisions required to build a more reliable analytical model.
 
