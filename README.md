@@ -237,7 +237,7 @@ Additional implementation details are documented in <a href="/docs/design/timezo
 
 #### Decision  
 Normalize all customer and employee address data into a structured geographic hierarchy  
-(Country -> Postal Zip Code -> Division -> City -> Address),  
+(`country` -> `postal_zip_code` -> `division` -> `city` -> `address`),  
 but preserve invoice billing addresses as embedded fields  
 (`billing_address`, `billing_city`, `billing_administrative_division`, `billing_country`, `billing_postal`) to maintain historical accuracy.
 
