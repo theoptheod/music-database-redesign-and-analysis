@@ -236,8 +236,10 @@ Additional implementation details are documented in <a href="/docs/design/timezo
 ### Address Data Normalization & Invoice Billing Address Exception
 
 #### Decision  
-Normalize all customer and employee address data into a structured geographic hierarchy (Country -> Postal Zip Code -> Division -> City -> Address),  
-but preserve invoice billing addresses as embedded fields (`billing_address`, `billing_city`, `billing_administrative_division`, `billing_country`, `billing_postal`) to maintain historical accuracy.
+Normalize all customer and employee address data into a structured geographic hierarchy  
+(Country -> Postal Zip Code -> Division -> City -> Address),  
+but preserve invoice billing addresses as embedded fields  
+(`billing_address`, `billing_city`, `billing_administrative_division`, `billing_country`, `billing_postal`) to maintain historical accuracy.
 
 #### Analytical Reasoning  
 The original schema stored addresses as free‑form text, leading to inconsistent spelling, duplicated locations, and unreliable geographic grouping.  
