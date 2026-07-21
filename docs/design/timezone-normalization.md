@@ -1,4 +1,4 @@
-# Timezone Normalization — Design Notes
+# Timezone Normalization - Design Notes
 
 ## Summary
 The original dataset stored timestamps without timezone information, making it impossible to determine whether events were recorded in server time, customer local time, or `UTC`.
