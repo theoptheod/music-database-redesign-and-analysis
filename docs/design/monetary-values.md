@@ -26,9 +26,9 @@ CheckConstraint("unit_price_cents >= 0", name="ck_unit_price_cents_non_negative"
 This guarantees that every monetary field contains an integer value of zero or greater.
 
 This pattern is applied to:
-* `track.unit_price_cents`
-* `invoice.invoice_total_cents`
-* `invoice_line.unit_price_cents`
+* `track`.`unit_price_cents`
+* `invoice`.`invoice_total_cents`
+* `invoice_line`.`unit_price_cents`
 
 ### Naming Convention
 All monetary columns end with `_cents` to make the unit explicit and avoid ambiguity in SQL queries or BI tools.
