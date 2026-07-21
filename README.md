@@ -215,9 +215,9 @@ Store all timestamps as `UTC` using `TIMESTAMPTZ`, preserving original values bu
 
 #### Analytical Reasoning  
 The legacy schema used naive timestamps with no timezone context.  
-This makes it impossible to know whether whether the timestamps represent server time, customer local time, or any other standardized reference.
+This makes it impossible to know whether the timestamps represent server time, customer local time, or any other standardized reference.
 
-For analysts, this ambiguity breaks:
+During analysis, this ambiguity breaks:
 * cohort boundaries
 * churn windows
 * hourly activity patterns
