@@ -184,6 +184,8 @@ Key issues included:
 
 The full legacy schema, including table samples and structural analysis, is documented in <a href="/docs/data/legacy-schema.md" target="_blank">Legacy Schema – Technical Analysis</a>.
 
+Understanding these issues made it possible to outline the design decisions required to build a more reliable analytical model.
+
 ## Design Decisions
 The redesigned schema aims to improve analytical reliability, data quality, and long‑term scalability.  
 Each decision in this section addresses a clear limitation in the original data and helps ensure the new design follows the standards used in modern, reliable systems.
