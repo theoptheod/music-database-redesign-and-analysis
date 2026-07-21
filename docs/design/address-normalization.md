@@ -28,7 +28,7 @@ This hybrid approach ensures clean, validated geographic data for analytics whil
     * enforcing relationships between cities and states
 
 4. **Invoice addresses were mutable**  
-    In the legacy schema, invoice billing fields were tied to the customer’s current address.
+    In the legacy schema, invoice billing fields were tied to the customer’s current address.  
     If a customer moved, historical invoices would change, which is legally incorrect.
     
 ## Normalized Geographic Model
