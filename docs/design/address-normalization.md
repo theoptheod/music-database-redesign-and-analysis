@@ -161,10 +161,10 @@ During migration:
 This ensured both data quality and legal correctness.
 
 ## Benefits of the Normalized Model
-Consistency: All geographic entities are validated and deduplicated
-Referential integrity: Countries, states, cities, and postal codes are linked correctly
-Analytics: Revenue by country, customer distribution by region, employee location reporting
-Extensibility: Future geocoding, timezone mapping, or analytics based on geographical regions
+Consistency: All geographic entities are validated and deduplicated  
+Referential integrity: Countries, states, cities, and postal codes are linked correctly  
+Analytics: Revenue by country, customer distribution by region, employee location reporting  
+Extensibility: Future geocoding, timezone mapping, or analytics based on geographical regions  
 Legal correctness: Invoice addresses remain immutable snapshots
 
 ## Future Considerations
