@@ -34,7 +34,7 @@ The following sections outline the project’s context, methodology, and structu
 - [Artist Normalization](#artist-normalization)
 - [ETL Pipeline](#etl-pipeline)
 - [New Database Design Overview](#new-database-design-overview)
-- [New Database Schema](#new-satabase-schema)
+- [New Database Schema](#new-database-schema)
 - [Benchmarking the Old vs. New Schema](#benchmarking-the-old-vs-new-schema)
 - [Conclusions](#conclusions)
 - [Next Steps](#next-steps)
