@@ -290,7 +290,7 @@ Preserve the original event‑based purchase model where each invoice line repre
 #### Analytical Reasoning  
 The legacy schema treats each purchase as a distinct event, not a grouped quantity.  
 Changing this behavior (e.g. aggregating identical items into a single row with a quantity field) would introduce assumptions about how the store processes transactions.  
-For analysts, altering this structure could distort purchase frequency, and event‑based metrics.
+Altering this structure could distort purchase frequency, and event‑based metrics during analysis.
 
 #### Business Impact
 * Maintains the original meaning of each purchase event
