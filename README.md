@@ -316,7 +316,7 @@ ORMs could accidentally cascade deletes, and referential integrity was not consi
 The redesigned schema eliminates these risks by enforcing a one‑way, immutable audit chain:
 * Invoices and invoice lines are permanent since they represent historical financial events.
 * Tracks, customers, and employees referenced by invoices cannot be deleted, protecting the dependency chain.
-* All relationships use RESTRICT‑based deletion rules, preventing accidental removal of linked entities.
+* All relationships use RESTRICT‑based deletion rules, preventing accidental removal of linked entities.  
 Financial entities are never updated in ways that alter historical meaning, ensuring analytical stability.
 
 This model mirrors real‑world financial systems, where historical transactions must remain intact for the lifetime of the business.
