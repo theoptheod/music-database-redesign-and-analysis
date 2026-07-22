@@ -2,7 +2,7 @@
 
 ## Summary
 The legacy schema stored addresses as free‑form text across customers, employees, and invoices.  
-This led to inconsistent spelling, duplicated locations, and unreliable geographic grouping that undermine revenue per region reporting, customer segmentation, and Power BI mapping.
+This led to inconsistent spelling, duplicated locations, and unreliable geographic grouping that undermine revenue per region reporting, customer segmentation and Power BI mapping.
 
 The redesigned schema introduces a normalized geographic hierarchy for customers and employees, while invoices retain embedded billing fields to preserve legal immutability.
 This hybrid approach ensures clean, validated geographic data for analytics while maintaining historically accurate billing information for financial records.
