@@ -11,12 +11,12 @@ Completed – Version 1.0
 
 ## Summary
 This project transforms a legacy music store database into a clean, analysis‑ready data model designed for modern BI tools.  
-The original schema contained duplicated information, inconsistent relationships, and structural issues that made analytical work and business insights unreliable.
+The original schema contained duplicated information, inconsistent relationships, and structural issues that made business insights unreliable.
 
-A new normalized database was rebuilt in PostgreSQL using a Third Normal Form (3NF) approach, that focuses on analytical clarity, data quality, and business driven modeling decisions.  
-It prepares the dataset for advanced reporting in Power BI, including revenue analysis, customer segmentation, product performance, and geographic insights.
+A new normalized database was rebuilt in PostgreSQL using a Third Normal Form (3NF) approach, that focuses on analytical clarity, data quality and business driven modeling decisions.  
+It prepares the dataset for advanced reporting in Power BI, including revenue analysis, customer segmentation, product performance and geographic insights.
 
-The following sections outline the project’s context, methodology, and structure.
+The following sections outline the project’s context, methodology and structure.
 
 ## Table of Contents
 - [Background](#background)
@@ -54,16 +54,16 @@ These were problems that would mislead dashboards, distort KPIs, and undermine a
 
 With the limitations clearly identified, the project shifted from evaluation to analytical reconstruction.
 
-The redesigned schema provides a stable foundation for BI work, enabling deeper insights such as churn indicators, cohort analysis, and customer lifetime value.  
+The redesigned schema provides a stable foundation for BI work, enabling deeper insights such as churn indicators, cohort analysis and customer lifetime value.  
 
 Building on this context, we now move to the importance of the modeling changes.
 
 ## Why This Matters for Analysis
 Most datasets appear usable at first glance, until you try to answer real business questions.  
-This project highlights the analytical judgment required to uncover hidden issues and reshape imperfect data into useful insights.
+This project highlights the analytical judgment required to uncover hidden issues, and reshape imperfect data into useful insights.
 
 Key reasons this redesign matters:
-* Analysts rarely receive clean data, so they need to be able to diagnose inconsistencies and reshape data so reporting is trustworthy.
+* Analysts rarely receive clean data, so they need to be able to diagnose inconsistencies and transform data so reporting is trustworthy.
 
 * BI tools depend on clean relationships, so the new schema simplifies joins and enforces consistent keys.
 
@@ -79,17 +79,17 @@ Key objectives:
 * Redesign the data model using a 3NF approach that improves consistency and integrity.
 * Standardize and migrate data with Python and SQLAlchemy to enforce constraints and consistent values.
 * Benchmark analytical performance by comparing representative queries across both schemas to validate improvements.
-* Enable advanced analytics including churn analysis, cohort tracking, revenue insights, and customer behavior modeling.
+* Enable advanced analytics including churn analysis, cohort tracking, revenue insights and customer behavior modeling.
 
 Achieving these objectives required a focused selection of tools and technologies.
 
 ## Tools & Technologies
-The tools used in this project were selected for their ability to support data preparation, schema redesign, and analytical validation:
+The tools used in this project were selected for their ability to support data preparation, schema redesign and analytical validation:
 * PostgreSQL: Core database engine used to implement the redesigned schema.
 * pgAdmin: Used for schema inspection, query execution, and debugging during development.
 * Python & SQLAlchemy: Enabled schema creation, data migration, and enforcement of constraints.
 * JupyterLab: Used to run Python scripts for schema generation and data adjustments prior to migration.
-* GitHub: Version control, project tracking, and documentation.
+* GitHub: Version control, project tracking and documentation.
 
 To run the migration scripts and reproduce the analysis, a minimal environment setup is required.
 
@@ -243,7 +243,7 @@ but preserve invoice billing addresses as embedded fields
 to maintain historical accuracy.
 
 #### Analytical Reasoning  
-The original schema stored addresses as free‑form text, leading to inconsistent spelling, duplicated locations, and unreliable geographic grouping.  
+The original schema stored addresses as free‑form text, leading to inconsistent spelling, duplicated locations and unreliable geographic grouping.  
 Normalizing customer and employee addresses eliminates these issues and creates a clean, validated geographic dimension suitable for BI analysis.
 
 However, invoices represent legal, historical documents.  
@@ -309,7 +309,7 @@ Adopt a strict, reliable deletion model where all financial records are fully pr
 All entities that contribute to historical revenue are immutable and cannot be removed once created.
 
 #### Analytical Reasoning
-Financial data form the backbone of every analytical workflow: revenue reporting, cohort analysis, churn modeling, customer lifetime value, and trend forecasting.  
+Financial data form the backbone of every analytical workflow: revenue reporting, cohort analysis, churn modeling, customer lifetime value and trend forecasting.  
 In the legacy schema, deletion behavior was ambiguous and relied on implicit assumptions.  
 ORMs could accidentally cascade deletes, and referential integrity was not consistently enforced.
 
