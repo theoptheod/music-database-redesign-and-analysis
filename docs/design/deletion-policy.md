@@ -2,7 +2,7 @@
 
 ## Summary
 This document explains the global deletion rules that govern the entire database schema.  
-It outlines how RESTRICT‑based foreign keys prevent accidental removal of catalog, geographic, employee, and financial entities.  
+It outlines how RESTRICT‑based foreign keys prevent accidental removal of catalog, geographic, employee and financial entities.  
 It clarifies why no cascading deletes exist and how manual relationship removal ensures safe, predictable operations.  
 It highlights the entities protected by deletion constraints and the rationale behind this design.  
 Together, these rules create a stable, robust and audit‑safe data environment.
