@@ -347,19 +347,19 @@ The goal wasn’t just to inspect the data, but to uncover structural gaps, uncl
 
 Key findings included:
 * Null Value Reliability  
-Primary keys were intact, but many descriptive fields were only partially populated or inconsistently used.
+Primary keys were intact, but many descriptive fields were only partially populated or inconsistently used.  
 Analytical impact: incomplete attributes weaken segmentation, reduce customer‑level insight, and introduce noise into Power BI.
 
 * Duplicate Records  
-A few track records appeared more than once, suggesting the catalog wasn’t consistently maintained.
+A few track records appeared more than once, suggesting the catalog wasn’t consistently maintained.  
 Analytical impact: duplicates produce count inaccuracies and can lead to misleading trends in dashboards.
 
 * Referential Integrity  
-No orphaned foreign keys were found, but several relationships relied on assumptions rather than enforced constraints.
+No orphaned foreign keys were found, but several relationships relied on assumptions rather than enforced constraints.  
 Analytical impact: weak constraints make relationships less reliable, which can lead to subtle errors in BI reports.
 
 * Formatting & Standardization  
-Formatting was generally consistent, but key fields (addresses, phone numbers, monetary values) lacked normalization or validation rules.
+Formatting was generally consistent, but key fields (addresses, phone numbers, monetary values) lacked normalization or validation rules.  
 Analytical impact: inconsistent formatting complicates geographic analysis, reduces join reliability, and introduces rounding/precision issues in financial reporting.
 
 A more detailed breakdown is available in <a href="/docs/data/data-quality-checks.md" target="_blank">Data Quality Checks Technical Analysis</a>.
