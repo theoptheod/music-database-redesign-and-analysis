@@ -1,7 +1,7 @@
 # Data Integrity - Design Notes
 
 ## Summary
-The redesigned schema implements a strict, audit‑safe deletion model to ensure that financial records remain immutable for the lifetime of the system.  
+The redesigned schema implements a strict, audit‑safe deletion model to ensure that financial records remain immutable for the lifetime of the system.
 Because entities such as `invoice` and `invoice_line` represent real financial transactions, the database must guarantee that no sequence of operations,  
 no matter the reason (e.g. user error, ORM misconfiguration, cascading deletes), can ever remove or corrupt data that are part of the financial audit trail.
 
