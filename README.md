@@ -375,7 +375,7 @@ Key issues include:
     Analytical impact: inflated counts, unstable catalog KPIs, and ambiguous trend analysis.
 
 * Incomplete or Non‑Applicable Address Data  
-    Address fields mixed NULLs and placeholders (e.g. 'None') due to a US‑centric address format.  
+    Address fields mixed NULLs and placeholders (e.g. "None") due to a US‑centric address format.  
     Analytical impact: unreliable geographic segmentation and inconsistent slicer behavior in Power BI.
 
 * Inconsistent Composer Information  
@@ -389,7 +389,7 @@ Key issues include:
 * Future‑Proofing Through Constraints  
     The redesigned schema introduces normalization, atomic modeling, and enforced constraints to prevent these issues from being re-introduced.
 
-A detailed breakdown is available in <a href="/docs/data/data-issues.md" target="_blank">Data Issues Doc</a>.
+A detailed breakdown is available in <a href="/docs/data/data-issues.md" target="_blank">Data Issues Technical Analysis</a>.
 
 ## Genre Normalization
 The performed normalization of the legacy `genre` table revealed structural inconsistencies that directly affected catalog analytics.
