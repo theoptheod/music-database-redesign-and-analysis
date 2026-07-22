@@ -1,7 +1,7 @@
-# Financial Integrity — Design Notes
+# Financial Integrity - Design Notes
 
 ## Summary
-This document outlines how the created financial subsystem of the database preserves historical accuracy and prevents data loss.
+This document outlines how the created financial subsystem of the database preserves historical accuracy and prevents data loss.  
 It explains the immutability of invoices, the protection of tracks and customers through RESTRICT constraints,
 and the relationships that anchor financial records to catalog and employee data.
 It also details the prevention of cascading deletes, strict constraints, and stable reporting.
