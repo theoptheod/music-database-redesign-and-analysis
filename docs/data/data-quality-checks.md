@@ -1,4 +1,4 @@
-# Data Quality Checks — Overview Notes
+# Data Quality Checks - Technical Analysis
 
 ## Summary
 This document provides a technical breakdown of the data‑quality checks performed on the legacy schema.  
@@ -11,18 +11,18 @@ Objective: Identify missing values in key fields that could compromise referenti
     - Profiled descriptive fields.
 * Findings:
     - No nulls in primary keys.
-    - Several optional descriptive fields (e.g., phone numbers, addresses) showed inconsistencies.
+    - Several optional descriptive fields (e.g. phone numbers, addresses) showed inconsistencies.
 * BI Impact:
     - Sparse attributes reduce segmentation accuracy.
     - Optional fields create unpredictable slicer behavior in Power BI.
     - Missing contact/location data weakens customer analytics.
     
 #### 2. Duplicate Detection
-Objective: Identify duplicate records that distort counts, KPIs, and catalog analytics.
+Objective: Identify duplicate records that distort counts, KPIs and catalog analytics.
 
 * Methodology:
     - Checked uniqueness constraints across key entities.
-    - Performed deduplication analysis on track, album, and artist.
+    - Performed deduplication analysis on track, album and artist.
 * Findings:
     - Duplicate track records confirmed.
     - No enforced uniqueness constraints in the legacy schema.
