@@ -42,7 +42,7 @@ This approach ensures:
 * No floating‑point operations during ETL
 * No rounding or formatting applied prematurely
 * A clean separation between storage, analysis, and presentation
-* Consistent behavior across SQL, Python, and BI tools
+* Consistent behavior across SQL, Python and BI tools
 
 ## Analysis‑Time Conversion
 When answering analytical questions or benchmarking queries, monetary values were converted using a simple transformation:
