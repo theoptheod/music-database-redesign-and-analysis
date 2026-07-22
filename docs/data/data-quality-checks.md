@@ -32,7 +32,7 @@ Objective: Identify duplicate records that distort counts, KPIs and catalog anal
     - Incorrect trend analysis when duplicates appear across time.
     
 #### 3. Referential Integrity Validation
-Objective: Ensure relationships between entities are complete, consistent, and enforceable.
+Objective: Ensure relationships between entities are complete, consistent and enforceable.
 
 * Methodology:
     - Validated foreign keys across all relationship pairs.
@@ -46,11 +46,11 @@ Objective: Ensure relationships between entities are complete, consistent, and e
     - Analysts are forced to rely on assumptions instead of guaranteed structure.
 
 #### 4. Formatting & Standardization Checks
-Objective: Identify inconsistent formatting that affects joins, grouping, and geographic/financial analysis.
+Objective: Identify inconsistent formatting that affects joins, grouping and geographic/financial analysis.
 
 * Methodology:
-    - Profiled address fields, phone numbers, and monetary values.
-    - Checked for mixed formats, inconsistent casing, and floating‑point precision issues.
+    - Profiled address fields, phone numbers and monetary values.
+    - Checked for mixed formats, inconsistent casing and floating‑point precision issues.
 * Findings:
     - Addresses and phone numbers lacked validation rules.
     - Monetary values stored as floating‑point types.
