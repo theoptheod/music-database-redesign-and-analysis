@@ -29,7 +29,7 @@ Attempting to enforce strict formatting or rewrite numbers using a specific stan
 Several factors make normalization impractical and potentially misleading:
 
 **1. International Variation**  
-The dataset includes numbers from North America, Europe, Australia, and other regions.  
+The dataset includes numbers from North America, Europe, Australia and other regions.  
 Without reliable country metadata, it is impossible to apply a consistent formatting rule.
 
 **2. Lack of Context**  
