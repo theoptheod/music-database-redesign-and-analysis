@@ -350,7 +350,7 @@ Key findings included:
 Primary keys were intact, but many descriptive fields were only partially populated or inconsistently used.
 Analytical impact: incomplete attributes weaken segmentation, reduce customer‑level insight, and introduce noise into Power BI.
 
-* Duplicate Records
+* Duplicate Records  
 A few track records appeared more than once, suggesting the catalog wasn’t consistently maintained.
 Analytical impact: duplicates produce count inaccuracies and can lead to misleading trends in dashboards.
 
