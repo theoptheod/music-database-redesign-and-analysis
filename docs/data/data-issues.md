@@ -1,13 +1,13 @@
-# Data Issues — Overview Notes
+# Data Issues - Technical Analysis
 
 ## Summary
 This document provides a technical breakdown of structural issues identified in the legacy dataset.  
-Each issue includes methodology, findings, and BI implications.
+Each issue includes methodology, findings and BI implications.
 
 #### 1. Duplicate Records
 Objective: Identify duplicate entities and assess whether safe deduplication is possible.
 * Methodology:
-    - Investigated uniqueness across `track`, `album`, and `artist`.
+    - Investigated uniqueness across `track`, `album` and `artist`.
     - Checked invoice references to determine whether duplicates were used in transactions.
     - Compared metadata (duration, bytesize) across duplicate entries.
 * Findings:
@@ -27,9 +27,9 @@ All duplicates were retained to preserve invoice integrity.
 #### 2. Incomplete or Non‑Applicable Address Data
 Objective: Assess reliability of geographic fields and identify structural limitations.
 * Methodology:
-    - Profiled customer and invoice address fields.
+    - Profiled `customer` and `invoice` address fields.
     - Identified placeholder values (e.g. "None") and inconsistent NULL usage.
-    - Evaluated the validity of country‑specific fields (e.g. state, postal code).
+    - Evaluated the validity of country‑specific fields (e.g. `state`, `postal code`).
 * Findings:
     - Address fields mixed NULLs, placeholders, and inconsistent casing.
     - Schema assumed US‑style address structures, which do not apply globally.
@@ -47,11 +47,11 @@ Administrative divisions modeled per country.
 #### 3. Inconsistent Composer Information
 Objective: Evaluate reliability of composer metadata and enforce atomic modeling.
 * Methodology:
-    - Profiled the composer field for NULLs, placeholders, and inconsistent formatting.
+    - Profiled the composer field for NULLs, placeholders and inconsistent formatting.
     - Checked for multi‑composer tracks.
     - Assessed feasibility of modeling composers as a normalized entity.
 * Findings:
-    - Composer values ranged from valid names to "anonymous", NULLs, and whitespace.
+    - Composer values ranged from valid names to "anonymous", NULLs and whitespace.
     - Multi‑composer tracks could not be represented.
     - Composer information violated atomicity and could not support contributor analytics.
 * BI Impact:
