@@ -14,14 +14,14 @@ Together, these rules ensure a fully audit‑safe and deletion‑protected finan
 * Employees cannot be deleted if they represent customers with invoices.
 
 ### Entities Involved
-* Invoice: Stores denormalized billing details and links to a customer.
-* InvoiceLine: Stores purchased track information, quantity, and pricing.
-* Track: Cannot be removed once referenced by any invoice line.
-* Customer: Cannot be removed while invoices exist.
-* Employee: Cannot be removed while representing customers with invoices.
+* `invoice`: Stores denormalized billing details and links to a customer.
+* `invoice_line`: Stores purchased track information, quantity, and pricing.
+* `track`: Cannot be removed once referenced by any invoice line.
+* `customer`: Cannot be removed while invoices exist.
+* `employee`: Cannot be removed while representing customers with invoices.
 
 ### Integrity Guarantees
-* RESTRICT prevents deletion of any financial entity that would break historical records.
+* `RESTRICT` prevents deletion of any financial entity that would break historical records.
 * No cascading deletes ensure invoice history is never lost.
 * Check constraints enforce valid pricing, quantity, and non‑empty billing fields.
 * Indexes support efficient financial reporting and analytics.
