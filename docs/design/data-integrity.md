@@ -1,15 +1,16 @@
-# Data Integrity — Design Notes
+# Data Integrity - Design Notes
 
 ## Summary
 The redesigned schema implements a strict, audit‑safe deletion model to ensure that financial records remain immutable for the lifetime of the system.  
-Because entities such as `invoice` and `invoice_line` represent real financial transactions, the database must guarantee that no sequence of operations, no matter the reason (e.g. user error, ORM misconfiguration, cascading deletes), can ever remove or corrupt data that are part of the financial audit trail.
+Because entities such as `invoice` and `invoice_line` represent real financial transactions, the database must guarantee that no sequence of operations,  
+no matter the reason (e.g. user error, ORM misconfiguration, cascading deletes), can ever remove or corrupt data that are part of the financial audit trail.
 
 To achieve this, the schema uses a `RESTRICT` deletion strategy, combined with carefully controlled SQLAlchemy relationship settings.  
 This prevents all deletes in order to preserve historical accuracy and protect analytical integrity.
 
 ## 1.Core Principle: Financial Records Must Be Immutable
-The table `invoice_line` is the foundation of the financial audit chain.
-It records:
+The `invoice_line` table is the foundation of the financial audit chain.  
+Through the financial audit chain we record:
 * which track was sold
 * at what price
 * in what quantity
@@ -73,7 +74,7 @@ This prevents ORM‑level data loss.
 ## 5.The Audit Chain and How `RESTRICT` Protects It
 Here is the full dependency chain:
 ```
-Track -> InvoiceLine -> Invoice -> Customer -> Employee -> Address -> City -> AdministrativeDivision -> Country
+Track -> InvoiceLine -> Invoice -> Customer -> Employee -> Address -> City -> AdministrativeDivision -> PostalZipCode -> Country
 ```
 
 RESTRICT ensures:
@@ -86,7 +87,7 @@ RESTRICT ensures:
 * You cannot delete an AdministrativeDivision with a City
 * You cannot delete a Country with Cities or Postal Codes
 
-This creates a one‑way, deletion‑proof chain that preserves all financial history.
+This creates a deletion‑proof chain that preserves all financial history.
 
 ## 6.Why This Matters
 This design ensures:
@@ -97,4 +98,5 @@ This design ensures:
 * Protection against accidental cascading deletes
 * Long‑term data integrity
 
-The schema is intentionally designed so that nothing in the financial audit chain can ever be deleted. This is the correct and safe approach for any system that handles real transactions.
+The schema is intentionally designed so that nothing in the financial audit chain can ever be deleted.  
+This is the correct and safe approach for any system that handles real transactions.
