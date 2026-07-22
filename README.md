@@ -182,7 +182,7 @@ Key issues included:
 * no deletion safeguards
 * limited support for geographic or analytical queries
 
-The full legacy schema, including table samples and structural analysis, is documented in <a href="/docs/data/legacy-schema.md" target="_blank">Legacy Schema - Technical Analysis</a>.
+The full legacy schema, including table samples and structural analysis, is documented in <a href="/docs/data/legacy-schema.md" target="_blank">Legacy Schema Technical Analysis</a>.
 
 With these limitations clearly defined, the next step was to establish the design decisions required to build a more reliable analytical model.
 
@@ -362,7 +362,7 @@ Analytical impact: weak constraints make relationships less reliable, which can 
 Formatting was generally consistent, but key fields (addresses, phone numbers, monetary values) lacked normalization or validation rules.
 Analytical impact: inconsistent formatting complicates geographic analysis, reduces join reliability, and introduces rounding/precision issues in financial reporting.
 
-A more detailed breakdown is available in <a href="/docs/data/data-quality-checks.md" target="_blank">Data Quality Checks Doc</a>.
+A more detailed breakdown is available in <a href="/docs/data/data-quality-checks.md" target="_blank">Data Quality Checks Technical Analysis</a>.
 
 ## Data Issues & Limitations
 During the exploration of the legacy dataset, several structural issues were revealed that cannot be fully resolved without access to the original source media.
