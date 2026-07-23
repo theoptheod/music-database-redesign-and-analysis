@@ -392,7 +392,7 @@ Key issues include:
 A detailed breakdown is available in <a href="/docs/data/data-issues.md" target="_blank">Data Issues Technical Analysis</a>.
 
 ## Genre Normalization
-The performed normalization of the legacy `genre` table revealed structural inconsistencies that directly affected catalog analytics.
+The performed normalization of the legacy `genre` table revealed structural inconsistencies that directly affected catalog analytics.  
 Genre values were neither atomic nor consistent, and the original one genre per track design forced oversimplified classifications.
 
 Key issues included:
@@ -401,18 +401,18 @@ Key issues included:
     Analytical impact: tracks that belonged into multiple genres were assinged into single labels, weakening segmentation and genre‑level KPIs.
 
 * Semantically Overlapping Genres  
-    Pairs like "Alternative" vs. "Alternative & Punk" or "Science Fiction" vs. "Sci Fi & Fantasy" represented the same conceptual space but were stored separately.
+    Pairs like "Alternative" vs. "Alternative & Punk" or "Science Fiction" vs. "Sci Fi & Fantasy" represented the same conceptual space but were stored separately.  
     Analytical impact: tracks were not classified correctly, and genre trends were fragmented across multiple labels.
 
 * Merge‑Before‑Split Strategy  
-    After grouping is resolved, the compound labels are then split into atomic genres.
+    After grouping is resolved, the compound labels are then split into atomic genres.  
     Analytical impact: preserves original intent while ensuring consistent, atomic genre representation.
 
 * Transitional Mapping Tables  
-    Mapping tables provide a deterministic path from legacy genres to normalized atomic genres.
+    Mapping tables provide a deterministic path from legacy genres to normalized atomic genres.  
     Analytical impact: guarantees auditability, prevents misclassification, and ensures correct BI reporting.
 
-A detailed breakdown is available in <a href="/docs/data/genre-normalization.md" target="_blank">Genre Normalization Overview Doc</a>.
+A detailed breakdown is available in <a href="/docs/data/genre-normalization.md" target="_blank">Genre Normalization Technical Analysis</a>.
 
 ## Composer Normalization
 The legacy composer field was highly inconsistent, since it contained mixed separators, reordered names, non‑ASCII punctuation, and various edge cases of band/artist stage names.  
