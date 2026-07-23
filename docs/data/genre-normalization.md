@@ -1,4 +1,4 @@
-# Genre Normalization Issues & Resolution Strategy — Overview Notes
+# Genre Normalization Issues & Resolution Strategy /-/ Technical Analysis
 
 ## Summary
 This document provides a technical breakdown of the structural and semantic issues identified in the  
@@ -30,7 +30,7 @@ Compound genre names are split into atomic components.
 Objective: Identify genre labels that represent the same conceptual category but were stored separately.
 * Methodology:
     - Compared compound genres to simpler variants.
-    - Identified conceptual overlaps (e.g. Alternative vs. Alternative & Punk).
+    - Identified conceptual overlaps (e.g. "Alternative" vs. "Alternative & Punk").
     - Evaluated semantic meaning of each label.
 * Findings:  
     - Pairs of genres represented the same conceptual space but were stored separately.
@@ -46,11 +46,11 @@ Simpler genres inherit the full set of atomic genres implied by their compound c
 #### 3. Merge‑Before‑Split Strategy
 Objective: Ensure semantic consistency before splitting compound genre labels.
 * Methodology:
-    - Grouped semantically related genres.
+    - Grouped genres that are conceptually related.
     - Merged conceptual groups before splitting compound labels.
-    - Ensured that semantic meaning was preserved.
+    - Ensured that the intended meaning of each genre was preserved.
 * Findings:  
-    - Performing semantic grouping before splitting avoids misinterpretation of split tokens.  
+    - Performing meaning‑based grouping before splitting avoids misinterpretation of split tokens.  
     For example:  
     Tracks labeled "Alternative" are mapped to the same conceptual group as "Alternative & Punk", inheriting both "Alternative" and "Punk".  
     Tracks labeled "Science Fiction" inherit "Sci Fi" and "Fantasy" from "Sci Fi & Fantasy".  
@@ -63,7 +63,7 @@ Objective: Ensure semantic consistency before splitting compound genre labels.
 Genre merging is performed before splitting compound names.
 
 #### 4. Transitional Mapping Tables
-Objective: Provide a deterministic, auditable path from legacy genres to normalized atomic genres.
+Objective: Provide a predetermined, auditable path from legacy genres to normalized atomic genres.
 * Methodology:
     - Created mapping tables linking legacy genre IDs to canonical atomic genres.
     - Ensured all original track–genre relationships were preserved.
