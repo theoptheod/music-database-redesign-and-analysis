@@ -393,7 +393,7 @@ A detailed breakdown is available in <a href="/docs/data/data-issues.md" target=
 
 ## Genre Normalization
 The performed normalization of the legacy `genre` table revealed structural inconsistencies that directly affected catalog analytics.  
-Genre values were neither atomic nor consistent, and restricting each track to a single genre produced compressed, overly simplistic classifications.
+Genre values were neither atomic nor consistent, and restricting each track to a single genre produced simplistic classifications.
 
 Key issues included:
 * Non‑Atomic Genre Values  
@@ -409,7 +409,7 @@ Key issues included:
     Analytical impact: preserves original intent while ensuring consistent, atomic genre representation.
 
 * Transitional Mapping Tables  
-    Mapping tables provide a deterministic path from legacy genres to normalized atomic genres.  
+    Mapping tables provide a structured path from legacy genres to normalized atomic genres.  
     Analytical impact: guarantees auditability, prevents misclassification, and ensures correct BI reporting.
 
 A detailed breakdown is available in <a href="/docs/data/genre-normalization.md" target="_blank">Genre Normalization Technical Analysis</a>.
