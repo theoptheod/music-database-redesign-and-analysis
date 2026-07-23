@@ -393,7 +393,7 @@ A detailed breakdown is available in <a href="/docs/data/data-issues.md" target=
 
 ## Genre Normalization
 The performed normalization of the legacy `genre` table revealed structural inconsistencies that directly affected catalog analytics.  
-Genre values were neither atomic nor consistent, and the original one genre per track design forced oversimplified classifications.
+Genre values were neither atomic nor consistent, and restricting each track to a single genre produced compressed, overly simplistic classifications.
 
 Key issues included:
 * Non‑Atomic Genre Values  
