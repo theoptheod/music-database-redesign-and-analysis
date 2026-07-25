@@ -427,7 +427,7 @@ Normalization follows a predictable sequence:
 * Handle atomic names (trim, standardize punctuation, fix casing) while applying exceptions where needed (e.g. "AC/DC").
 * Produce the canonical composer list which is deduplicated, alphabetized, and contains unique surrogate IDs per entry.
 
-The created `composer_track` junction table links each track to its normalized composers.
+The created `composer_track` junction table links each track to its normalized composers.  
 This ensures BI‑ready composer data: atomic identities, consistent formatting, and reliable relationships.
 
 A detailed breakdown is available in <a href="/docs/data/composer-normalization.md" target="_blank">Composer Normalization Overview Doc</a>.
