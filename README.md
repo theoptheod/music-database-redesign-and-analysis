@@ -434,14 +434,14 @@ This ensures BI‑ready composer data that have atomic identities, consistent fo
 A detailed breakdown is available in <a href="/docs/data/composer-normalization.md" target="_blank">Composer Normalization Technical Analysis</a>.
 
 ## Artist Normalization
-The legacy artist field suffered from the same non‑atomic formatting issues as the composer data.  
+The legacy `artist` field suffered from the same non‑atomic formatting issues as the composer data.  
 To avoid duplicating logic, the Artist pipeline mirrors the Composer normalization workflow:
 * created the manual overrides first
 * implemented separator normalization
 * completed atomic name cleaning
 * assigned surrogate IDs to each artist
 
-The `artist_manual_split_dict` dictionary handles the multiple artist cases (e.g. band collaborations or compound artist strings).  
+The `artist_manual_split_dict` dictionary handles problematic cases (e.g. band collaborations or compound artist strings).  
 All other values follow the same normalization rules described in the Composer section.  
 The resulting model consists of an atomic artist dimension and an `artist_album` junction table  
 that reliably represents the many‑to‑many relationship between artists and albums.
