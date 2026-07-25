@@ -12,7 +12,7 @@ Each one of the created DataFrames, acts as the controlled environment where cle
 
 Responsibilities of the staging layer:
 * Standardize column names and types across all tables.
-* Deduplicate catalog entities with the removal of repeated artists, albums, genres, and composers before they enter the normalized schema.
+* Deduplicate catalog entities with the removal of repeated field values before they enter the normalized schema.
 * Validate foreign‑key relationships in order to prevent broken relationships later in the pipeline.
 * Prepare surrogate keys and junction‑table mappings to ensure that relationships are clean and explicit.
 
@@ -39,7 +39,7 @@ This gives the ETL pipeline a strict structure to load into.
 The ORM layer ensures:
 * Accurate table definitions
 * Clear foreign‑key relationships
-* Enforced domain rules such as NOT NULL and CHECK constraints
+* Enforced domain rules such as `NOT NULL` and `CHECK` constraints
 * Consistent mapping between DataFrames and tables
 
 By relying on ORM models, the pipeline guarantees that every inserted row follows the rules of the normalized schema.
