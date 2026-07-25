@@ -33,8 +33,10 @@ For all other strings, the pipeline applies deterministic transformations:
         After normalization we move on to splitting.  
         For example:
         ```
-        "Adrian Smith||Bruce Dickinson||Steve Harris"  
+        "Adrian Smith||Bruce Dickinson||Steve Harris"
+        ```  
         becomes  
+        ```
         ["Adrian Smith", "Bruce Dickinson", "Steve Harris"]
         ```
         This produces atomic raw names for further cleaning.  
