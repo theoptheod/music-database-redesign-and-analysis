@@ -1,4 +1,4 @@
-# Genre Normalization Issues & Resolution Strategy /-/ Technical Analysis
+# Genre Normalization Issues & Resolution Strategy - Technical Analysis
 
 ## Summary
 This document provides a technical breakdown of the structural and semantic issues identified in the  
@@ -26,43 +26,25 @@ Since the following values violate 1NF, they cannot be represented cleanly in a 
 **Resolution:**  
 Compound genre names are split into atomic components.
 
-#### 2. Semantically Overlapping Genres
-Objective: Identify genre labels that represent the same conceptual category but were stored separately.
+#### 2. Compound Genre Normalization
+Objective: Ensure a normalized schema by splitting compound labels into atomic genres.
 * Methodology:
-    - Compared compound genres to simpler variants.
-    - Identified conceptual overlaps (e.g. "Alternative" vs. "Alternative & Punk").
-    - Evaluated semantic meaning of each label.
-* Findings:  
-    - Pairs of genres represented the same conceptual space but were stored separately.
+    - Identified overlaps (e.g. "Alternative" vs. "Alternative & Punk").
+    - Merged groups before splitting compound labels.
+* Findings:
     - Because the legacy schema allowed only one genre per track, tracks labeled with simpler genres were under‑classified.
-* BI Impact:
-    - Genre trends were fragmented across multiple labels.
-    - Tracks were missing relevant genre associations.
-    - Cross‑genre analytics were incomplete or misleading.
-
-**Resolution:**  
-Simpler genres inherit the full set of atomic genres implied by their compound counterparts.
-
-#### 3. Merge‑Before‑Split Strategy
-Objective: Ensure semantic consistency before splitting compound genre labels.
-* Methodology:
-    - Grouped genres that are conceptually related.
-    - Merged conceptual groups before splitting compound labels.
-    - Ensured that the intended meaning of each genre was preserved.
-* Findings:  
     - Performing meaning‑based grouping before splitting avoids misinterpretation of split tokens.  
     For example:  
     Tracks labeled "Alternative" are mapped to the same conceptual group as "Alternative & Punk", inheriting both "Alternative" and "Punk".  
-    Tracks labeled "Science Fiction" inherit "Sci Fi" and "Fantasy" from "Sci Fi & Fantasy".  
+    Tracks labeled "Science Fiction" inherit "Sci Fi" and "Fantasy" from "Sci Fi & Fantasy".
 * BI Impact:
-    - Preserves original intent of genre assignments.
-    - Ensures consistent atomic representation.
+    - Ensures consistent atomic representation, structural correctness and consistent many‑to‑many genre relationships.
     - Prevents misclassification caused by premature splitting.
-
+ 
 **Resolution:**  
-Genre merging is performed before splitting compound names.
+Genre merging is performed before splitting compound names and atomic genres inherit the full set of atomic genres implied by their compound counterparts.
 
-#### 4. Transitional Mapping Tables
+#### 3. Transitional Mapping Tables
 Objective: Provide a predetermined, auditable path from legacy genres to normalized atomic genres.
 * Methodology:
     - Created mapping tables linking legacy genre IDs to canonical atomic genres.
@@ -84,3 +66,11 @@ Objective: Provide a predetermined, auditable path from legacy genres to normali
 
 **Resolution:**  
 Mapping tables provide a deterministic, reversible pipeline from legacy genres to normalized atomic genres.
+
+### Note on semantic accuracy:  
+Some compound labels in the source dataset may have functioned as category headers rather than true hybrid genres.  
+Splitting them may introduce minor semantic noise (e.g. tracks that received both "Sci‑Fi" and "Fantasy" genre IDs even if the original label was a broad shelving category).
+
+This trade‑off is intentional and documented:
+* Normalization and consistency are prioritized over perfect genre purity.  
+* Future refinements may include manual review or external metadata to improve atomic genre assignments.
