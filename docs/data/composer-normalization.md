@@ -5,7 +5,7 @@ This document details the methodology used to normalize composer data and constr
 It explains the motivation for normalization, the manual mapping for messy inputs, and the automated pipeline for cleaning and standardizing composer names.
 Finally, it outlines key analytical implications, including improved contributor reporting, stable relationships, and handling of edge cases.
 
-#### 1. Problem Context
+#### Problem Context
 The original `composer` column in the `track` table was structurally unreliable:  
 • Multiple separators used interchangeably (commas, slashes, semicolons, ampersands, “and”)  
 • Shorthand formats (“U2/ Edge, The”)  
@@ -15,7 +15,7 @@ The original `composer` column in the `track` table was structurally unreliable:
 These inconsistencies made automated parsing fragile.  
 Regex produced unpredictable splits and wan't able to correctly identify composer entities.
 
-#### 2. Manual Mapping Layer
+#### Manual Mapping Layer
 A Python dictionary (`composer_manual_split_dict`) defines canonical splits for problematic raw strings.  
 Any string present in this dictionary:  
 • Bypasses all automated normalization  
@@ -23,7 +23,7 @@ Any string present in this dictionary:
 • Ensures stability for known messy cases  
 This layer prevents regressions and keeps the pipeline predictable.
 
-#### 3. Automated Normalization Pipeline
+#### Automated Normalization Pipeline
 For all other strings, the pipeline applies deterministic transformations:   
 
 **1. Separator Normalization**  
@@ -78,7 +78,7 @@ For all other strings, the pipeline applies deterministic transformations:
         • `composer_track`  
         • `track`  
 
-#### 4. Analytical Implications
+#### Analytical Implications
 ##### BI Reliability
 The normalized model enables:
 * Accurate composer reporting
