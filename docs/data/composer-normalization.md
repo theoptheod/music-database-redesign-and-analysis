@@ -2,7 +2,7 @@
 
 ## Summary
 This document details the methodology used to normalize composer data and construct the Composer–Track relational model.  
-It explains the motivation for normalization, the manual mapping for messy inputs, and the automated pipeline for cleaning and standardizing composer names.  
+It explains the motivation for normalization, the manual mapping for messy inputs, and the automated pipeline for cleaning and standardizing composer names.
 Finally, it outlines key analytical implications, including improved contributor reporting, stable relationships, and handling of edge cases.
 
 #### 1. Problem Context
