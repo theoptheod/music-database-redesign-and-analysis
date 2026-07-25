@@ -68,9 +68,9 @@ Objective: Provide a predetermined, auditable path from legacy genres to normali
 Mapping tables provide a deterministic, reversible pipeline from legacy genres to normalized atomic genres.
 
 ### Note on semantic accuracy:  
-Some compound labels in the source dataset may have functioned as category headers rather than true hybrid genres.  
-Splitting them may introduce minor semantic noise (e.g. tracks that received both "Sci‑Fi" and "Fantasy" genre IDs even if the original label was a broad shelving category).
+The compound labels in the source dataset may have functioned as category headers rather than true hybrid genres.  
+Splitting them may have introduced minor semantic noise (e.g. tracks that received both "Sci‑Fi" and "Fantasy" genre IDs even if the original label was a broad shelving category).
 
-This trade‑off is intentional and documented:
+This trade‑off is intentional:
 * Normalization and consistency are prioritized over perfect genre purity.  
 * Future refinements may include manual review or external metadata to improve atomic genre assignments.
