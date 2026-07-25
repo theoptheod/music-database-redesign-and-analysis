@@ -430,7 +430,7 @@ Normalization follows a predictable sequence:
 The created `composer_track` junction table links each track to its normalized composers.  
 This ensures BI‑ready composer data: atomic identities, consistent formatting, and reliable relationships.
 
-A detailed breakdown is available in <a href="/docs/data/composer-normalization.md" target="_blank">Composer Normalization Overview Doc</a>.
+A detailed breakdown is available in <a href="/docs/data/composer-normalization.md" target="_blank">Composer Normalization Technical Analysis</a>.
 
 ## Artist Normalization
 The legacy artist field suffered from the same non‑atomic formatting issues as the composer data.  
