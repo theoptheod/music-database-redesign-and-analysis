@@ -1,4 +1,4 @@
-# Composer Normalization & Composer–Track Mapping - Technical Analysis
+# Composer Normalization & Composer-Track Mapping - Technical Analysis
 
 ## Summary
 This document details the methodology used to normalize composer data and construct the Composer–Track relational model.  
