@@ -415,8 +415,8 @@ Key issues included:
 A detailed breakdown is available in <a href="/docs/data/genre-normalization.md" target="_blank">Genre Normalization Technical Analysis</a>.
 
 ## Composer Normalization
-The legacy composer field was highly inconsistent, since it contained mixed separators, reordered names, non‑ASCII punctuation, and various edge cases  
-of band/artist stage names. Generic regex rules were too brittle, so the pipeline I used combines manual overrides for known problematic strings with deterministic normalization for everything else.
+The legacy composer field was highly inconsistent, since it contained mixed separators, reordered names, non‑ASCII punctuation, and various  
+edge cases of band/artist stage names. Generic regex rules were too brittle, so the pipeline I used combines manual overrides for known problematic strings with deterministic normalization for everything else.
 
 The process converts raw composer text into a stable relational model:
 * `composer` (`composer_id`, `composer_name`)
