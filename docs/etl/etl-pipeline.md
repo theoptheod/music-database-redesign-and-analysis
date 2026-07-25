@@ -1,9 +1,9 @@
-# ETL Pipeline — Overview Notes
+# ETL Pipeline - Technical Analysis
 
 ## Summary
 This document describes the complete ETL workflow used to migrate the old dataset into a fully normalized PostgreSQL schema.   
 It uses Pandas DataFrames for staging, SQLAlchemy ORM models for structure, and a strict approach to referential integrity.  
-The goal is straightforward: load the data, clean it, validate relationships, and make sure everything fits the rules before it’s written into the final schema.  
+The goal of the pipeline is to load the data, clean it, validate relationships and finally ensure that everything fits the rules, before it’s written into the final schema.  
 This keeps the database consistent and prevents issues that could affect BI analysis later on.
 
 #### 1. Staging Layer: Pandas DataFrames
@@ -17,12 +17,12 @@ Responsibilities of the staging layer:
 * Validate foreign‑key relationships in order to prevent broken relationships later in the pipeline.
 * Prepare surrogate keys and junction‑table mappings to ensure that relationships are clean and explicit.
 
-This staging layer catches inconsistencies early so they never reach the final database.
+The staging layer catches inconsistencies early so they never reach the final database.
 
 #### 2. Universal NA Cleaning Function
 When data is pulled from the original PostgreSQL database into Pandas, missing values can appear in several different forms (NaN, NaT, pd.NA).  
 These behave differently inside Pandas and can cause type issues, when inserting into the new normalized schema.  
-To avoid this, the pipeline applies a universal cleaning step that converts all representation of missing values into a single, consistent Python None.  
+To avoid this, the pipeline applies a universal cleaning step that converts all representation of missing values into a single, consistent Python "None".  
 
 This ensures:
 * Consistent null handling across the entire ETL process
@@ -46,13 +46,14 @@ The ORM layer ensures:
 By relying on ORM models, the pipeline guarantees that every inserted row follows the rules of the normalized schema.
 
 #### 4. Converting DataFrames to Row Dictionaries
-SQLAlchemy’s bulk insert mechanism expects data in a row‑oriented dictionary format. After cleaning, each DataFrame is converted using:
+SQLAlchemy’s bulk insert mechanism expects data in a row‑oriented dictionary format.  
+After cleaning, each DataFrame is converted using:  
 ```
 df.to_dict(orient="records")
-```
-This produces a list of dictionaries where each dictionary represents one row.
+```  
+This produces a list of dictionaries, where each dictionary represents one row.
 
-It allows:
+This allows:
 * Fast bulk inserts
 * Lower overhead than ORM object creation
 * Consistent mapping to SQLAlchemy models
@@ -79,11 +80,11 @@ Each insert:
 * Commits only when all rows pass validation
 * Rolls back on any violation
 
-This ensures safe high‑volume loading without risking partial or corrupted inserts.
+This ensures safe, high‑volume loading without risking partial or corrupted inserts.
 
-#### 7. Foreign‑Key‑Safe Insertion Order
-Because the schema is normalized, tables must be inserted in a dependency‑safe order.
-Parent tables first, followed by children and finally junction tables.
+#### 7. Foreign‑Key Safe Insertion Order
+Because the schema is normalized, tables must be inserted in an order that respects dependencies.  
+So we insert parent tables first, followed by children and finally junction tables.
 
 This prevents:
 * Broken foreign keys
