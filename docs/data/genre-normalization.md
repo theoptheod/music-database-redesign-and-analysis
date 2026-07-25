@@ -33,7 +33,7 @@ Objective: Ensure a normalized schema by splitting compound labels into atomic g
     - Merged groups before splitting compound labels.
 * Findings:
     - Because the legacy schema allowed only one genre per track, tracks labeled with simpler genres were under‑classified.
-    - Performing meaning‑based grouping before splitting avoids misinterpretation of split tokens.  
+    - Performing grouping before splitting avoids misclassification of split tokens.  
     For example:  
         * Tracks labeled "Alternative" are mapped to the same group as "Alternative & Punk", inheriting both "Alternative" and "Punk".  
         * Tracks labeled "Science Fiction" inherit "Sci Fi" and "Fantasy" from "Sci Fi & Fantasy".
@@ -42,7 +42,7 @@ Objective: Ensure a normalized schema by splitting compound labels into atomic g
     - Prevents misclassification caused by premature splitting.
  
 **Resolution:**  
-Genre merging is performed before splitting compound names and atomic genres inherit the full set of atomic genres implied by their compound counterparts.
+Genre merging is performed before splitting compound names, so that atomic genres inherit the full set of atomic genres implied by their compound counterparts.
 
 #### 3. Transitional Mapping Tables
 Objective: Provide a predetermined, auditable path from legacy genres to normalized atomic genres.
