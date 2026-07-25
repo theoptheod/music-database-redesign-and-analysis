@@ -455,7 +455,7 @@ Key characteristics:
     All raw data is first loaded into Pandas DataFrames, where it is cleaned, standardized, deduplicated, and validated.  
     This ensures that only consistent, well‑structured data reaches the database.  
 * Universal NA‑handling  
-    Pandas use several special “missing value” types that PostgreSQL cannot store.  
+    Pandas uses several special “missing value” types that PostgreSQL cannot store.  
     The pipeline converts all of them to Python "None", preventing insertion errors and keeping null values consistent across the entire dataset.
 * Structured loading order  
     Tables are inserted in a strict sequence: parents first, then children, then many‑to‑many junction tables.  
