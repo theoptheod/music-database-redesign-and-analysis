@@ -3,8 +3,8 @@
 ## Summary
 This document describes the complete ETL workflow used to migrate the old dataset into a fully normalized PostgreSQL schema.   
 It uses Pandas DataFrames for staging, SQLAlchemy ORM models for structure, and a strict approach to referential integrity.  
-The goal of the pipeline is to load the data, clean it, validate relationships and finally ensure that everything fits the rules, before it’s written into the final schema.  
-This keeps the database consistent and prevents issues that could affect BI analysis later on.
+The goal of the pipeline is to load the data, clean it, validate relationships and finally ensure that everything fits the rules,  
+before it’s written into the final schema. This keeps the database consistent and prevents issues that could affect BI analysis later on.
 
 #### 1. Staging Layer: Pandas DataFrames
 The staging layer pulls data directly from the original database using SQLAlchemy and loads each table into a Pandas DataFrame.  
