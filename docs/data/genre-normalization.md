@@ -35,8 +35,8 @@ Objective: Ensure a normalized schema by splitting compound labels into atomic g
     - Because the legacy schema allowed only one genre per track, tracks labeled with simpler genres were under‑classified.
     - Performing meaning‑based grouping before splitting avoids misinterpretation of split tokens.  
     For example:  
-    Tracks labeled "Alternative" are mapped to the same conceptual group as "Alternative & Punk", inheriting both "Alternative" and "Punk".  
-    Tracks labeled "Science Fiction" inherit "Sci Fi" and "Fantasy" from "Sci Fi & Fantasy".
+        * Tracks labeled "Alternative" are mapped to the same conceptual group as "Alternative & Punk", inheriting both "Alternative" and "Punk".  
+        * Tracks labeled "Science Fiction" inherit "Sci Fi" and "Fantasy" from "Sci Fi & Fantasy".
 * BI Impact:
     - Ensures consistent atomic representation, structural correctness and consistent many‑to‑many genre relationships.
     - Prevents misclassification caused by premature splitting.
