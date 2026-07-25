@@ -455,22 +455,22 @@ Key characteristics:
     All raw data is first loaded into Pandas DataFrames, where it is cleaned, standardized, deduplicated, and validated.  
     This ensures that only consistent, well‑structured data reaches the database.  
 * Universal NA‑handling  
-    Pandas uses several special “missing value” types that PostgreSQL cannot store.
+    Pandas use several special “missing value” types that PostgreSQL cannot store.  
     The pipeline converts all of them to Python "None", preventing insertion errors and keeping null values consistent across the entire dataset.
 * Structured loading order  
-    Tables are inserted in a strict sequence: parents first, then children, then many‑to‑many junction tables.
+    Tables are inserted in a strict sequence: parents first, then children, then many‑to‑many junction tables.  
     This guarantees that every foreign key points to an existing record.
 * ORM‑based schema enforcement  
-    SQLAlchemy models define all constraints, relationships, and domain rules.
+    SQLAlchemy models define all constraints, relationships, and domain rules.  
     Every row inserted must comply with these rules, which protects the analytical model from invalid or inconsistent data.
 * Bulk insert operations  
-    The pipeline uses SQLAlchemy’s optimized bulk‑insert mechanism.
+    The pipeline uses SQLAlchemy’s optimized bulk‑insert mechanism.  
     It loads large volumes of data efficiently without bypassing constraints, ensuring that partial or corrupted loads never occur.
 
 This pipeline is intentionally conservative, so that if any violation occurs (missing FK, malformed value, inconsistent type) the loading is stopped.  
 This protects any created BI models from broken hierarchies, and misleading metrics.
 
-The full implementation is available in <a href="/docs/etl/etl-pipelinen.md" target="_blank">ETL Pipeline Overview Doc</a>.
+The full implementation is available in <a href="/docs/etl/etl-pipeline.md" target="_blank">ETL Pipeline Technical Analysis</a>.
   
 ## New Database Design Overview
 The redesigned PostgreSQL schema replaces the legacy structure with a fully normalized, analytics‑ready model.  
