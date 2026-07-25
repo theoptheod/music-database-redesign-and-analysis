@@ -5,7 +5,7 @@ This document details the methodology used to normalize composer data and constr
 It explains the motivation for normalization, the manual mapping for messy inputs, and the automated pipeline for cleaning and standardizing composer names.
 Finally, it outlines key analytical implications, including improved contributor reporting, stable relationships, and handling of edge cases.
 
-#### Problem Context
+### Problem Context
 The original `composer` column in the `track` table was structurally unreliable:  
 • Multiple separators used interchangeably (commas, slashes, semicolons, ampersands, “and”)  
 • Shorthand formats (“U2/ Edge, The”)  
@@ -15,7 +15,7 @@ The original `composer` column in the `track` table was structurally unreliable:
 These inconsistencies made automated parsing fragile.  
 Regex produced unpredictable splits and wan't able to correctly identify composer entities.
 
-#### Manual Mapping Layer
+### Manual Mapping Layer
 A Python dictionary (`composer_manual_split_dict`) defines canonical splits for problematic raw strings.  
 Any string present in this dictionary:  
 • Bypasses all automated normalization  
@@ -23,7 +23,7 @@ Any string present in this dictionary:
 • Ensures stability for known messy cases  
 This layer prevents regressions and keeps the pipeline predictable.
 
-#### Automated Normalization Pipeline
+### Automated Normalization Pipeline
 For all other strings, the pipeline applies deterministic transformations:   
 
 **1. Separator Normalization**  
@@ -78,15 +78,15 @@ For all other strings, the pipeline applies deterministic transformations:
         • `composer_track`  
         • `track`  
 
-#### Analytical Implications
-##### BI Reliability
+### Analytical Implications
+#### BI Reliability
 The normalized model enables:
 * Accurate composer reporting
 * Clean joins between tracks and composers
 * Stable aggregation of composer activity
 * Reliable filtering and grouping (e.g. tracks composed by Brian May)
 
-##### Data Quality Improvements
+#### Data Quality Improvements
 The pipeline resolves:
 * Non‑atomic composer fields
 * Formatting inconsistencies
@@ -94,7 +94,7 @@ The pipeline resolves:
 * Mixed separators
 * Stage name capitalization issues
 
-##### Future‑Proofing
+#### Future‑Proofing
 The manual mapping layer allows:
 * Controlled overrides for new messy cases
 * Predictable behavior without rewriting regex logic
