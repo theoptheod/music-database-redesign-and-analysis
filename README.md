@@ -415,7 +415,8 @@ Key issues included:
 A detailed breakdown is available in <a href="/docs/data/genre-normalization.md" target="_blank">Genre Normalization Technical Analysis</a>.
 
 ## Composer Normalization
-The legacy composer field was highly inconsistent, since it contained mixed separators, reordered names, non‑ASCII punctuation, and various edge cases of band/artist stage names. Generic regex rules were too brittle, so the pipeline I used combines manual overrides for known problematic strings with deterministic normalization for everything else.
+The legacy composer field was highly inconsistent, since it contained mixed separators, reordered names, non‑ASCII punctuation, and various edge cases  
+of band/artist stage names. Generic regex rules were too brittle, so the pipeline I used combines manual overrides for known problematic strings with deterministic normalization for everything else.
 
 The process converts raw composer text into a stable relational model:
 * `composer` (`composer_id`, `composer_name`)
@@ -428,7 +429,7 @@ Normalization follows a predictable sequence:
 * Produce the canonical composer list which is deduplicated, alphabetized, and contains unique surrogate IDs per entry.
 
 The created `composer_track` junction table links each track to its normalized composers.  
-This ensures BI‑ready composer data: atomic identities, consistent formatting, and reliable relationships.
+This ensures BI‑ready composer data that have atomic identities, consistent formatting, and reliable relationships.
 
 A detailed breakdown is available in <a href="/docs/data/composer-normalization.md" target="_blank">Composer Normalization Technical Analysis</a>.
 
