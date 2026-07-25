@@ -426,7 +426,7 @@ Normalization follows a predictable sequence:
 * Create a manual splitting dictionary, so that any mapped string bypasses all automated logic.
 * Normalize separators in order to unify commas, slashes, ampersands, “and”, etc.
 * Handle atomic names (trim, standardize punctuation, fix casing) while applying exceptions where needed (e.g. "AC/DC").
-* Produce the canonical composer list which is deduplicated, alphabetized, and contains unique surrogate IDs per entry.
+* Produce the canonical composer list which is deduplicated and alphabetized.
 
 The created `composer_track` junction table links each track to its normalized composers.  
 This ensures BI‑ready composer data that have atomic identities, consistent formatting, and reliable relationships.
