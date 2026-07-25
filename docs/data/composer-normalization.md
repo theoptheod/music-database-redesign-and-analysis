@@ -31,14 +31,14 @@ For all other strings, the pipeline applies deterministic transformations:
         This guarantees that every composer field can be split reliably.  
     **2. Splitting Into Composer Lists**  
         After normalization we move on to splitting.  
-        For example:
+        For example:  
         ```
         "Adrian Smith||Bruce Dickinson||Steve Harris"
         ```  
         becomes  
         ```
         ["Adrian Smith", "Bruce Dickinson", "Steve Harris"]
-        ```
+        ```  
         This produces atomic raw names for further cleaning.  
     **3. Atomic Name Normalization**  
         Function: `normalize_atomic_name()`  
