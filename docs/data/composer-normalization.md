@@ -8,10 +8,10 @@ Finally, it outlines key analytical implications, including improved contributor
 #### 1. Problem Context
 The original `composer` column in the `track` table was structurally unreliable:  
 • Multiple separators used interchangeably (commas, slashes, semicolons, ampersands, “and”)  
-• Shorthand formats: “U2/ Edge, The”  
-• Reversed name order: “Dolmayan, John”  
+• Shorthand formats (“U2/ Edge, The”)  
+• Reversed name order (“Dolmayan, John”)  
 • Non‑ASCII hyphens and punctuation  
-• Stage names and abbreviations: AC/DC, R.E.M., The Edge  
+• Stage names and abbreviations ("AC/DC", "R.E.M.", "The Edge")  
 These inconsistencies made automated parsing fragile.  
 Regex produced unpredictable splits and wan't able to correctly identify composer entities.
 
