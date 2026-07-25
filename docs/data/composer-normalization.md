@@ -60,17 +60,17 @@ For all other strings, the pipeline applies deterministic transformations:
             * Predictable joins  
             * BI‑friendly composer analytics   
     **6. Building the `composer_track` Junction Table**  
-    Tracks may have multiple composers, so a many‑to‑many structure is required.  
-    For each track:  
-    * Read `track_id`  
-    * Iterate through its normalized composer list  
-    * Look up each composer’s `composer_id`  
-    * Append (`track_id`, `composer_id`) to the junction table  
-    * Assign a surrogate `composer_track_id` for database consistency  
-    This produces a clean relational model:  
-    *  `composer`  
-    * `composer_track`  
-    * `track`  
+        Tracks may have multiple composers, so a many‑to‑many structure is required.  
+        For each track:  
+            * Read `track_id`  
+            * Iterate through its normalized composer list  
+            * Look up each composer’s `composer_id`  
+            * Append (`track_id`, `composer_id`) to the junction table  
+            * Assign a surrogate `composer_track_id` for database consistency  
+        This produces a clean relational model:  
+            *  `composer`  
+            * `composer_track`  
+            * `track`  
 
 #### 4. Analytical Implications
 ##### BI Reliability
