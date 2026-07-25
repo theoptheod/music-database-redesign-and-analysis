@@ -12,7 +12,6 @@ Each one of the created DataFrames, acts as the controlled environment where cle
 
 Responsibilities of the staging layer:
 * Standardize column names and types across all tables.
-* Normalize missing values by converting PostgreSQL NULLs and Pandas NA types into a unified representation ("None"), so the ETL process behaves consistently.
 * Deduplicate catalog entities with the removal of repeated artists, albums, genres, and composers before they enter the normalized schema.
 * Validate foreign‑key relationships in order to prevent broken relationships later in the pipeline.
 * Prepare surrogate keys and junction‑table mappings to ensure that relationships are clean and explicit.
