@@ -6,7 +6,7 @@ It explains the motivation for normalization, the manual mapping for messy input
 Finally, it outlines key analytical implications, including improved contributor reporting, stable relationships, and handling of edge cases.
 
 #### 1. Problem Context
-The original `composer` column in the `track` table was structurally unreliable: 
+The original `composer` column in the `track` table was structurally unreliable:  
 • Multiple separators used interchangeably (commas, slashes, semicolons, ampersands, “and”).  
 • Shorthand formats: “U2/ Edge, The”.  
 • Reversed name order: “Dolmayan, John.”  
