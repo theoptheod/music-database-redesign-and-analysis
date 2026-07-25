@@ -6,21 +6,21 @@ It explains the motivation for normalization, the manual mapping for messy input
 Finally, it outlines key analytical implications, including improved contributor reporting, stable relationships, and handling of edge cases.
 
 #### 1. Problem Context
-The original `composer` column in the `track` table was structurally unreliable:
-• Multiple separators used interchangeably (commas, slashes, semicolons, ampersands, “and”).
-• Shorthand formats: “U2/ Edge, The”.
-• Reversed name order: “Dolmayan, John.”
-• Non‑ASCII hyphens and punctuation.
+The original `composer` column in the `track` table was structurally unreliable: 
+• Multiple separators used interchangeably (commas, slashes, semicolons, ampersands, “and”).  
+• Shorthand formats: “U2/ Edge, The”.  
+• Reversed name order: “Dolmayan, John.”  
+• Non‑ASCII hyphens and punctuation.  
 • Stage names and abbreviations: AC/DC, R.E.M., The Edge.  
 These inconsistencies made automated parsing fragile.  
 Regex produced unpredictable splits and wan't able to correctly identify composer entities.
 
 #### 2. Manual Mapping Layer
 A Python dictionary (`composer_manual_split_dict`) defines canonical splits for problematic raw strings.  
-Any string present in this dictionary:
-• Bypasses all automated normalization
-• Returns a pre‑validated list of canonical composer names
-• Ensures stability for known messy cases
+Any string present in this dictionary:  
+• Bypasses all automated normalization  
+• Returns a pre‑validated list of canonical composer names  
+• Ensures stability for known messy cases  
 This layer prevents regressions and keeps the pipeline predictable.
 
 #### 3. Automated Normalization Pipeline
