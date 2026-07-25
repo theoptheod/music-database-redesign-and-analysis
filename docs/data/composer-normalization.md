@@ -24,11 +24,13 @@ Any string present in this dictionary:
 This layer prevents regressions and keeps the pipeline predictable.
 
 #### 3. Automated Normalization Pipeline
-For all other strings, the pipeline applies deterministic transformations:  
+For all other strings, the pipeline applies deterministic transformations:   
+
 **1. Separator Normalization**  
     Function: `normalize_separators()`  
     Purpose: Convert all separators (e.g. ",", "/", ";", "&", "and") into a single canonical delimiter ("||").  
     This guarantees that every composer field can be split reliably.  
+    
 **2. Splitting Into Composer Lists**  
     After normalization we move on to splitting.  
     For example:  
@@ -40,6 +42,7 @@ For all other strings, the pipeline applies deterministic transformations:
    ["Adrian Smith", "Bruce Dickinson", "Steve Harris"]
     ```  
     This produces atomic raw names for further cleaning.  
+    
 **3. Atomic Name Normalization**  
     Function: `normalize_atomic_name()`  
     Responsibilities:  
@@ -48,17 +51,20 @@ For all other strings, the pipeline applies deterministic transformations:
         * Standardize capitalization  
         * Apply exception rules (e.g. "ac/dc" becomes "AC/DC")  
     This step ensures each composer is represented consistently across the dataset.  
+    
 **4. Building the Unique Composer List**  
     All normalized names are collected into a Python set:  
         * Guarantees uniqueness  
         * Prevents duplicates caused by formatting differences  
     The set is then alphabetized to produce a stable canonical list.  
+    
 **5. Assigning Composer IDs**  
     Each unique composer receives a surrogate key (`composer_id`).  
     This ensures:  
         * Stable foreign‑key relationships  
         * Predictable joins  
         * BI‑friendly composer analytics   
+        
 **6. Building the `composer_track` Junction Table**  
     Tracks may have multiple composers, so a many‑to‑many structure is required.  
     For each track:  
