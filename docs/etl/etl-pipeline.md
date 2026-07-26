@@ -19,9 +19,9 @@ Responsibilities of the staging layer:
 The staging layer catches inconsistencies early so they never reach the final database.
 
 #### 2. Universal NA Cleaning Function
-When data is pulled from the original PostgreSQL database into Pandas, missing values can appear in several different forms (NaN, NaT, pd.NA). These behave  
-differently inside Pandas and can cause type issues, when inserting into the new normalized schema. To avoid this, the pipeline applies a universal  
-cleaning step that converts all representation of missing values into a single, consistent Python "None".  
+When data is pulled from the original PostgreSQL database into Pandas, missing values can appear in several different forms  
+(NaN, NaT, pd.NA). These behave differently inside Pandas and can cause type issues, when inserting into the new normalized schema.  
+To avoid this, the pipeline applies a universal cleaning step that converts all representation of missing values into a single, consistent Python "None".  
 
 This ensures:
 * Consistent null handling across the entire ETL process
