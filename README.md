@@ -479,7 +479,8 @@ It organizes the system into three domains:
 * a hierarchical geographic model (countries, divisions, cities, postal codes, addresses)
 * a customer/employee/invoice subsystem
 
-The design enforces atomic entities, clear many‑to‑many relationships, and strict constraint rules, ensuring predictable joins and reliable BI reporting.
+The design enforces atomic entities, clear many‑to‑many relationships,  
+and strict constraint rules, ensuring predictable joins and reliable BI reporting.
 
 Strong relational principles guide the schema:
 * Third Normal Form
@@ -490,7 +491,7 @@ Strong relational principles guide the schema:
 The result is a stable, extensible foundation that supports contributor analytics, geographic segmentation,  
 customer management, and invoice documentation without the inconsistencies of the original unnormalized dataset.
 
-A deeper architectural explanation of the redesign is available in <a href="/docs/schema/database-design-overview.md" target="_blank">New Database Design Technical Analysis</a>.
+A deeper architectural explanation of the redesign is available in <a href="/docs/schema/database-design-overview.md" target="_blank">New Database Design Notes</a>.
 
 A full entity‑level documentation (attributes, relationships, constraints, integrity rules etc), is available in <a href="/docs/schema/database-schema.md" target="_blank">New Database Schema Technical Analysis</a>.
   
