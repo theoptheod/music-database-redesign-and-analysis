@@ -473,7 +473,7 @@ This protects any created BI models from broken hierarchies, and misleading metr
 The full implementation is available in <a href="/docs/etl/etl-pipeline.md" target="_blank">ETL Pipeline Technical Analysis</a>.
   
 ## New Database Design Overview
-The redesigned PostgreSQL schema replaces the legacy structure with a fully normalized, analytics‑ready model.  
+The redesigned PostgreSQL schema replaces the legacy structure with a fully normalized, analysis‑ready model.  
 It organizes the system into three domains:
 * a complete music catalog (albums, artists, composers, genres, media types, playlists, tracks)
 * a hierarchical geographic model (countries, divisions, cities, postal codes, addresses)
@@ -490,9 +490,9 @@ Strong relational principles guide the schema:
 The result is a stable, extensible foundation that supports contributor analytics, geographic segmentation,  
 customer management, and invoice documentation without the inconsistencies of the original unnormalized dataset.
 
-A deeper architectural explanation of the redesign is available in <a href="/docs/schema/database-design-overview.md" target="_blank">New Database Design Overview Doc</a>.
+A deeper architectural explanation of the redesign is available in <a href="/docs/schema/database-design-overview.md" target="_blank">New Database Design Technical Analysis</a>.
 
-A full entity‑level documentation (attributes, relationships, constraints, integrity rules etc), is available in <a href="/docs/schema/database-schema.md" target="_blank">New Database Schema Doc</a>.
+A full entity‑level documentation (attributes, relationships, constraints, integrity rules etc), is available in <a href="/docs/schema/database-schema.md" target="_blank">New Database Schema Technical Analysis</a>.
   
 ## New Database Schema
 The following diagram illustrates the final relational schema of the normalized PostgreSQL database.
