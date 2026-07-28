@@ -493,7 +493,8 @@ customer management, and invoice documentation without the inconsistencies of th
 
 A deeper architectural explanation of the redesign is available in <a href="/docs/schema/database-design-overview.md" target="_blank">New Database Design Notes</a>.
 
-A full entity‑level documentation (attributes, relationships, constraints, integrity rules etc), is available in <a href="/docs/schema/database-schema.md" target="_blank">New Database Schema Technical Analysis</a>.
+A full entity‑level documentation (attributes, relationships, constraints, integrity rules etc),  
+is available in <a href="/docs/schema/database-schema.md" target="_blank">New Database Schema Technical Analysis</a>.
   
 ## New Database Schema
 The following diagram illustrates the final relational schema of the normalized PostgreSQL database.
