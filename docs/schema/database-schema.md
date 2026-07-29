@@ -21,6 +21,7 @@ It also outlines the constraints, indexes, and cascading behaviors that ensure d
 - [PlaylistTrack](#--playlisttrack--)
 - [Country](#--country--)
 - [PostalZipCode](#--postalzipcode--)
+- [AdministrativeDivision](#--administrativedivision--)
 
 ## Entity Documentation of the Normalized Database
 
