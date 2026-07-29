@@ -12,6 +12,7 @@ It also outlines the constraints, indexes, and cascading behaviors that ensure d
 - [ArtistAlbum](#--artistalbum--)
 - [Composer](#--composer--)
 - [Genre](#--genre--)
+- [MediaType](#--mediatype--)
 - [Playlist](#--playlist--)
 - [Track](#--track--)
 - [AlbumTrack](#--albumtrack--)
