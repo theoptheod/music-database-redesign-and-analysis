@@ -10,6 +10,8 @@ It also outlines the constraints, indexes, and cascading behaviors that ensure d
 - [Album](#--album--)
 - [Artist](#--artist--)
 - [ArtistAlbum](#--artistalbum--)
+- [Composer](#--composer--)
+- [Genre](#--genre--)
 
 ## Entity Documentation of the Normalized Database
 
