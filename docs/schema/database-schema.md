@@ -25,6 +25,8 @@ It also outlines the constraints, indexes, and cascading behaviors that ensure d
 - [City](#--city--)
 - [Address](#--address--)
 - [Customer](#--customer--)
+- [EmployeeLevel](#--employeelevel--)
+- [EmployeeTitle](#--employeetitle--)
 
 ## Entity Documentation of the Normalized Database
 
