@@ -22,6 +22,9 @@ It also outlines the constraints, indexes, and cascading behaviors that ensure d
 - [Country](#--country--)
 - [PostalZipCode](#--postalzipcode--)
 - [AdministrativeDivision](#--administrativedivision--)
+- [City](#--city--)
+- [Address](#--address--)
+- [Customer](#--customer--)
 
 ## Entity Documentation of the Normalized Database
 
