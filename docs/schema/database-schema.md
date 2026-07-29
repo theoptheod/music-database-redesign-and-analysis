@@ -27,6 +27,9 @@ It also outlines the constraints, indexes, and cascading behaviors that ensure d
 - [Customer](#--customer--)
 - [EmployeeLevel](#--employeelevel--)
 - [EmployeeTitle](#--employeetitle--)
+- [Employee](#--employee--)
+- [InvoiceLine](#--invoiceline--)
+- [Invoice](#--invoice--)
 
 ## Entity Documentation of the Normalized Database
 
