@@ -44,7 +44,7 @@ Each album stores its title and connects to artists through the `artist_album` a
 
 #### Attributes
 * `album_id`: Primary key of the entity
-* `album_title`: The title of the album 
+* `album_title`: The title of the album
 
 #### Relationships
 * artist_albums: One‑to‑many collection of ArtistAlbum rows
@@ -156,8 +156,8 @@ Each media type may be associated with many tracks.
 * Enforce uniqueness and validity of media type names
 
 #### Attributes
-`media_type_id`: Primary key of the entity  
-`media_type_name`: Name of the media type
+* `media_type_id`: Primary key of the entity
+* `media_type_name`: Name of the media type
 
 #### Relationships
 tracks: One‑to‑many collection of related Track objects via `media_type_id`
@@ -177,8 +177,8 @@ A playlist may contain many tracks, and each membership is represented by a Play
 * Provide read‑only access to playlist contents
 
 #### Attributes
-`playlist_id`: Primary key of the entity
-`playlist_name`: Name of the playlist
+* `playlist_id`: Primary key of the entity
+* `playlist_name`: Name of the playlist
 
 #### Relationships
 playlist_tracks: One‑to‑many collection of PlaylistTrack rows
@@ -198,12 +198,12 @@ Tracks have a media type and may be associated with composers, genres, playlists
 * Provide read‑only many‑to‑many access to related entities
 
 ### Attributes
-`track_id`: Primary key of the entity
-`media_type_id`: Foreign key referencing `media_type`.`media_type_id`
-`track_name`: Name of the track
-`duration_milliseconds`: Duration of the track
-`size_bytes`: Size of the track in bytes
-`unit_price_cents`: Cost of the track converted into cents
+* `track_id`: Primary key of the entity
+* `media_type_id`: Foreign key referencing `media_type`.`media_type_id`
+* `track_name`: Name of the track
+* `duration_milliseconds`: Duration of the track
+* `size_bytes`: Size of the track in bytes
+* `unit_price_cents`: Cost of the track converted into cents
 
 #### Relationships
 * media_type: Many‑to‑one link to MediaType
@@ -375,10 +375,10 @@ Represents first‑level administrative regions (states, provinces, regions, etc
 * Group cities
 
 #### Attributes
-`administrative_division_id`: Primary key of the entity
-`country_id`: Foreign key referencing `country`.`country_id`
-`division_name`: Name of the administrative division
-`division_type`: Type of the administrative division
+* `administrative_division_id`: Primary key of the entity
+* `country_id`: Foreign key referencing `country`.`country_id`
+* `division_name`: Name of the administrative division
+* `division_type`: Type of the administrative division
 
 #### Relationships
 * country: Many‑to‑one link to Country
@@ -607,7 +607,7 @@ Each line links to a track and stores quantity and pricing information.
 * track: Many‑to‑one link to Track
 
 #### Integrity & Performance
-* Indexes on `invoice_id and `track_id`
+* Indexes on `invoice_id` and `track_id`
 * Check constraints enforce valid pricing and quantity
 * Foreign keys use RESTRICT, preventing deletion of invoices or tracks when invoice lines exist
 * InvoiceLine is the final protection layer preventing Track deletion
