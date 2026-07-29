@@ -35,7 +35,7 @@ It also outlines the constraints, indexes, and cascading behaviors that ensure d
 
 ### --Album--
 Represents a published music album.  
-Each album stores its title and connects to artists through the ArtistAlbum association table and to tracks through the AlbumTrack association table.
+Each album stores its title and connects to artists through the `artist_album` association table and to tracks through the `album_track` association table.
 
 #### Responsibilities
 * Store album information
@@ -53,14 +53,14 @@ Each album stores its title and connects to artists through the ArtistAlbum asso
 * tracks: Read‑only many‑to‑many view of related Track objects via `album_track`
 
 #### Integrity & Performance
-* Indexed `album title`
+* Indexed `album_title`
 * Check constraint prevents empty or whitespace‑only titles
-* Foreign keys referencing Album use RESTRICT, preventing deletion when linked to artists or tracks
+* Foreign keys referencing `album_id` use RESTRICT, preventing deletion when linked to artists or tracks
 * Association rows are protected from cascading deletes, so that albums cannot be deleted while referenced anywhere in the system
 
 ### --Artist--
 Represents a musical artist or group.  
-Artists may appear on multiple albums, and each association is stored explicitly in the ArtistAlbum table.
+Artists may appear on multiple albums, and each association is stored explicitly in the `artist_album` table.
 
 #### Responsibilities
 * Store artist names
@@ -69,7 +69,7 @@ Artists may appear on multiple albums, and each association is stored explicitly
 
 #### Attributes
 * `artist_id`: Primary key of the entity
-* `artist_name`: Name of the artist
+* `artist_name`: Name of the artist or group
 
 #### Relationships
 * artist_albums: One‑to‑many collection of ArtistAlbum rows
@@ -78,7 +78,7 @@ Artists may appear on multiple albums, and each association is stored explicitly
 #### Integrity & Performance
 * Indexed `artist_name`
 * Check constraint prevents empty or whitespace‑only names
-* Foreign keys referencing Artist use RESTRICT, preventing deletion when linked to albums
+* Foreign keys referencing `artist_id` use RESTRICT, preventing deletion when linked to albums
 * Association rows are protected from cascading deletes, so that artists cannot be deleted while referenced anywhere in the system
 
 ### --ArtistAlbum--
@@ -101,11 +101,11 @@ Association/Junction table linking artists and albums.
 #### Integrity & Performance
 * Indexes on both foreign keys
 * Unique composite index on (`artist_id`, `album_id`) to prevent duplicates
-* Cascading deletes are not allowed. All Artist–Album associations remain intact to protect historical catalog and invoice data.
+* Cascading deletes are not allowed. All artist–album associations remain intact to protect historical catalog and invoice data.
 
 ### --Composer--
 Represents a musical composer or group.  
-A composer may be credited on many tracks, and each association is stored explicitly in the ComposerTrack table.
+A composer may be credited on many tracks, and each association is stored explicitly in the `composer_track` table.
 
 #### Responsibilities
 * Store composer names
@@ -114,7 +114,7 @@ A composer may be credited on many tracks, and each association is stored explic
 
 #### Attributes
 * `composer_id`: Primary key of the entity
-* `composer_name`: Name of the composer
+* `composer_name`: Name of the composer or group
 
 #### Relationships
 * composer_tracks: One‑to‑many collection of ComposerTrack rows
@@ -147,7 +147,7 @@ Represents a musical genre. Tracks may belong to multiple genres, and each link 
 * Delete cascades are intentionally disabled to preserve historical genre–track relationships
 
 ### --MediaType--
-Represents a classification of how a track’s media is stored or delivered (e.g. MPEG audio, AAC, etc.).  
+Represents a classification of how a track’s media is stored or delivered (e.g. MPEG audio, AAC, etc).  
 Each media type may be associated with many tracks.
 
 #### Responsibilities
@@ -186,7 +186,7 @@ tracks: Read‑only many‑to‑many view of related Track objects via `playlist
 
 #### Integrity & Performance
 * Check constraint prevents empty or whitespace‑only names
-* Delete cascades are intentionally disabled, so that Playlist–Track links are preserved and not removed automatically.
+* Delete cascades are intentionally disabled, so that playlist–track links are preserved and not removed automatically.
 
 ### --Track--
 Represents an individual audio track.  
@@ -220,7 +220,7 @@ Tracks have a media type and may be associated with composers, genres, playlists
 #### Integrity & Performance
 * Multiple indexes for efficient filtering
 * Check constraints enforce valid numeric ranges and non‑empty names
-* Foreign keys referencing Track use RESTRICT, preventing deletion when any related invoice or catalog relationship exists
+* Foreign keys referencing `track_id` use RESTRICT, preventing deletion when any related invoice or catalog relationship exists
 * Association rows are protected from cascading deletes. Tracks cannot be deleted when referenced by any invoice or catalog relationship.
 * Tracks form the core of catalog and financial history, and therefore are deletion‑protected
 
@@ -255,7 +255,7 @@ Association/Junction table linking albums and tracks.
 Association/Junction table linking composers and tracks.
 
 #### Responsibilities
-* Represent the relationship between a composer and a created track
+* Represent the relationship between composer/s and created track/s
 * Enforce uniqueness of composer–track pairs
 * Serve as the link between the two entities
 
@@ -354,7 +354,7 @@ Represents postal or ZIP codes, supporting countries without postal codes.
 #### Attributes
 * `postal_zip_code_id`: Primary key of the entity
 * `country_id`: Foreign key referencing `country`.`country_id`
-* `code`: The postal/zip code (optional)
+* `code`: The postal/zip code
 
 #### Relationships
 * country: Many‑to‑one link to Country
@@ -425,7 +425,7 @@ Represents a physical address.
 #### Attributes
 * `address_id`: Primary key of the entity
 * `city_id`: Foreign key referencing `city`.`city_id`
-* `postal_zip_code_id`: Foreign key referencing postal_zip_code.postal_zip_code_id
+* `postal_zip_code_id`: Foreign key referencing `postal_zip_code`.`postal_zip_code_id` (optional)
 * `address_line_1`: First part of address (required)
 * `address_line_2`: First part of address (optional)
 
@@ -491,7 +491,7 @@ Lookup table defining employee seniority or classification levels.
 * Unique constraint on `employee_level_code`
 * Check constraints enforce length and non‑whitespace
 * Foreign keys in Employee use RESTRICT, preventing deletion of a level when employees reference it
-* Association rows are protected from cascading deletes,so that levels cannot be deleted while linked to employees
+* Association rows are protected from cascading deletes, so that levels cannot be deleted while linked to employees
 
 ### --EmployeeTitle--
 Lookup table defining job titles for employees.
@@ -510,7 +510,7 @@ Lookup table defining job titles for employees.
 #### Integrity & Performance
 * Index on `employee_title_name`
 * Check constraint prevents whitespace‑only titles
-* Foreign keys in Employee use RESTRICT, preventing deletion of a title when employees reference it
+* Foreign keys in `employee` use RESTRICT, preventing deletion of a title when employees reference it
 * Association rows are protected from cascading deletes, so that titles cannot be deleted while linked to employees
 
 ### --Employee--
