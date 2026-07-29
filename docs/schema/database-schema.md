@@ -12,7 +12,7 @@ It also outlines the constraints, indexes, and cascading behaviors that ensure d
 
 ## Entity Documentation of the Normalized Database
 
-### --Album-- 1
+### --Album--
 Represents a published music album.  
 Each album stores its title and connects to artists through the ArtistAlbum association table and to tracks through the AlbumTrack association table.
 
@@ -37,7 +37,7 @@ Each album stores its title and connects to artists through the ArtistAlbum asso
 * Foreign keys referencing Album use RESTRICT, preventing deletion when linked to artists or tracks
 * Association rows are protected from cascading deletes, so that albums cannot be deleted while referenced anywhere in the system
 
-### --Artist-- 2
+### --Artist--
 Represents a musical artist or group.  
 Artists may appear on multiple albums, and each association is stored explicitly in the ArtistAlbum table.
 
@@ -60,7 +60,7 @@ Artists may appear on multiple albums, and each association is stored explicitly
 * Foreign keys referencing Artist use RESTRICT, preventing deletion when linked to albums
 * Association rows are protected from cascading deletes, so that artists cannot be deleted while referenced anywhere in the system
 
-### --ArtistAlbum--3
+### --ArtistAlbum--
 Association/Junction table linking artists and albums.
 
 #### Responsibilities
@@ -82,7 +82,7 @@ Association/Junction table linking artists and albums.
 * Unique composite index on (`artist_id`, `album_id`) to prevent duplicates
 * Cascading deletes are not allowed. All Artist–Album associations remain intact to protect historical catalog and invoice data.
 
-### --Composer-- 4
+### --Composer--
 Represents a musical composer or group.  
 A composer may be credited on many tracks, and each association is stored explicitly in the ComposerTrack table.
 
@@ -104,7 +104,7 @@ A composer may be credited on many tracks, and each association is stored explic
 * Check constraint prevents empty or whitespace‑only names
 * Delete cascades are intentionally disabled to preserve historical track and invoice relationships.
 
-### --Genre-- 5
+### --Genre--
 Represents a musical genre. Tracks may belong to multiple genres, and each link is represented by a GenreTrack row.
 
 #### Responsibilities
@@ -125,7 +125,7 @@ Represents a musical genre. Tracks may belong to multiple genres, and each link 
 * Check constraint prevents empty or whitespace‑only names
 * Delete cascades are intentionally disabled to preserve historical genre–track relationships
 
-### --MediaType-- 6
+### --MediaType--
 Represents a classification of how a track’s media is stored or delivered (e.g. MPEG audio, AAC, etc.).  
 Each media type may be associated with many tracks.
 
@@ -146,7 +146,7 @@ tracks: One‑to‑many collection of related Track objects via `media_type_id`
 * Check constraint prevents empty or whitespace‑only names
 * Delete cascades are intentionally disabled; media types cannot be removed automatically when linked to tracks
 
-### --Playlist-- 7
+### --Playlist--
 Represents a user‑defined playlist.  
 A playlist may contain many tracks, and each membership is represented by a PlaylistTrack row.
 
@@ -167,7 +167,7 @@ tracks: Read‑only many‑to‑many view of related Track objects via `playlist
 * Check constraint prevents empty or whitespace‑only names
 * Delete cascades are intentionally disabled, so that Playlist–Track links are preserved and not removed automatically.
 
-### --Track-- 8
+### --Track--
 Represents an individual audio track.  
 Tracks have a media type and may be associated with composers, genres, playlists, and albums through their respective association tables.
 
@@ -203,7 +203,7 @@ Tracks have a media type and may be associated with composers, genres, playlists
 * Association rows are protected from cascading deletes. Tracks cannot be deleted when referenced by any invoice or catalog relationship.
 * Tracks form the core of catalog and financial history, and therefore are deletion‑protected
 
-### --AlbumTrack-- 9 
+### --AlbumTrack--
 Association/Junction table linking albums and tracks.
 
 #### Responsibilities
@@ -230,7 +230,7 @@ Association/Junction table linking albums and tracks.
 * Foreign keys use RESTRICT, preventing deletion of albums or tracks when linked
 * Association rows are protected from cascading deletes
 
-### --ComposerTrack-- 10
+### --ComposerTrack--
 Association/Junction table linking composers and tracks.
 
 #### Responsibilities
@@ -253,7 +253,7 @@ Association/Junction table linking composers and tracks.
 * Foreign keys use RESTRICT, preventing deletion of composers or tracks when linked
 * Association rows are protected from cascading deletes
 
-### --GenreTrack-- 11
+### --GenreTrack--
 Association/Junction table linking genres and tracks.
 
 #### Responsibilities
@@ -276,7 +276,7 @@ Association/Junction table linking genres and tracks.
 * Foreign keys use RESTRICT, preventing deletion of genres or tracks when linked
 * Association rows are protected from cascading deletes
 
-### --PlaylistTrack-- 12
+### --PlaylistTrack--
 Association/Junction table linking playlists and tracks.
 
 #### Responsibilities
@@ -299,7 +299,7 @@ Association/Junction table linking playlists and tracks.
 * Foreign keys use RESTRICT, preventing deletion of playlists or tracks when linked
 * Association rows are protected from cascading deletes
 
-### --Country-- 13
+### --Country--
 Represents a sovereign nation and functions as the root of the geographic hierarchy.
 
 #### Responsibilities
@@ -323,7 +323,7 @@ Represents a sovereign nation and functions as the root of the geographic hierar
 * Foreign keys in child tables use RESTRICT, preventing deletion of a country when referenced by postal codes or administrative divisions
 * Association rows are protected from cascading deletes
 
-### --PostalZipCode-- 14
+### --PostalZipCode--
 Represents postal or ZIP codes, supporting countries without postal codes.
 
 #### Responsibilities
@@ -346,7 +346,7 @@ Represents postal or ZIP codes, supporting countries without postal codes.
 * Foreign keys use RESTRICT, preventing deletion of countries or postal codes when referenced
 * Association rows are protected from cascading deletes
 
-### --AdministrativeDivision-- 15
+### --AdministrativeDivision--
 Represents first‑level administrative regions (states, provinces, regions, etc.).
 
 #### Responsibilities
@@ -370,7 +370,7 @@ Represents first‑level administrative regions (states, provinces, regions, etc
 * Foreign keys use RESTRICT, preventing deletion of a country when divisions exist
 * Association rows are protected from cascading deletes
 
-### --City-- 16
+### --City--
 Represents a city or municipality.
 
 #### Responsibilities
@@ -393,7 +393,7 @@ Represents a city or municipality.
 * Foreign keys use RESTRICT, preventing deletion of an administrative division when cities exist
 * Cities cannot be deleted while referenced by addresses
 
-### --Address-- 17
+### --Address--
 Represents a physical address.
 
 #### Responsibilities
@@ -419,7 +419,7 @@ Represents a physical address.
 * Foreign keys use RESTRICT, preventing deletion of cities or postal codes when addresses exist
 * Addresses cannot be deleted while referenced by customers or employees
 
-### --Customer-- 18
+### --Customer--
 Represents a client who purchases products and receives invoices.  
 Each customer is linked to an address and is assigned a responsible employee representative.
 
@@ -452,7 +452,7 @@ Each customer is linked to an address and is assigned a responsible employee rep
 * Customers cannot be deleted while invoices exist
 * No cascading deletes are allowed, in order to preserve invoice history
 
-### --EmployeeLevel-- 19
+### --EmployeeLevel--
 Lookup table defining employee seniority or classification levels.
 
 #### Responsibilities
@@ -472,7 +472,7 @@ Lookup table defining employee seniority or classification levels.
 * Foreign keys in Employee use RESTRICT, preventing deletion of a level when employees reference it
 * Association rows are protected from cascading deletes,so that levels cannot be deleted while linked to employees
 
-### --EmployeeTitle-- 20
+### --EmployeeTitle--
 Lookup table defining job titles for employees.
 
 #### Responsibilities
@@ -492,7 +492,7 @@ Lookup table defining job titles for employees.
 * Foreign keys in Employee use RESTRICT, preventing deletion of a title when employees reference it
 * Association rows are protected from cascading deletes, so that titles cannot be deleted while linked to employees
 
-### --Employee-- 21
+### --Employee--
 Represents a company employee.  
 Employees have a title, level, address, and may manage other employees.  
 They may also serve as customer representatives.
