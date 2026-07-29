@@ -243,7 +243,7 @@ but preserve invoice billing addresses as embedded fields
 to maintain historical accuracy.
 
 #### Analytical Reasoning  
-The original schema stored addresses as free‑form text, leading to inconsistent spelling, duplicated locations and unreliable geographic grouping.  
+The original schema stored addresses as free‑form text, leading to inconsistent spelling, duplicated locations and unreliable geographic grouping.
 Normalizing customer and employee addresses eliminates these issues and creates a clean, validated geographic dimension suitable for BI analysis.
 
 However, invoices represent legal, historical documents.  
