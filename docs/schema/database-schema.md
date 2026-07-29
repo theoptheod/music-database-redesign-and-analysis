@@ -7,7 +7,8 @@ covering the entire music catalog, geographic hierarchy, customer/employee subsy
 It also outlines the constraints, indexes, and cascading behaviors that ensure data quality and predictable joins across the schema.  
 
 ## Table of Contents
-- [Album](#--album--1)
+- [Album](#album)
+- [](#)
 
 ## Entity Documentation of the Normalized Database
 
