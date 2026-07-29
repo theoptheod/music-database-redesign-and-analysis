@@ -18,6 +18,8 @@ It also outlines the constraints, indexes, and cascading behaviors that ensure d
 - [AlbumTrack](#--albumtrack--)
 - [ComposerTrack](#--composertrack--)
 - [GenreTrack](#--genretrack--)
+- [PlaylistTrack](#--playlisttrack--)
+- [Country](#--country--)
 
 ## Entity Documentation of the Normalized Database
 
