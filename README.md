@@ -13,8 +13,8 @@ Completed – Version 1.0
 This project transforms a legacy music store database into a clean, analysis‑ready data model designed for modern BI tools.  
 The original schema contained duplicated information, inconsistent relationships, and structural issues that made business insights unreliable.
 
-A new normalized database was rebuilt in PostgreSQL using a Third Normal Form (3NF) approach, that focuses on analytical clarity, data quality and business driven modeling decisions.  
-It prepares the dataset for advanced reporting in Power BI, including revenue analysis, customer segmentation, product performance and geographic insights.
+A new normalized database was rebuilt in PostgreSQL using a Third Normal Form (3NF) approach, that focuses on analytical clarity, data quality  
+and business driven modeling decisions. It prepares the dataset for advanced reporting in Power BI, including revenue analysis, customer segmentation, product performance and geographic insights.
 
 The following sections outline the project’s context, methodology and structure.
 
