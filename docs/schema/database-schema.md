@@ -156,7 +156,7 @@ Each media type may be associated with many tracks.
 * Enforce uniqueness and validity of media type names
 
 #### Attributes
-`media_type_id`: Primary key of the entity
+`media_type_id`: Primary key of the entity  
 `media_type_name`: Name of the media type
 
 #### Relationships
