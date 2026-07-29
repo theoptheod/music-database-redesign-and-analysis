@@ -7,12 +7,12 @@ outlining the three major domains: music catalog, geographic hierarchy, and cust
 It details the normalization strategy, the rationale behind atomic entities, the use of explicit many‑to‑many relationships  
 and the relational design principles applied throughout the schema, including 3NF, check constraints, indexing, and naming conventions.
 
-Finally, it highlights the analytical benefits of the redesign and how the new structure supports  
-reliable contributor analytics, geographic segmentation, and customer/invoice reporting.
+Finally, it highlights the analytical benefits of the redesign and how the new structure  
+supports reliable contributor analytics, geographic segmentation, and customer/invoice reporting.
 
 ## Motivation for Redesign
 The original schema contained multiple structural issues:
-* non‑atomic contributor fields,
+* non‑atomic contributor fields
 * ambiguous many‑to‑many relationships stored as text
 * inconsistent formatting
 * weak normalization across geographic and customer domains
@@ -24,13 +24,13 @@ The new PostgreSQL schema addresses these issues through a complete redesign rat
 The schema models three major domains:
 
 1. Music Catalog  
-Includes albums, artists, composers, genres, media types, playlists, and tracks.  
+Includes albums, artists, composers, genres, media types, playlists and tracks.  
 Supports both one‑to‑many and many‑to‑many relationships through explicit junction tables  
 (`artist_album`, `composer_track`, `genre_track`, `playlist_track`, `album_track`).  
 Constraints and indexes ensure data consistency and efficient querying.
 
 2. Geographic Hierarchy  
-A fully normalized geographic model representing countries, administrative divisions, cities, postal/ZIP codes, and addresses.  
+A fully normalized geographic model representing countries, administrative divisions, cities, postal/ZIP codes and addresses.  
 Supports countries with or without postal codes, enforces uniqueness within geographic scopes, and ensures clean standardized text fields.
 
 3. Customer, Employee & Invoice Management  
@@ -55,8 +55,8 @@ Atomic entities for artists, composers, and genres, each with surrogate keys and
 Each dimension supports many‑to‑many relationships via junction tables.
 
 #### Catalog Entities
-Albums, tracks, media types, and playlists are modeled with strict constraints, indexes, and explicit associations.  
-Tracks serve as a central node linking composers, genres, playlists, albums, and invoice lines.
+Albums, tracks, media types and playlists are modeled with strict constraints, indexes and explicit associations.  
+Tracks serve as a central node linking composers, genres, playlists, albums and invoice lines.
 
 #### Geographic Entities
 Countries -> Administrative Divisions -> Cities -> Addresses -> Customers/Employees  
