@@ -171,8 +171,8 @@ An overview of the repository layout:
 ```
 
 ## Legacy Schema Overview
-The original database used a denormalized, inconsistent schema with weak constraints, free‑form text fields, and limited support for geographic  
-or financial analysis. It served as a functional tutorial dataset, but not as a reliable foundation for BI workflows or analytical reporting.
+The original database used a denormalized, inconsistent schema with weak constraints, free‑form text fields, and limited support for  
+geographic or financial analysis. It served as a functional tutorial dataset, but not as a reliable foundation for BI workflows or analytical reporting.
 
 Key issues included:
 * free‑form addresses with no validation
