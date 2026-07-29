@@ -1,8 +1,8 @@
-# New Database Schema — Design Notes
+# New Database Schema - Technical Specification
 
 ## Summary
 This document provides a complete reference for every entity in the normalized PostgreSQL database.  
-It describes each table’s purpose, key attributes, relationships, and integrity rules,  
+It describes each table’s purpose, key attributes, relationships and integrity rules,  
 covering the entire music catalog, geographic hierarchy, customer/employee subsystem, and invoice model.  
 It also outlines the constraints, indexes, and cascading behaviors that ensure data quality and predictable joins across the schema.  
 
