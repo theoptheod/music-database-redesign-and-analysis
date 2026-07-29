@@ -246,8 +246,8 @@ to maintain historical accuracy.
 The original schema stored addresses as free‑form text, leading to inconsistent spelling, duplicated locations and unreliable geographic grouping.
 Normalizing customer and employee addresses eliminates these issues and creates a clean, validated geographic dimension suitable for BI analysis.
 
-However, invoices represent legal, historical documents.  
-If billing addresses were normalized, any future customer address update would retroactively alter past invoices, corrupting historical reporting, breaking auditability, and distorting geographic revenue trends.
+However, invoices represent legal, historical documents. If billing addresses were normalized, any future customer address update would  
+retroactively alter past invoices, corrupting historical reporting, breaking auditability, and distorting geographic revenue trends.
 
 To balance analytical clarity with historical integrity, the redesign applies normalization everywhere except invoice billing fields, which remain immutable snapshots of the original transaction.
 
