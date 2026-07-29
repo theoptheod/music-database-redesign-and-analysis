@@ -20,6 +20,7 @@ It also outlines the constraints, indexes, and cascading behaviors that ensure d
 - [GenreTrack](#--genretrack--)
 - [PlaylistTrack](#--playlisttrack--)
 - [Country](#--country--)
+- [PostalZipCode](#--postalzipcode--)
 
 ## Entity Documentation of the Normalized Database
 
