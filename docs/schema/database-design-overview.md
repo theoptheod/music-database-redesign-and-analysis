@@ -1,4 +1,4 @@
-# New Database Design Overview — Design Notes
+# New Database Overview - Design Notes
 
 ## Summary
 This document provides a full architectural explanation of the redesigned PostgreSQL schema,  
