@@ -6,6 +6,9 @@ It describes each table’s purpose, key attributes, relationships, and integrit
 covering the entire music catalog, geographic hierarchy, customer/employee subsystem, and invoice model.  
 It also outlines the constraints, indexes, and cascading behaviors that ensure data quality and predictable joins across the schema.  
 
+## Table of Contents
+- [Album](#--album--1)
+
 ## Entity Documentation of the Normalized Database
 
 ### --Album-- 1
