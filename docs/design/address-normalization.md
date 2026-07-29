@@ -143,6 +143,17 @@ Benefits:
 * future HR analytics
 
 ## Invoice Billing Addresses
+
+### Handling Missing Billing Postal Codes and Administrative Divisions
+The legacy invoice data contains missing billing postal codes and administrative divisions, represented by the string "None".  
+Because invoice billing fields are preserved as immutable text snapshots, they are not normalized and do not reference the geographic hierarchy.
+
+During ETL, all literal "None" strings are converted to actual NULL values to ensure semantic correctness and prevent polluted text fields.  
+No placeholder postal codes or administrative divisions are created, and invoices with missing billing information remain valid financial records.
+
+This approach maintains the legal immutability of invoice data while ensuring that missing values are represented consistently in the normalized database.
+
+### Embedded Invoice Billing Fields
 Invoices retain embedded billing fields:
 * `billing_address`
 * `billing_city`
