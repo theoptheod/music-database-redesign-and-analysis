@@ -7,8 +7,8 @@ The five benchmark questions are:
 1. Top‑Grossing Artists: “Which artists generated the most revenue?”
 2. Most Popular Genre per Country: “What is the most popular music genre in each country?”
 3. Top‑Spending Customer per Country: “Who is the highest‑spending customer in each country?”
-4.Top‑Selling Albums: “Which albums generated the most revenue?”
-5.Top 10 Best‑Selling Tracks: “What are the top 10 tracks by total revenue?”
+4. Top‑Selling Albums: “Which albums generated the most revenue?”
+5. Top 10 Best‑Selling Tracks: “What are the top 10 tracks by total revenue?”
 
 Together, these questions form a complete analytical benchmark suite, covering:
 * revenue aggregation
