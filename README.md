@@ -537,12 +537,12 @@ Across the benchmark suite:
 * Many‑to‑many modeling increases join complexity but enables correct analytics
 * The old schema is faster only where its oversimplified relationships reduce join cost
 
-These results confirm that the redesigned schema is more accurate, more predictable, and better suited for real analytical workloads, even when join complexity increases.
+These results confirm that the redesigned schema is more accurate, more predictable, and better suited for real analytical workloads, even when normalization increases join complexity.
 
 ### Benchmark Summary Diagram
 
-                Benchmark Results — Old vs New Schema
-                -------------------------------------
+    Benchmark Results — Old vs New Schema
+    -------------------------------------
 
     Query 1:  Customer Spending on Top Artist        ->   New Schema Faster  
     Query 2:  Most Popular Genre per Country         ->   Old Schema Faster
@@ -550,8 +550,8 @@ These results confirm that the redesigned schema is more accurate, more predicta
     Query 4:  Top-Selling Albums                     ->   Old Schema Faster
     Query 5:  Top 10 Best-Selling Tracks             ->   New Schema Faster
 
-                Overall Result:
-                Normalized Schema Wins 3 / 5 Queries
+    Overall Result:
+    Normalized Schema Wins 3 / 5 Queries
 
 The five benchmark questions can be found in <a href="/analysis/benchmark-questions/benchmark-questions-overview.md" target="_blank">Benchmark Questions Overview</a>.
 
