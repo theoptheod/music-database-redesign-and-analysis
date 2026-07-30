@@ -38,7 +38,7 @@ The following sections outline the project’s context, methodology and structur
 - [Benchmarking the Old vs. New Schema](#benchmarking-the-old-vs-new-schema)
 - [Conclusions](#conclusions)
 - [Next Steps](#next-steps)
-- [Project Files & Reference Material](#project-files-reference-material)
+- [Project Files & Reference Material](#project-files--reference-material)
 - [Contact](#contact)
 - [Acknowledgments](#acknowledgments)
 - [License](#license)
