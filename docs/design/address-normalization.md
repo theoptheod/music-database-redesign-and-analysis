@@ -72,10 +72,9 @@ To maintain a clean and semantically correct geographic hierarchy, the redesigne
 * `address`.`postal_zip_code_id` is NULLABLE
 * Only real postal codes are inserted into `postal_zip_code`
 * Missing postal codes do not generate placeholder rows
-* "None" values from invoices are converted to actual NULLs during ETL
 
 This ensures that the postal catalog contains only valid, reusable postal codes, while addresses with missing postal codes are represented by `postal_zip_code_id` = `NULL`.
-Customers and employees with incomplete address data are preserved without creating artificial postal‑code entries,and invoice billing fields remain immutable snapshots of the original transaction.
+Customers with incomplete address data are preserved without creating artificial postal‑code entries, and invoice billing fields remain immutable snapshots of the original transaction.
 
 This design keeps the geographic hierarchy clean, prevents polluted foreign‑key relationships, and accurately reflects real‑world data where postal codes may be optional or unavailable.
 
