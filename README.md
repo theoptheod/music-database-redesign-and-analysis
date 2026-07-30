@@ -557,7 +557,7 @@ standardizing entities, and applying a strict ETL process, the new schema is now
 With the normalized database in place, the project now moves into its second phase: building an advanced Power BI dashboard.  
 This dashboard will take advantage of the cleaned dimensions, explicit foreign‑key relationships, and consistent entity definitions established in the ETL process.
 The goal is to deliver richer visualizations, more accurate metrics, and a BI experience that reflects the improved structure of the new schema.
-The work completed in Part 1 serves as the foundation for this next stage, ensuring that the analytical layer is built on top of high‑quality, well‑modeled data.
+The work completed in Part 1 serves as the foundation for this next stage, ensuring that the analytical layer is built on top of well‑modeled data.
 
 ## Project Files & Reference Material
 This repository includes the original dataset, the redesigned schema, set of queries and performance outputs used during evaluation.  
