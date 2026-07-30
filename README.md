@@ -601,7 +601,7 @@ If you have questions or would like to connect, feel free to reach out through t
 - [Portfolio Projects Website](https://theoptheod.github.io/)
 
 ## Acknowledgments  
-This project was inspired by a [YouTube tutorial](https://www.youtube.com/watch?v=SAWiIV12sU4)
+This project was inspired by this [YouTube tutorial](https://www.youtube.com/watch?v=SAWiIV12sU4)
 created by [Simplilearn](https://www.youtube.com/@SimplilearnOfficial).
 
 I’m grateful for the inspiration that set this whole journey in motion.  
