@@ -530,8 +530,6 @@ A modern analytical schema must eliminate these issues and demonstrate measurabl
 Five benchmark queries were executed on both schemas using `EXPLAIN ANALYZE`, covering  
 customer analytics, genre popularity, album/track revenue, and artist performance.
 
-The five benchmark questions can be found in <a href="/analysis/benchmark-questions/benchmark-questions-overview.md" target="_blank">Benchmark Questions Overview</a>.
-
 Across the benchmark suite:
 * The normalized schema performed better in 3 out of 5 queries
 * Integer‑based currency consistently improves correctness and performance
@@ -541,7 +539,11 @@ Across the benchmark suite:
 
 These results confirm that the redesigned schema is more accurate, more predictable, and better suited for real analytical workloads, even when join complexity increases.
 
-Full SQL queries and sample execution plans for each database are available in the `/analysis` directory.  
+
+The five benchmark questions can be found in <a href="/analysis/benchmark-questions/benchmark-questions-overview.md" target="_blank">Benchmark Questions Overview</a>.
+
+Full SQL queries and sample execution plans for each database are available in the `/analysis` directory.
+
 A more detailed breakdown is available in <a href="/analysis/performance-comparison.md" target="_blank">Performance Comparison: Old vs. New Schema Technical Analysis</a>.
 
 ### Benchmark Summary Diagram
