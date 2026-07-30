@@ -1,7 +1,7 @@
 # Performance Comparison: Old vs. New Schema /-/ Technical Analysis
 
 ## Summary
-This document provides a detailed evaluation of how the legacy schema and the redesigned normalized schema perform across five analytical workloads.  
+This document provides a detailed evaluation of how the legacy schema and the redesigned normalized schema perform across five analytical workloads.
 Each benchmark uses EXPLAIN ANALYZE to measure execution time, join strategies, row‑processing volume, and planner behavior.
 
 ### 1. Benchmarking Methodology
