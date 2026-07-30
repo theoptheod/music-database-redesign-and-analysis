@@ -18,4 +18,4 @@ Together, these questions form a complete analytical benchmark suite, covering:
 * integer vs floating‑point currency
 * join complexity and scalability
 
-Each query is implemented for both schemas, analyzed with EXPLAIN ANALYZE, and compared in terms of correctness, performance, and scalability.
+Each query is implemented for both schemas, analyzed with `EXPLAIN ANALYZE`, and compared in terms of correctness, performance, and scalability.
