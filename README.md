@@ -539,14 +539,8 @@ Across the benchmark suite:
 
 These results confirm that the redesigned schema is more accurate, more predictable, and better suited for real analytical workloads, even when join complexity increases.
 
-
-The five benchmark questions can be found in <a href="/analysis/benchmark-questions/benchmark-questions-overview.md" target="_blank">Benchmark Questions Overview</a>.
-
-Full SQL queries and sample execution plans for each database are available in the `/analysis` directory.
-
-A more detailed breakdown is available in <a href="/analysis/performance-comparison.md" target="_blank">Performance Comparison: Old vs. New Schema Technical Analysis</a>.
-
 ### Benchmark Summary Diagram
+
                 Benchmark Results — Old vs New Schema
                 -------------------------------------
 
@@ -558,6 +552,12 @@ A more detailed breakdown is available in <a href="/analysis/performance-compari
 
                 Overall Result:
                 Normalized Schema Wins 3 / 5 Queries
+
+The five benchmark questions can be found in <a href="/analysis/benchmark-questions/benchmark-questions-overview.md" target="_blank">Benchmark Questions Overview</a>.
+
+Full SQL queries and sample execution plans for each database are available in the `/analysis` directory.
+
+A more detailed breakdown is available in <a href="/analysis/performance-comparison.md" target="_blank">Performance Comparison: Old vs. New Schema Technical Analysis</a>.
 
 ## Conclusions 
 The first phase of this project focused on rebuilding the legacy dataset into a clean, constraint‑driven, fully normalized PostgreSQL schema.  
