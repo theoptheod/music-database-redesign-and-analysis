@@ -527,8 +527,8 @@ A modern analytical schema must eliminate these issues and demonstrate measurabl
 * scalability under larger workloads
 
 ### Summary of Results
-Five benchmark queries were executed on both schemas using `EXPLAIN ANALYZE`,  
-covering customer analytics, genre popularity, album/track revenue, and artist performance.
+Five benchmark queries were executed on both schemas using `EXPLAIN ANALYZE`, covering  
+customer analytics, genre popularity, album/track revenue, and artist performance.
 
 The five benchmark questions can be found in <a href="/analysis/benchmark-questions/benchmark-questions-overview.md" target="_blank">Benchmark Questions Overview</a>.
 
