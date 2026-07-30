@@ -564,8 +564,16 @@ This repository includes the original dataset, the redesigned schema, set of que
 These materials provide transparency into the transformation process and allow reproducibility of the results.
 
 **- Original database files**  
-    The `original-database/` folder contains the legacy schema (`Music_Store_database.sql`) and the original analytical queries,  
-    that are excluded from the README in order to avoid clutter, but are preserved here for reference.
+    The `original-database/` folder contains the legacy schema (`Music_Store_database.sql`) and the original  
+    analytical queries, that are excluded from the README in order to avoid clutter, but are preserved there for reference.
+
+**- Documentation screenshots and diagrams**  
+    The `images/database-diagrams` folder stores the ERD of the original database, and the ERD of the normalized schema that was created using `Mermaid.live`.  
+    The `images/screeshots` folder stores screenshots of the questions that the original project was trying to address.  
+    The `docs/` folder contains all supporting notes used during the redesign process.
+
+**- Migration and schema scripts**  
+    The `src/` folder contains the Python script used to create the new schema with SQLAlchemy, adjust the legacy data where needed, and perform the migration into the normalized model.
 
 **- Baseline analytical queries and execution plans**  
     The `analysis/benchmark-questions/` folder contains the five benchmark questions used to evaluate both schemas,  
@@ -574,13 +582,6 @@ These materials provide transparency into the transformation process and allow r
     the SQL implementations of all benchmark queries for both the legacy and redesigned schemas.  
     The `analysis/explain-analyze-outputs` folder (also split into `/old_schema/` and `/new_schema/`) contains  
     sample execution plans and performance metrics for the corresponding queries, that facilitate a direct comparison between the two models.
-
-**- Migration and schema scripts**  
-    The `src/` folder contains the Python script used to create the new schema with SQLAlchemy, adjusts the legacy data where needed, and performs the migration into the normalized model.
-
-**- Documentation and diagrams**  
-    Stored in `docs/` and `images/` are the ERD of the original database, the detailed `Mermaid.live` ERD of the normalized schema,  
-    and supporting notes and visuals used during the redesign process.
 
 The above files provide clear guidance through every stage of the project, from understanding the original data all the way to completing the final implementation.
 
