@@ -1,0 +1,379 @@
+-- Question Set 1 - Easy
+
+-- 1. Who is the most senior employee based on job title?
+
+-- NOTE: There are multiple ways to find the most senior employee.
+-- We can use "employee_title", "manager_id", "employee_level", and "hire_date".
+
+-- Solution 1: Using "employee_title".
+SELECT
+    "employee"."employee_last_name",
+	"employee"."employee_first_name",
+	"employee_title"."employee_title_name"
+FROM "employee"
+LEFT JOIN "employee_title"
+    ON "employee"."employee_title_id" = "employee_title"."employee_title_id"
+WHERE  "employee_title"."employee_title_name" = 'Senior General Manager';
+
+-- Solution 2: Using "manager_id".
+SELECT
+    "employee"."employee_last_name",
+	"employee"."employee_first_name",
+	"employee"."manager_id"
+FROM "employee"
+WHERE  "employee"."manager_id" IS NULL;
+
+-- Solution 3: Using "employee_level".
+SELECT
+    "employee"."employee_last_name",
+	"employee"."employee_first_name",
+	"employee_level"."employee_level_code"
+FROM "employee"
+LEFT JOIN "employee_level" 
+    ON "employee"."employee_level_id" = "employee_level"."employee_level_id"
+ORDER BY "employee_level"."employee_level_code" DESC
+LIMIT 1;
+	
+-- Solution 4: Using "hire_date".
+SELECT
+    "employee"."employee_last_name",
+	"employee"."employee_first_name",
+	"employee"."employee_hiredate"
+FROM "employee"
+ORDER BY "employee"."employee_hiredate" ASC
+LIMIT 1;
+
+-- 2. Which countries have the most invoices?
+SELECT
+	"invoice"."billing_country",
+	COUNT(*) AS "count_of_invoices_per_country"
+FROM "invoice"
+GROUP BY "invoice"."billing_country"
+ORDER BY "count_of_invoices_per_country" DESC;
+
+-- 3. What are the top 3 values of total invoice?
+SELECT
+	"invoice"."invoice_id",
+	ROUND(CAST("invoice"."invoice_total_cents" AS DECIMAL) / 100, 2) AS "rounded_total_of_invoice"
+FROM "invoice"
+ORDER BY "invoice"."invoice_total_cents" DESC
+LIMIT 3;
+
+-- 4. What city has the best customers?
+-- We would like to organize a Music Festival in the city that produces
+-- the higher earnings. Write a query that returns the city with the
+-- highest sum of invoice totals. The query should return the city's name
+-- and its invoice totals.
+
+-- Solution 1: Using GROUP BY and LIMIT.
+SELECT
+    "invoice"."billing_city",
+	ROUND(CAST(SUM("invoice"."invoice_total_cents") AS DECIMAL) / 100, 2) AS "rounded_total_city_earnings"
+FROM "invoice"
+GROUP BY "invoice"."billing_city"
+ORDER BY "rounded_total_city_earnings" DESC
+LIMIT 1;
+
+-- Solution 2: Using GROUP BY, uncorrelated subquery and CTE.
+SELECT
+    "invoice"."billing_city",
+	ROUND(CAST(SUM("invoice"."invoice_total_cents") AS DECIMAL) / 100, 2) AS "rounded_total_city_earnings"
+FROM "invoice"
+GROUP BY "invoice"."billing_city"
+HAVING ROUND(CAST(SUM("invoice"."invoice_total_cents") AS DECIMAL) / 100, 2) = (WITH "highest_total_invoices_city" AS (
+											                                        SELECT
+										                                                "invoice"."billing_city",
+											                                            ROUND(CAST(SUM("invoice"."invoice_total_cents") AS DECIMAL) / 100, 2) AS "rounded_total_city_earnings"
+										                                            FROM "invoice"
+										                                            GROUP BY "invoice"."billing_city"
+																				    )
+																				    SELECT
+																				        MAX("rounded_total_city_earnings")
+										                                            FROM "highest_total_invoices_city"
+																				);
+																				
+-- 5. Who is the best customer?
+-- The customer who has spent the most money will be declared the best.
+-- Write a query that returns the name of that customer and the sum amount
+-- he or she has spent.
+
+-- Solution 1: Using GROUP BY and LIMIT.
+SELECT
+	"customer"."customer_id",
+	"customer"."customer_last_name",
+	"customer"."customer_first_name",
+	ROUND(CAST(SUM("invoice"."invoice_total_cents") AS DECIMAL) / 100, 2) AS "rounded_customer_spendings"
+FROM "customer"
+LEFT OUTER JOIN "invoice"
+	ON "customer"."customer_id" = "invoice"."customer_id"
+GROUP BY "customer"."customer_id", "customer"."customer_last_name", "customer"."customer_first_name"
+ORDER BY "rounded_customer_spendings" DESC
+LIMIT 1;
+
+-- Solution 2: Using GROUP BY and uncorrelated subqueries.
+SELECT
+	"customer"."customer_id",
+	"customer"."customer_last_name",
+	"customer"."customer_first_name",
+	ROUND(CAST(SUM("invoice"."invoice_total_cents") AS DECIMAL) / 100, 2) AS "rounded_customer_spendings"
+FROM "customer"
+LEFT OUTER JOIN "invoice"
+	ON "customer"."customer_id" = "invoice"."customer_id"
+GROUP BY "customer"."customer_id", "customer"."customer_last_name", "customer"."customer_first_name"
+HAVING ROUND(CAST(SUM("invoice"."invoice_total_cents") AS DECIMAL) / 100, 2) = (SELECT
+                                                                                MAX("total_spendings_per_customer")
+																				FROM (SELECT
+																				          ROUND(CAST(SUM("invoice"."invoice_total_cents") AS DECIMAL) / 100, 2) AS "total_spendings_per_customer"
+																				      FROM "invoice"
+																					  GROUP BY "customer_id")
+																			    );
+																				
+-- Question Set 2 - Moderate
+
+-- 1. Write a query that returns the email, first name, last name and genre
+-- of all Rock music listeners. Return the list ordered alphabetically by email
+-- starting with 'A'.
+
+-- NOTE: To remove duplicates in the output, use GROUP BY. 
+SELECT
+    "customer"."customer_last_name",
+	"customer"."customer_first_name",
+	"customer"."customer_email",
+	"genre"."genre_name"
+FROM "customer"
+LEFT OUTER JOIN "invoice"
+    ON "customer"."customer_id" = "invoice"."customer_id"
+LEFT OUTER JOIN "invoice_line"
+    ON "invoice"."invoice_id" = "invoice_line"."invoice_id"
+LEFT OUTER JOIN "track"
+    ON "invoice_line"."track_id" = "track"."track_id"
+LEFT OUTER JOIN "genre_track"
+    ON "track"."track_id" = "genre_track"."track_id"
+LEFT OUTER JOIN "genre"
+    ON "genre_track"."genre_id" = "genre"."genre_id"
+WHERE "genre"."genre_name" = 'Rock'
+GROUP BY "customer"."customer_last_name", "customer"."customer_first_name", "customer"."customer_email", "genre"."genre_name"
+ORDER BY "customer"."customer_last_name" ASC, "customer"."customer_first_name" ASC;
+
+-- 2. Let's invite the artist who has written the most rock tracks,
+-- appearing on our database. Write a query that returns the Artist's name
+-- and total track count of the top 10 rock bands.
+SELECT
+	"artist"."artist_id",
+    "artist"."artist_name",
+	COUNT("track"."track_id") AS "count_of_written_tracks"
+FROM "artist"
+LEFT OUTER JOIN "artist_album"
+    ON "artist"."artist_id" = "artist_album"."artist_id"
+LEFT OUTER JOIN "album"
+	ON "artist_album"."album_id" = "album"."album_id"
+LEFT OUTER JOIN "album_track"
+    ON "album"."album_id" = "album_track"."album_id"
+LEFT OUTER JOIN "track"
+    ON "album_track"."track_id" = "track"."track_id"
+LEFT OUTER JOIN "genre_track"
+    ON "track"."track_id" = "genre_track"."track_id"
+LEFT OUTER JOIN "genre"
+    ON "genre_track"."genre_id" = "genre"."genre_id" 
+WHERE "genre"."genre_name" = 'Rock'
+GROUP BY "artist"."artist_id", "artist"."artist_name"
+ORDER BY "count_of_written_tracks" DESC
+LIMIT 10;
+
+-- 3. Return all the track names that have a song length longer that the average
+-- song length. Return the Name and Milliseconds for each track. Order by the
+-- song length with the longest songs listed first.
+SELECT
+	"track"."track_id",
+	"track"."track_name",
+	"track"."duration_milliseconds"
+FROM "track"
+WHERE "track"."duration_milliseconds" > (SELECT
+                                             ROUND(AVG("track"."duration_milliseconds"), 2) 
+										 FROM "track")
+ORDER BY "track"."duration_milliseconds" DESC;
+
+-- Question Set 3 - Advanced
+
+-- 1. Find how much money was spend by each customer on the top selling artist.
+-- Write a query to return customer name, artist name and total spent.
+
+-- Solution 1: Using uncorrelated subqueries and LIMIT.
+SELECT
+	"customer"."customer_id",
+    "customer"."customer_last_name" || ' ' || "customer"."customer_first_name" AS "customer_name",
+	"artist"."artist_name",
+    ROUND(SUM(CAST(("invoice_line"."unit_price_cents" * "invoice_line"."quantity") AS DECIMAL) / 100), 2)  AS "best_selling_artist_earnings_per_customer"	
+FROM "artist"
+INNER JOIN "artist_album"
+    ON "artist"."artist_id" = "artist_album"."artist_id"
+INNER JOIN "album"
+    ON "artist_album"."album_id" = "album"."album_id"
+INNER JOIN "album_track"
+    ON "album"."album_id" = "album_track"."album_id"
+INNER  JOIN "track"
+    ON "album_track"."track_id" = "track"."track_id"
+INNER  JOIN "invoice_line"
+    ON "track"."track_id" = "invoice_line"."track_id"
+INNER JOIN "invoice"
+    ON "invoice_line"."invoice_id" = "invoice"."invoice_id"
+INNER JOIN "customer"
+    ON "invoice"."customer_id" = "customer"."customer_id"
+WHERE "artist"."artist_id" = (SELECT
+                              "artist_id"
+                              FROM (SELECT
+	  									"artist"."artist_id",
+	  									"artist"."artist_name",
+	  									ROUND(SUM(CAST(("invoice_line"."unit_price_cents" * "invoice_line"."quantity") AS DECIMAL) / 100), 2)  AS "rounded_earnings_per_artist"
+      								FROM "artist"
+      								INNER JOIN "artist_album"
+      									ON "artist"."artist_id" = "artist_album"."artist_id"
+      								INNER JOIN "album"
+								        ON "artist_album"."album_id" = "album"."album_id"
+								    INNER JOIN "album_track"
+								        ON "album"."album_id" = "album_track"."album_id"
+								    INNER  JOIN "track"
+								        ON "album_track"."track_id" = "track"."track_id"
+								    INNER  JOIN "invoice_line"
+								        ON "track"."track_id" = "invoice_line"."track_id"
+								    GROUP BY "artist"."artist_id"
+								    ORDER BY "rounded_earnings_per_artist" DESC
+									LIMIT 1)
+								)
+GROUP BY "customer"."customer_id", "artist"."artist_name"
+ORDER BY "best_selling_artist_earnings_per_customer" DESC, "customer_name" ASC;
+
+-- Solution 2: Using uncorrelated subquery and multiple CTEs.
+WITH "artists_earnings_cte" AS (
+	SELECT
+	    "artist"."artist_id",
+	    "artist"."artist_name",
+	    ROUND(SUM(CAST(("invoice_line"."unit_price_cents" * "invoice_line"."quantity") AS DECIMAL) / 100), 2)  AS "rounded_earnings_per_artist"
+	FROM "artist"
+	INNER JOIN "artist_album"
+	    ON "artist"."artist_id" = "artist_album"."artist_id"
+	INNER JOIN "album"
+	    ON "artist_album"."album_id" = "album"."album_id"
+	INNER JOIN "album_track"
+	    ON "album"."album_id" = "album_track"."album_id"
+	INNER  JOIN "track"
+	    ON "album_track"."track_id" = "track"."track_id"
+	INNER  JOIN "invoice_line"
+	    ON "track"."track_id" = "invoice_line"."track_id"
+	GROUP BY "artist"."artist_id"
+	ORDER BY "rounded_earnings_per_artist" DESC
+),
+"best_selling_artist_cte" AS (
+    SELECT
+	    "artist_id"
+    FROM "artists_earnings_cte"
+    WHERE "rounded_earnings_per_artist" = (SELECT
+                                               MAX("rounded_earnings_per_artist")
+									       FROM "artists_earnings_cte")
+)
+SELECT
+	"customer"."customer_id",
+    "customer"."customer_last_name" || ' ' || "customer"."customer_first_name" AS "customer_name",
+	"artist"."artist_name",
+    ROUND(SUM(CAST(("invoice_line"."unit_price_cents" * "invoice_line"."quantity") AS DECIMAL) / 100), 2)  AS "best_selling_artist_earnings_per_customer"	
+FROM "artist"
+INNER JOIN "artist_album"
+    ON "artist"."artist_id" = "artist_album"."artist_id"
+INNER JOIN "album"
+    ON "artist_album"."album_id" = "album"."album_id"
+INNER JOIN "album_track"
+    ON "album"."album_id" = "album_track"."album_id"
+INNER  JOIN "track"
+    ON "album_track"."track_id" = "track"."track_id"
+INNER  JOIN "invoice_line"
+    ON "track"."track_id" = "invoice_line"."track_id"
+INNER JOIN "invoice"
+    ON "invoice_line"."invoice_id" = "invoice"."invoice_id"
+INNER JOIN "customer"
+    ON "invoice"."customer_id" = "customer"."customer_id"
+INNER JOIN "best_selling_artist_cte"
+    ON "artist"."artist_id" = "best_selling_artist_cte"."artist_id"
+GROUP BY "customer"."customer_id", "artist"."artist_name"
+ORDER BY "best_selling_artist_earnings_per_customer" DESC, "customer_name" ASC;
+
+-- 2. We want to find out the most popular music genre for each country. 
+-- We determine the most popular genre as the genre with the highest amount
+-- of purchases. Write a query that returns each country along with the top Genre.
+-- For countries where the maximum number of puchases is shares, return all genres.
+
+-- Solution 1: Using uncorrelated subquery and WINDOW FUNCTION.
+SELECT
+    "sq"."country",
+	"sq"."top_genre/s"
+FROM (SELECT
+	      "inv_2"."billing_country" AS "country",
+	      "genre"."genre_name" AS "top_genre/s",
+	      ROUND(SUM((CAST("invoice_line"."unit_price_cents" AS DECIMAL) * "invoice_line"."quantity") / 100), 2) AS "rounded_earnings_per_genre",
+	      RANK() OVER(PARTITION BY "inv_2"."billing_country" ORDER BY "inv_2"."billing_country" ASC, ROUND(SUM((CAST("invoice_line"."unit_price_cents" AS DECIMAL) * "invoice_line"."quantity") / 100), 2) DESC) AS "rank"
+      FROM "invoice" AS "inv_2"
+      INNER JOIN "invoice_line"
+          ON "inv_2"."invoice_id" = "invoice_line"."invoice_id"
+      INNER JOIN "track"
+          ON "invoice_line"."track_id" = "track"."track_id"
+      INNER JOIN "genre_track"
+          ON "track"."track_id" = "genre_track"."track_id"
+      INNER JOIN "genre"
+          ON "genre_track"."genre_id" = "genre"."genre_id"
+      GROUP BY "genre"."genre_id", "inv_2"."billing_country") AS "sq"
+WHERE "rank" = 1;
+
+-- Solution 2: Using uncorrelated and correlated subqueries.
+SELECT
+    "o_inv"."billing_country",
+	"o_genre"."genre_name"
+FROM "invoice" AS "o_inv"
+INNER JOIN "invoice_line" AS "o_invoice_line"
+    ON "o_inv"."invoice_id" = "o_invoice_line"."invoice_id"
+INNER JOIN "track" AS "o_track"
+    ON "o_invoice_line"."track_id" = "o_track"."track_id"
+INNER JOIN "genre_track" AS "o_genre_track"
+    ON "o_track"."track_id" = "o_genre_track"."track_id"
+INNER JOIN "genre" AS "o_genre"
+    ON "o_genre_track"."genre_id" = "o_genre"."genre_id"
+GROUP BY "o_inv"."billing_country", "o_genre"."genre_name"
+HAVING ROUND(SUM((CAST("o_invoice_line"."unit_price_cents" AS DECIMAL) * "o_invoice_line"."quantity") / 100), 2) = (SELECT
+                                                                                                                        MAX("rounded_earnings")
+                                                                                                                    FROM (SELECT
+																												          ROUND(SUM((CAST("i_invoice_line"."unit_price_cents" AS DECIMAL) * "i_invoice_line"."quantity") / 100), 2) AS "rounded_earnings"
+																												          FROM "invoice" AS "i_inv"
+																												          INNER JOIN "invoice_line" AS "i_invoice_line"
+																												          ON "i_inv"."invoice_id" = "i_invoice_line"."invoice_id"
+																												          INNER JOIN "track" AS "i_track"
+																												          ON "i_invoice_line"."track_id" = "i_track"."track_id"
+																												          INNER JOIN "genre_track" AS "i_genre_track"
+																												          ON "i_track"."track_id" = "i_genre_track"."track_id"
+																												          INNER JOIN "genre" AS "i_genre"
+																												          ON "i_genre_track"."genre_id" = "i_genre"."genre_id"
+																													      WHERE "o_inv"."billing_country" = "i_inv"."billing_country"
+																													      GROUP BY "i_genre"."genre_name")
+																												    );
+
+-- 3. Write a query that determines the customer that has spent the most on music
+-- for each country. Write a query that returns the country along with the top
+-- customer and how much they spent. For countries where the top amount spent is
+-- shared, provide all customers who spent this amount.
+
+-- Solution 1: Using CTE and WINDOW FUNCTION.
+WITH "cte_top_customer_per_country" AS (
+    SELECT
+        "invoice"."billing_country" AS "country_of_origin",
+	    "customer"."customer_last_name" || ', ' || "customer"."customer_first_name" AS "customer_full_name",
+	    ROUND(SUM("invoice"."invoice_total_cents") / 100.0, 2) AS "rounded_customer_spendings",
+	    RANK() OVER(PARTITION BY "invoice"."billing_country" ORDER BY SUM(invoice.invoice_total_cents) DESC) AS "rank"
+    FROM "invoice"
+    LEFT OUTER JOIN "customer"
+        ON "invoice"."customer_id" = "customer"."customer_id"
+    GROUP BY "invoice"."billing_country", "customer"."customer_last_name", "customer"."customer_first_name"
+)
+SELECT
+    "country_of_origin",
+	"customer_full_name",
+	"rounded_customer_spendings"
+FROM "cte_top_customer_per_country"
+WHERE "rank" = 1
+ORDER BY "rounded_customer_spendings" DESC;
