@@ -35,7 +35,7 @@ The following sections outline the project’s context, methodology and structur
 - [ETL Pipeline](#etl-pipeline)
 - [New Database Design Overview](#new-database-design-overview)
 - [New Database Schema](#new-database-schema)
-- [Benchmarking the Old vs. New Schema](#benchmarking-the-old-vs-new-schema)
+- [Old vs. New Schema Benchmarking](#old-vs-new-schema-benchmarking)
 - [Conclusions](#conclusions)
 - [Next Steps](#next-steps)
 - [Project Files & Reference Material](#project-files--reference-material)
@@ -507,7 +507,7 @@ The following diagram illustrates the final relational schema of the normalized 
 
 ![Normalized Database Schema](images/database-diagrams/redesigned_db_diagram.png)
   
-## Benchmarking the Old vs. New Schema
+## Old vs. New Schema Benchmarking
 A schema redesign is only meaningful if it produces more accurate analytics and more efficient execution plans.  
 To validate the new normalized schema, this project benchmarks both versions using five representative analytical workloads drawn from real music‑industry reporting.
 
@@ -527,10 +527,13 @@ A modern analytical schema must eliminate these issues and demonstrate measurabl
 * scalability under larger workloads
 
 ### Summary of Results
-Five benchmark queries were executed on both schemas using `EXPLAIN ANALYZE`, covering customer analytics, genre popularity, album/track revenue, and artist performance.
+Five benchmark queries were executed on both schemas using `EXPLAIN ANALYZE`,  
+covering customer analytics, genre popularity, album/track revenue, and artist performance.
+
+The five benchmark questions can be found in <a href="/analysis/benchmark-questions/benchmark-questions-overview.md" target="_blank">Benchmark Questions Overview</a>.
 
 Across the benchmark suite:
-* The normalized schema wins 4 out of 5 queries
+* The normalized schema performed better in 3 out of 5 queries
 * Integer‑based currency consistently improves correctness and performance
 * Normalization reduces row width and improves grouping efficiency
 * Many‑to‑many modeling increases join complexity but enables correct analytics
@@ -544,14 +547,14 @@ Full SQL queries and sample execution plans for each database are available in t
                 Benchmark Results — Old vs New Schema
                 -------------------------------------
 
-    Query 1:  Customer Spending on Top Artist        →   New Schema Wins
-    Query 2:  Most Popular Genre per Country         →   Old Schema Faster (Expected)
-    Query 3:  Top-Spending Customer per Country      →   New Schema Wins (4× Faster)
-    Query 4:  Top-Selling Albums                     →   Old Schema Faster (Expected)
-    Query 5:  Top 10 Best-Selling Tracks             →   New Schema Wins (Slightly Faster)
+    Query 1:  Customer Spending on Top Artist        ->   New Schema Faster  
+    Query 2:  Most Popular Genre per Country         ->   Old Schema Faster
+    Query 3:  Top-Spending Customer per Country      ->   New Schema Wins (4× Faster)
+    Query 4:  Top-Selling Albums                     ->   Old Schema Faster
+    Query 5:  Top 10 Best-Selling Tracks             ->   New Schema Faster
 
                 Overall Result:
-                Normalized Schema Wins 4 / 5 Queries
+                Normalized Schema Wins 3 / 5 Queries
 
 ## Conclusions 
 The first phase of this project focused on rebuilding the legacy dataset into a clean, constraint‑driven, fully normalized PostgreSQL schema.  
