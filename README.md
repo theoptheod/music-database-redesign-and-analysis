@@ -549,9 +549,9 @@ Full SQL queries and sample execution plans for each database are available in t
 
 ## Conclusions 
 The first phase of this project focused on rebuilding the legacy dataset into a clean, constraint‑driven, fully normalized PostgreSQL schema.  
-The goal was not to improve raw query performance, but to create a reliable analytical foundation that includes  
-consistent dimensions, enforced relationships, predictable null handling, and a structure that eliminates ambiguity during reporting.  
-By resolving data‑quality issues, standardizing entities, and applying a strict ETL process, the new schema is now stable, trustworthy, and aligned with modern BI modeling practices.  
+The goal was not to improve raw query performance, but to create a reliable analytical foundation that includes consistent dimensions,  
+enforced relationships, predictable null handling, and a structure that eliminates ambiguity during reporting. By resolving data‑quality issues,
+standardizing entities, and applying a strict ETL process, the new schema is now stable, trustworthy, and aligned with modern BI modeling practices.  
 
 ## Next Steps
 With the normalized database in place, the project now moves into its second phase: building an advanced Power BI dashboard.  
