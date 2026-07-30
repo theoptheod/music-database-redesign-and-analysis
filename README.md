@@ -89,6 +89,7 @@ The tools used in this project were selected for their ability to support data p
 * pgAdmin: Used for schema inspection, query execution, and debugging during development.
 * Python & SQLAlchemy: Enabled schema creation, data migration, and enforcement of constraints.
 * JupyterLab: Used to run Python scripts for schema generation and data adjustments prior to migration.
+* Mermaid (mermaid.live): Used to design and render the ERD of the redesigned database.
 * GitHub: Version control, project tracking and documentation.
 
 To run the migration scripts and reproduce the analysis, a minimal environment setup is required.
@@ -145,6 +146,11 @@ An overview of the repository layout:
 │         ├── new-schema/
 │         └── old-schema/
 │
+├── answers/                      # Written answers to the original analytical questions
+│   ├── new-schema/               # Answers based on the redesigned schema
+|   |
+│   └── old-schema/               # Answers based on the legacy schema
+│
 │
 ├── docs/                         # Extended technical documentation
 │   ├── data/                     # Legacy issues, normalization, data quality
@@ -160,7 +166,7 @@ An overview of the repository layout:
 │   │
 │   └── screenshots/
 │
-├── original-database/            # Legacy schema and original dataset files
+├── original-database/            # Legacy schema file
 │
 ├── src/                          # Python scripts for migration, cleaning, and validation
 │
@@ -564,20 +570,19 @@ This repository includes the original dataset, the redesigned schema, set of que
 These materials provide transparency into the transformation process and allow reproducibility of the results.
 
 **- Original database files**  
-    The `original-database/` folder contains the legacy schema (`Music_Store_database.sql`) and the original  
-    analytical queries, that are excluded from the README in order to avoid clutter, but are preserved there for reference.
+    The `original-database/` folder contains the legacy schema (`Music_Store_database.sql`) preserved there for reference.
 
 **- Documentation screenshots and diagrams**  
     The `images/database-diagrams` folder stores the ERD of the original database, and the ERD of the normalized schema that was created using `Mermaid.live`.  
-    The `images/screeshots` folder stores screenshots of the questions that the original project was trying to address.  
+    The `images/screeshots` folder contains the three sets of original analytical questions from the legacy project.  
     The `docs/` folder contains all supporting notes used during the redesign process.
 
 **- Migration and schema scripts**  
     The `src/` folder contains the Python script used to create the new schema with SQLAlchemy, adjust the legacy data where needed, and perform the migration into the normalized model.
 
 **- Baseline analytical queries and execution plans**  
-    The `analysis/benchmark-questions/` folder contains the five benchmark questions used to evaluate both schemas,  
-    three advanced queries from the original source and two additional queries designed to stress‑test joins and aggregations.  
+    The `analysis/benchmark-questions/` folder contains five benchmark questions used to evaluate both schemas,  
+    three of them taken from the advanced queries of the original source and two additional queries designed to stress‑test joins and aggregations.  
     The `analysis/query-solutions` folder (split into `/old_schema/` and `/new_schema/`) contains  
     the SQL implementations of all benchmark queries for both the legacy and redesigned schemas.  
     The `analysis/explain-analyze-outputs` folder (also split into `/old_schema/` and `/new_schema/`) contains  
