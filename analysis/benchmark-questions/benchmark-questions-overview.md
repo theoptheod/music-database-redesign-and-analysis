@@ -3,7 +3,7 @@
 This project evaluates how the old (unnormalized) database and the new (normalized) schema perform when answering real analytical  
 questions. Each benchmark query represents a common business scenario used in music analytics, digital storefronts, and reporting systems.
 
-The five benchmark questions are:
+**The five benchmark questions are:**
 1. Top‑Grossing Artists: “Which artists generated the most revenue?”
 2. Most Popular Genre per Country: “What is the most popular music genre in each country?”
 3. Top‑Spending Customer per Country: “Who is the highest‑spending customer in each country?”
