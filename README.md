@@ -577,7 +577,8 @@ These materials provide transparency into the transformation process and allow r
     to the original analytical questions, enabling a direct comparison of how each schema resolves the same business scenarios.
 
 **- Documentation screenshots and diagrams**  
-    The `images/database-diagrams` folder stores the ERD of the original database, and the ERD of the normalized schema that was created using `Mermaid.live`.  
+    The `images/database-diagrams` folder stores the ERD of the original database,  
+    and the ERD of the normalized schema that was created using `Mermaid.live`.  
     The `images/screeshots` folder contains the three sets of original analytical questions from the legacy project.  
     The `docs/` folder contains all supporting notes used during the redesign process.
 
@@ -585,8 +586,8 @@ These materials provide transparency into the transformation process and allow r
     The `src/` folder contains the Python script used to create the new schema with SQLAlchemy, adjust the legacy data where needed, and perform the migration into the normalized model.
 
 **- Baseline analytical queries and execution plans**  
-    The `analysis/benchmark-questions/` folder contains five benchmark queries:  
-    three adapted from the original project’s advanced questions and two additional queries designed to stress‑test join and aggregation performance.  
+    The `analysis/benchmark-questions/` folder contains five benchmark queries: three adapted from the  
+    original project’s advanced questions and two additional queries designed to stress‑test join and aggregation performance.  
     The `analysis/query-solutions` folder (split into `/old_schema/` and `/new_schema/`) contains  
     the SQL implementations of all benchmark queries for both the legacy and redesigned schemas.  
     The `analysis/explain-analyze-outputs` folder (also split into `/old_schema/` and `/new_schema/`) contains  
