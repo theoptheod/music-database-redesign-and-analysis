@@ -568,11 +568,11 @@ These materials provide transparency into the transformation process and allow r
     that are excluded from the README in order to avoid clutter, but are preserved here for reference.
 
 **- Baseline analytical queries and execution plans**  
-        * The `analysis/benchmark-questions/` folder contains the five benchmark questions used to evaluate both schemas:  
+    * The `analysis/benchmark-questions/` folder contains the five benchmark questions used to evaluate both schemas,  
         the three advanced queries from the original source and two additional queries designed to stress‑test joins and aggregations.
-        * The `analysis/query-solutions` folder (split into `/old_schema/` and `/new_schema/`) contains the SQL implementations  
+    * The `analysis/query-solutions` folder (split into `/old_schema/` and `/new_schema/`) contains the SQL implementations  
         of all benchmark queries for both the legacy and redesigned schemas.
-        * The `analysis/explain-analyze-outputs` folder (also split into `/old_schema/` and `/new_schema/`) contains  
+    * The `analysis/explain-analyze-outputs` folder (also split into `/old_schema/` and `/new_schema/`) contains  
         sample execution plans and performance metrics for the corresponding queries, that facilitate a direct comparison between the two models.
 
 **- Migration and schema scripts**  
