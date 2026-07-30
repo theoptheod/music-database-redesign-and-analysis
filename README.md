@@ -542,6 +542,7 @@ Across the benchmark suite:
 These results confirm that the redesigned schema is more accurate, more predictable, and better suited for real analytical workloads, even when join complexity increases.
 
 Full SQL queries and sample execution plans for each database are available in the `/analysis` directory.
+A more detailed breakdown is available in <a href="/analysis/performance-comparison.md" target="_blank">Performance Comparison: Old vs. New Schema Technical Analysis</a>.
 
 ### Benchmark Summary Diagram
                 Benchmark Results — Old vs New Schema
