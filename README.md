@@ -572,6 +572,10 @@ These materials provide transparency into the transformation process and allow r
 **- Original database files**  
     The `original-database/` folder contains the legacy schema (`Music_Store_database.sql`) preserved there for reference.
 
+**- Written answers to analytical questions**
+    The `answers/` folder (split into `/old_schema/` and `/new_schema/`) contains the written answers to the  
+    original analytical questions, allowing a side‑by‑side comparison of how each schema responds to the same business scenarios.
+
 **- Documentation screenshots and diagrams**  
     The `images/database-diagrams` folder stores the ERD of the original database, and the ERD of the normalized schema that was created using `Mermaid.live`.  
     The `images/screeshots` folder contains the three sets of original analytical questions from the legacy project.  
