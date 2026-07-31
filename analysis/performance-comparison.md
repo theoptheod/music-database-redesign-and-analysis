@@ -12,7 +12,7 @@ All queries were executed on PostgreSQL using the following procedure:
 * Capture full execution plans for both schemas
 * Compare join strategies, row counts, and planner decisions
 
-This ensures stable, reproducible measurements and isolates structural differences between schemas rather than transient cache effects.
+This ensures stable, reproducible results that reflect true structural differences between the two schemas rather than temporary cache effects.
 
 ### 2. Why Performance Benchmarking Is Necessary
 The legacy schema contains several structural flaws that directly impact analytical workloads:
