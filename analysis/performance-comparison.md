@@ -34,7 +34,7 @@ Benchmarking quantifies the impact of these improvements.
 ### 3. Benchmark Query Results
 **Query 1 - Customer Spending on the Top‑Selling Artist**  
 The first benchmark query calculates total revenue per artist, identifies the top‑selling artist, and determines how much each customer spent on that artist.
-This query stresses deep join chains, aggregation correctness, currency precision, and join efficiency — making it an ideal test of schema quality.
+This query stresses join chains, aggregation correctness, currency precision, and join efficiency making it an ideal test of schema quality.
 
 Why This Query Matters
 Artist‑level revenue analytics are foundational in digital music platforms.
