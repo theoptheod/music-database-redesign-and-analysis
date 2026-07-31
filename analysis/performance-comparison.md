@@ -1,7 +1,7 @@
 # Performance Comparison: Old vs. New Schema /-/ Technical Analysis
 
 ## Summary
-This document provides a detailed evaluation of how the legacy schema and the redesigned normalized schema perform across five analytical workloads.
+This document provides a detailed evaluation of how the legacy and the redesigned schema perform across five analytical workloads.  
 Each benchmark uses `EXPLAIN ANALYZE` to measure execution time, join strategies, row‑processing volume, and planner behavior.
 
 ### 1. Benchmarking Methodology
@@ -23,7 +23,7 @@ The legacy schema contains several structural flaws that directly impact analyti
 * One‑to‑many artist/album modeling that produce incorrect analytics for collaborations
 
 The normalized schema addresses these issues through:
-* Integer‑based currency (*_cents)
+* Integer‑based currency
 * Many‑to‑many junction tables
 * Strict foreign‑key constraints
 * Atomic customer and geography fields
