@@ -509,7 +509,8 @@ The following diagram illustrates the final relational schema of the normalized 
   
 ## Old vs. New Schema Benchmarking
 A schema redesign is only meaningful if it produces more accurate analytics and more efficient execution plans.  
-To validate the new normalized schema, this project benchmarks both versions using five representative analytical workloads drawn from real music‑industry reporting.
+To validate the new normalized schema, this project benchmarks both versions using five representative analytical  
+workloads drawn from real music‑industry reporting.
 
 ### Why Benchmarking Matters
 The legacy schema suffers from structural weaknesses that directly impact analytical correctness and performance:
