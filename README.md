@@ -600,7 +600,7 @@ These materials provide transparency into the transformation process and allow r
     The `analysis/explain-analyze-outputs` folder (also split into `/old_schema/` and `/new_schema/`) contains  
     sample execution plans and performance metrics for the corresponding queries, that facilitate a direct comparison between the two models.
 
-The above files provide clear guidance through every stage of the project, from understanding the original data all the way to completing the final implementation.
+The above files provide clear guidance through every stage of the project, from analyzing the original data to delivering the final implementation.
 
 ## Contact
 If you have questions or would like to connect, feel free to reach out through the links below:
