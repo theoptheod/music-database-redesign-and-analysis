@@ -7,7 +7,7 @@ Music Database Redesign & Analytical Exploration
 Theofilos P. Theodoridis
 
 ## Project Status
-Completed – Version 1.0
+Completed - Version 1.0
 
 ## Summary
 This project transforms a legacy music store database into a clean, analysis‑ready data model designed for modern BI tools.  
