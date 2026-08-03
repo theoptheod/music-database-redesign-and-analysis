@@ -20,7 +20,7 @@ Through the financial audit chain we record:
 
 Because these records represent real financial transactions, they must remain intact for the lifetime of the system.
 
-This leads to the first rule:
+So during the redesign the following rule is applied:
 
 **No table that participates directly or indirectly in the financial audit chain may ever be deleted automatically.**
 
