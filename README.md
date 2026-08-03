@@ -157,7 +157,7 @@ An overview of the repository layout:
 │   │
 │   ├── design/                   # Conceptual design decisions and rationale
 │   │
-│   ├── etl/                      # Python to PostgreSQL migration pipeline docs
+│   ├── etl/                      # Python to PostgreSQL migration pipeline doc
 │   │
 │   └── schema/                   # Final schema structure and constraints
 │
@@ -168,7 +168,7 @@ An overview of the repository layout:
 │
 ├── original-database/            # Legacy schema file
 │
-├── src/                          # Python scripts for migration, cleaning, and validation
+├── src/                          # Python script for migration, cleaning, and validation
 │
 ├── .env.example
 ├── .gitignore
