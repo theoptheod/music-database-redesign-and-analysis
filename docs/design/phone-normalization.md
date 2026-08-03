@@ -59,8 +59,8 @@ This placeholder:
 * makes the missing data easy to identify later
 * reflects common ETL practice for incomplete legacy data
 
-In a real business system, a missing phone number would normally trigger a follow‑up process  
-to collect the correct information (for example contacting the customer via email).  
+In a real business system, a missing phone number would normally trigger a follow‑up  
+process to collect the correct information (for example contacting the customer via email).  
 For this project, the placeholder provides a clean and fully documented solution.
 
 ## Summary
