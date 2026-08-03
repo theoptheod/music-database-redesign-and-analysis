@@ -377,24 +377,24 @@ During the exploration of the legacy dataset, several structural issues were rev
 These limitations do not break the schema, but they reduce analytical reliability and introduce blind spots in BI reporting.
 
 Key issues include:
-* Duplicate Records  
+* **Duplicate Records**  
     Multiple entities contained duplicates (e.g. `track`).  
     Some duplicates were referenced in invoices, making safe deduplication impossible.  
     Analytical impact: inflated counts, unstable catalog KPIs, and ambiguous trend analysis.
 
-* Incomplete or Non‑Applicable Address Data  
+* **Incomplete or Non‑Applicable Address Data**  
     Address fields mixed NULLs and placeholders (e.g. "None") due to a US‑centric address format.  
     Analytical impact: unreliable geographic segmentation and inconsistent slicer behavior in Power BI.
 
-* Inconsistent Composer Information  
+* **Inconsistent Composer Information**  
     Composer values ranged from valid names to NULLs and placeholders.  
     Analytical impact: contributor analytics were unreliable, and multi‑composer tracks could not be modeled.
 
-* Missing Source Media  
+* **Missing Source Media**  
     Metadata differences across duplicate tracks could not be validated without original audio files.  
     Analytical impact: KPIs based on track duration and file size remain uncertain.
 
-* Future‑Proofing Through Constraints  
+* **Future‑Proofing Through Constraints**  
     The redesigned schema introduces normalization, atomic modeling, and enforced constraints to prevent these issues from being re-introduced.
 
 A detailed breakdown is available in <a href="/docs/data/data-issues.md" target="_blank">Data Issues Technical Analysis</a>.
