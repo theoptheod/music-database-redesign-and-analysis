@@ -354,19 +354,19 @@ Before restructuring the database, a set of data‑quality assessments was carri
 The goal wasn’t just to inspect the data, but to uncover structural gaps, unclear business rules, and inconsistencies that could undermine financial accuracy, analytical work and BI reporting.
 
 Key findings included:
-* Null Value Reliability  
+* **Null Value Reliability**  
 Primary keys were intact, but many descriptive fields were only partially populated or inconsistently used.  
 Analytical impact: incomplete attributes weaken segmentation, reduce customer‑level insight, and introduce noise into Power BI.
 
-* Duplicate Records  
+* **Duplicate Records**  
 A few track records appeared more than once, suggesting the catalog wasn’t consistently maintained.  
 Analytical impact: duplicates produce count inaccuracies and can lead to misleading trends in dashboards.
 
-* Referential Integrity  
+* **Referential Integrity**  
 No orphaned foreign keys were found, but several relationships relied on assumptions rather than enforced constraints.  
 Analytical impact: weak constraints make relationships less reliable, which can lead to subtle errors in BI reports.
 
-* Formatting & Standardization  
+* **Formatting & Standardization**  
 Formatting was generally consistent, but key fields (addresses, phone numbers, monetary values) lacked normalization or validation rules.  
 Analytical impact: inconsistent formatting complicates geographic analysis, reduces join reliability, and introduces rounding/precision issues in financial reporting.
 
