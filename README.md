@@ -159,7 +159,7 @@ An overview of the repository layout:
 │   │
 │   ├── etl/                      # Python to PostgreSQL migration pipeline docs
 │   │
-│   └── schema/                   # Final schema structure, diagrams, constraints
+│   └── schema/                   # Final schema structure and constraints
 │
 ├── images/                       # Diagrams and visuals used in the README
 │   ├── database-diagrams/
