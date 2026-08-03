@@ -161,7 +161,7 @@ An overview of the repository layout:
 │   │
 │   └── schema/                   # Final schema structure and constraints
 │
-├── images/                       # Diagrams and visuals used in the README
+├── images/                       # Diagrams and visuals used in the project
 │   ├── database-diagrams/
 │   │
 │   └── screenshots/
