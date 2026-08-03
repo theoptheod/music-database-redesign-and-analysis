@@ -316,7 +316,8 @@ Adopt a strict, reliable deletion model where all financial records are fully pr
 All entities that contribute to historical revenue are immutable and cannot be removed once created.
 
 #### Analytical Reasoning
-Financial data form the backbone of every analytical workflow: revenue reporting, cohort analysis, churn modeling, customer lifetime value and trend forecasting.  
+Financial data form the backbone of every analytical workflow: revenue reporting,  
+cohort analysis, churn modeling, customer lifetime value and trend forecasting.  
 In the legacy schema, deletion behavior was ambiguous and relied on implicit assumptions.  
 ORMs could accidentally cascade deletes, and referential integrity was not consistently enforced.
 
