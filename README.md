@@ -88,7 +88,7 @@ The tools used in this project were selected for their ability to support data p
 * PostgreSQL: Core database engine used to implement the redesigned schema.
 * pgAdmin: Used for schema inspection, query execution, and debugging during development.
 * Python & SQLAlchemy: Enabled schema creation, data migration, and enforcement of constraints.
-* JupyterLab: Used to run Python scripts for schema generation and data adjustments prior to migration.
+* JupyterLab: Environment for running Python-based schema generation and performing data adjustments prior to migration.
 * Mermaid (mermaid.live): Used to design and render the ERD of the redesigned database.
 * GitHub: Version control, project tracking and documentation.
 
