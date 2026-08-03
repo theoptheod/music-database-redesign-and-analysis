@@ -275,7 +275,8 @@ Retain phone numbers exactly as they appear in the original dataset, without enf
 
 #### Analytical Reasoning  
 The source data contains phone numbers in many formats, with no consistent standard.  
-Any attempt to standardize them would introduce assumptions about country codes, formatting rules, or number validity and could risk altering real customer information.  
+Any attempt to standardize them would introduce assumptions about country codes,  
+formatting rules, or number validity and could risk altering real customer information.  
 Phone numbers also aren’t reliable unique identifiers, and enforcing constraints would create false errors.
 
 #### Business Impact
