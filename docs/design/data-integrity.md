@@ -22,7 +22,7 @@ Because these records represent real financial transactions, they must remain in
 
 This leads to the first rule:
 
-No table that participates directly or indirectly in the financial audit chain may ever be deleted automatically.
+**No table that participates directly or indirectly in the financial audit chain may ever be deleted automatically.**
 
 This includes:
 * `invoice_line`
