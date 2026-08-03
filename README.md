@@ -63,7 +63,7 @@ Most datasets appear usable at first glance, until you try to answer real busine
 This project highlights the analytical judgment required to uncover hidden issues, and reshape imperfect data into useful insights.
 
 Key reasons this redesign matters:
-* Analysts rarely receive clean data, so they need to be able to diagnose inconsistencies and transform data so reporting is trustworthy.
+* Analysts rarely receive clean data, so they need to be able to diagnose inconsistencies and transform data in order to provide trustworthy reporting.
 
 * BI tools depend on clean relationships, so the new schema simplifies joins and enforces consistent keys.
 
