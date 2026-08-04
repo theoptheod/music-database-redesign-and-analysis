@@ -274,7 +274,7 @@ Association/Junction table linking composers and tracks.
 Association/Junction table linking genres and tracks.
 
 #### Responsibilities
-* Represent the relationship between a music genres and a track
+* Represent the relationship between music genre and track
 * Enforce uniqueness of genre–track pairs
 * Serve as the link between the two entities
 
