@@ -13,7 +13,7 @@ The original `composer` column in the `track` table was structurally unreliable:
 • Non‑ASCII hyphens and punctuation  
 • Stage names and abbreviations ("AC/DC", "R.E.M.", "The Edge")  
 These inconsistencies made automated parsing fragile.  
-Regex produced unpredictable splits and wan't able to correctly identify composer entities.
+Regex produced unpredictable splits and wasn't able to correctly identify composer entities.
 
 ### Manual Mapping Layer
 A Python dictionary (`composer_manual_split_dict`) defines canonical splits for problematic raw strings.  
