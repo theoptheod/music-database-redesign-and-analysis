@@ -251,7 +251,7 @@ Association/Junction table linking albums and tracks.
 Association/Junction table linking composers and tracks.
 
 #### Responsibilities
-* Represent the relationship between composer/s and created track/s
+* Represent the relationship between composer and track
 * Enforce uniqueness of composer–track pairs
 * Serve as the link between the two entities
 
