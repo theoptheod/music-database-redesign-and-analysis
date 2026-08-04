@@ -181,7 +181,7 @@ A playlist may contain many tracks, and each membership is represented by a Play
 * `playlist_name`: Name of the playlist
 
 #### Relationships
-playlist_tracks: One‑to‑many collection of PlaylistTrack rows
+playlist_tracks: One‑to‑many collection of PlaylistTrack rows  
 tracks: Read‑only many‑to‑many view of related Track objects via `playlist_track`
 
 #### Integrity & Performance
