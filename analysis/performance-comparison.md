@@ -63,7 +63,7 @@ Key issues observed:
 * floating‑point arithmetic introduces rounding errors
 * wider intermediate result sets increase sorting and hashing cost
 
-Although execution time appears similar on the legacyc dataset, the plan structure is significantly less efficient and would degrade rapidly as data volume increases.
+Although execution time appears similar on the legacy dataset, the plan structure is significantly less efficient and would degrade rapidly as data volume increases.
 
 Old Schema Performance
 
