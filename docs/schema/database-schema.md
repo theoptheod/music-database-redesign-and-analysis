@@ -341,7 +341,7 @@ Represents a sovereign nation and functions as the root of the geographic hierar
 * Association rows are protected from cascading deletes
 
 ### --PostalZipCode--
-Represents postal or ZIP codes, supporting countries without postal codes.
+Represents postal or ZIP codes.
 
 #### Responsibilities
 * Store postal/zip codes
