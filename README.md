@@ -459,19 +459,19 @@ The ETL pipeline rebuilds the legacy database into a fully normalized PostgreSQL
 The aim of the process used was to catch data‑quality problems early, enforce referential integrity, and prevent inconsistent data from leaking into reports.
 
 Key characteristics:  
-* DataFrame staging layer  
+* **DataFrame staging layer**  
     All raw data is first loaded into Pandas DataFrames, where it is cleaned, standardized, deduplicated, and validated.  
     This ensures that only consistent, well‑structured data reaches the database.  
-* Universal NA‑handling  
+* **Universal NA‑handling**  
     Pandas uses several special “missing value” types that PostgreSQL cannot store.  
     The pipeline converts all of them to Python "None", preventing insertion errors and keeping null values consistent across the entire dataset.
-* Structured loading order  
+* **Structured loading order**  
     Tables are inserted in a strict sequence: parents first, then children, then many‑to‑many junction tables.  
     This guarantees that every foreign key points to an existing record.
-* ORM‑based schema enforcement  
+* **ORM‑based schema enforcement**  
     SQLAlchemy models define all constraints, relationships, and domain rules.  
     Every row inserted must comply with these rules, which protects the analytical model from invalid or inconsistent data.
-* Bulk insert operations  
+* **Bulk insert operations**  
     The pipeline uses SQLAlchemy’s optimized bulk‑insert mechanism.  
     It loads large volumes of data efficiently without bypassing constraints, ensuring that partial or corrupted loads never occur.
 
