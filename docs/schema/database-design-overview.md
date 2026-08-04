@@ -23,17 +23,17 @@ The new PostgreSQL schema addresses these issues through a complete redesign rat
 ## Architectural Domains
 The schema models three major domains:
 
-1. Music Catalog  
+**1. Music Catalog**  
 Includes albums, artists, composers, genres, media types, playlists and tracks.  
 Supports both one‑to‑many and many‑to‑many relationships through explicit junction tables  
 (`artist_album`, `composer_track`, `genre_track`, `playlist_track`, `album_track`).  
 Constraints and indexes ensure data consistency and efficient querying.
 
-2. Geographic Hierarchy  
+**2. Geographic Hierarchy**  
 A fully normalized geographic model representing countries, administrative divisions, cities, postal/ZIP codes and addresses.  
 Supports countries with or without postal codes, enforces uniqueness within geographic scopes, and ensures clean standardized text fields.
 
-3. Customer, Employee & Invoice Management  
+**3. Customer, Employee & Invoice Management**  
 Models customer identity, employee hierarchy, job titles, seniority levels, and invoice documentation.  
 Self‑referencing relationships support multi‑level organizational structures.  
 Invoice data is denormalized intentionally to preserve historical accuracy.
