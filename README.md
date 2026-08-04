@@ -404,19 +404,19 @@ The performed normalization of the legacy `genre` table revealed structural inco
 Genre values were neither atomic nor consistent, and restricting each track to a single genre produced simplistic classifications.
 
 Key issues included:
-* Non‑Atomic Genre Values  
+* **Non‑Atomic Genre Values**  
     Compound labels (e.g. "Alternative & Punk", "Hip Hop/Rap") violated 1NF and could not be represented cleanly in a normalized schema.
     Analytical impact: tracks that belonged into multiple genres were assinged into single labels, weakening segmentation and genre‑level KPIs.
 
-* Semantically Overlapping Genres  
+* **Semantically Overlapping Genres**  
     Pairs like "Alternative" vs. "Alternative & Punk" or "Science Fiction" vs. "Sci Fi & Fantasy" were stored separately.  
     Analytical impact: tracks were not classified correctly, and genre trends were fragmented across multiple labels.
 
-* Merge‑Before‑Split Strategy  
+* **Merge‑Before‑Split Strategy**  
     After grouping is resolved, the compound labels are then split into atomic genres.  
     Analytical impact: ensures consistent, atomic genre representation.
 
-* Transitional Mapping Tables  
+* **Transitional Mapping Tables**  
     Mapping tables provide a structured path from legacy genres to normalized atomic genres.  
     Analytical impact: guarantees auditability, prevents misclassification, and ensures correct BI reporting.
 
