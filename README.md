@@ -547,7 +547,7 @@ These results confirm that the redesigned schema is more accurate, more predicta
     Benchmark Results — Old vs New Schema
     -------------------------------------
 
-    Query 1:  Top‑Grossing Artists                   ->   New Schema Faster  
+    Query 1:  Top‑Grossing Artist                    ->   New Schema Faster  
     Query 2:  Most Popular Genre per Country         ->   Old Schema Faster
     Query 3:  Top-Spending Customer per Country      ->   New Schema Wins (4× Faster)
     Query 4:  Top-Selling Albums                     ->   Old Schema Faster
