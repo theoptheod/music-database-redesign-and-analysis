@@ -101,7 +101,7 @@ Association/Junction table linking artists and albums.
 #### Integrity & Performance
 * Indexes on both foreign keys
 * Unique composite index on (`artist_id`, `album_id`) to prevent duplicates
-* Cascading deletes are not allowed. All artist–album associations remain intact to protect historical catalog and invoice data.
+* Cascading deletes are not allowed, so that all artist–album associations remain intact to protect historical catalog and invoice data
 
 ### --Composer--
 Represents a musical composer or group.  
@@ -123,7 +123,7 @@ A composer may be credited on many tracks, and each association is stored explic
 #### Integrity & Performance
 * Indexed `composer_name`
 * Check constraint prevents empty or whitespace‑only names
-* Delete cascades are intentionally disabled to preserve historical track and invoice relationships.
+* Delete cascades are intentionally disabled to preserve historical track and invoice relationships
 
 ### --Genre--
 Represents a musical genre. Tracks may belong to multiple genres, and each link is represented by a GenreTrack row.
@@ -165,7 +165,7 @@ tracks: One‑to‑many collection of related Track objects via `media_type_id`
 #### Integrity & Performance
 * Unique constraint ensures no duplicate media type names
 * Check constraint prevents empty or whitespace‑only names
-* Delete cascades are intentionally disabled; media types cannot be removed automatically when linked to tracks
+* Delete cascades are intentionally disabled, so that media types cannot be removed automatically when linked to tracks
 
 ### --Playlist--
 Represents a user‑defined playlist.  
