@@ -186,7 +186,7 @@ tracks: Read‑only many‑to‑many view of related Track objects via `playlist
 
 #### Integrity & Performance
 * Check constraint prevents empty or whitespace‑only names
-* Delete cascades are intentionally disabled, so that playlist–track links are preserved and not removed automatically.
+* Delete cascades are intentionally disabled, so that playlist–track links are preserved and not removed automatically
 
 ### --Track--
 Represents an individual audio track.  
@@ -221,7 +221,7 @@ Tracks have a media type and may be associated with composers, genres, playlists
 * Multiple indexes for efficient filtering
 * Check constraints enforce valid numeric ranges and non‑empty names
 * Foreign keys referencing `track_id` use RESTRICT, preventing deletion when any related invoice or catalog relationship exists
-* Association rows are protected from cascading deletes. Tracks cannot be deleted when referenced by any invoice or catalog relationship.
+* Association rows are protected from cascading deletes, so that Tracks cannot be deleted when referenced by any invoice or catalog relationship
 * Tracks form the core of catalog and financial history, and therefore are deletion‑protected
 
 ### --AlbumTrack--
