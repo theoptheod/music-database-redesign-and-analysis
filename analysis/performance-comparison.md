@@ -47,7 +47,7 @@ They drive:
 A schema that cannot compute artist revenue accurately or efficiently is fundamentally limited.
 
 #### Old Schema
-In the unnormalized schema, artist information is stored directly on the `album` table, and invoice totals rely on floating‑point arithmetic.
+In the unnormalized schema, artist information is stored directly on the `album` table, and invoice totals rely on floating‑point arithmetic.  
 This leads to:
 * larger intermediate result sets
 * less efficient join paths
