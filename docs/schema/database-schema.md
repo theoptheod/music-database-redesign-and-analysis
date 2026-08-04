@@ -298,7 +298,7 @@ Association/Junction table linking playlists and tracks.
 
 #### Responsibilities
 * Represent the relationship between a playlist and a track
-* Enforce uniqueness of playlist–track pairs
+* Enforce uniqueness of playlist-track pairs
 * Serve as the link between the two entities
 
 #### Attributes
