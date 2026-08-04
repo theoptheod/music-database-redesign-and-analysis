@@ -428,6 +428,7 @@ Represents a physical address.
 #### Relationships
 * city: Many‑to‑one link to City
 * postal_zip_code: Many‑to‑one link to PostalZipCode
+* customers: One‑to‑many link to Customer
 * employees: One‑to‑many link to Employee
 
 #### Integrity & Performance
