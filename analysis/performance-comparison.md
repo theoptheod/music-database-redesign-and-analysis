@@ -102,7 +102,7 @@ New Schema Performance
 
 #### Query 2 - Most Popular Genre per Country  
 The second benchmark query identifies the most popular music genre in each country, based on total track purchases.  
-This query stresses a different part of the schema than Query 1.  
+This query stresses a different part of the schema in comparison to Query 1.  
 Instead of focusing on artist revenue, it tests the correctness and efficiency of genre metadata, customer geography, and track‑level purchase analytics.
 
 ##### Why This Query Matters  
