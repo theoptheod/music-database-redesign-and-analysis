@@ -32,7 +32,7 @@ The normalized schema addresses these issues through:
 Benchmarking quantifies the impact of these improvements.
 
 ### 3. Benchmark Query Results
-#### Query 1 - Customer Spending on the Top‑Selling Artist 
+#### Query 1 - Top‑Grossing Artist
 The first benchmark query calculates total revenue per artist, identifies the top‑selling artist, and determines how much each customer spent on that artist.
 This query stresses join chains, aggregation correctness, currency precision, and join efficiency making it an ideal test of schema quality.
 
