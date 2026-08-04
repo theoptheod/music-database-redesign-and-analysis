@@ -238,10 +238,6 @@ Association/Junction table linking albums and tracks.
 * `track_id`: Foreign key referencing `track`.`track_id`
 
 #### Relationships
-* artist: Many‑to‑one link to the Artist entity
-* album: Many‑to‑one link to the Album entity
-
-#### Relationships
 * album: Many‑to‑one link to the Album entity
 * track: Many‑to‑one link to the Track entity
 
