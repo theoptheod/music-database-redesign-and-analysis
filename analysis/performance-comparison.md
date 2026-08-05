@@ -160,7 +160,7 @@ Key improvements:
 * integer‑based revenue eliminates rounding errors
 * stricter foreign‑key constraints improve planner confidence
 
-Although execution time is higher on the legacy dataset, the normalized schema produces more accurate and scalable results.
+Although execution time is lower on the legacy dataset, the normalized schema produces more accurate and scalable results.
 In real‑world music catalogs, where tracks often belong to multiple genres, the normalized schema is required for correctness and would scale more effectively.
 
 **New Schema Performance**
