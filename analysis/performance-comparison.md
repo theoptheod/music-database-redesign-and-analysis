@@ -226,7 +226,7 @@ Key improvements:
 * narrower rows improve grouping
 * hash aggregation significantly reduces execution time
 
-The normalized schema is over 4× faster for this query, while also producing more accurate and reliable results.
+The normalized schema is more than 4 times faster for this query, while also producing more accurate and reliable results.
 
 **New Schema Performance**
 
