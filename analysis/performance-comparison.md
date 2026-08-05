@@ -106,7 +106,7 @@ The second benchmark query identifies the most popular music genre in each count
 This query stresses genre metadata quality, geographic consistency, and grouping efficiency, making it a strong test of analytical correctness and join performance.
 
 ##### Why This Query Matters
-Genre‑level analytics are foundational in digital music platforms.
+Genre‑level analytics are foundational in digital music platforms.  
 They drive:
 * recommendation systems
 * regional marketing
