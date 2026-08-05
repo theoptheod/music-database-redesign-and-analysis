@@ -99,7 +99,7 @@ Although planning time is slightly higher due to more join paths, the execution 
 | **Planning Time**  | **~5.4 ms**  |
 | **Execution Time** | **~12.0 ms** |
 
-Full execution plans are available in the /analysis directory.
+Full sample execution plans are available in the `analysis/explain-analyze-outputs/` directory.
 
 #### Query 2 - Most Popular Genre per Country  
 The second benchmark query identifies the most popular music genre in each country based on total track purchases.
@@ -170,7 +170,7 @@ In real‑world music catalogs, where tracks often belong to multiple genres, th
 | **Planning Time**  | **~0.95 ms** |
 | **Execution Time** | **~8.70 ms** |
 
-Full execution plans are available in the /analysis directory.
+Full sample execution plans are available in the `analysis/explain-analyze-outputs/` directory.
 
 ### Query 3 - Top‑Spending Customer per Country
 The third benchmark query identifies the highest‑spending customer in each country.
@@ -235,7 +235,7 @@ The normalized schema is over 4× faster for this query, while also producing mo
 | **Planning Time**  | **~0.33 ms** |
 | **Execution Time** | **~0.53 ms** |
 
-Full execution plans are available in the /analysis directory.
+Full sample execution plans are available in the `analysis/explain-analyze-outputs/` directory.
 
 ### Query 4 - Top‑Selling Albums
 The fourth benchmark query calculates total revenue per album and identifies the top‑selling albums.
@@ -301,7 +301,7 @@ This increases planning and execution time on small datasets like the unnormaliz
 | **Planning Time**  | **~9.43 ms**  |
 | **Execution Time** | **~13.29 ms** |
 
-Full execution plans are available in the /analysis directory.
+Full sample execution plans are available in the `analysis/explain-analyze-outputs/` directory.
 
 ### Query 5 - Top 10 Best‑Selling Tracks
 The fifth benchmark query identifies the top 10 tracks by total revenue.
@@ -364,7 +364,7 @@ The old schema is simpler, but the normalized schema is more accurate, more cons
 | **Planning Time**  | **~6.01 ms** |
 | **Execution Time** | **~9.19 ms** |
 
-Full execution plans are available in the /analysis directory.
+Full sample execution plans are available in the `analysis/explain-analyze-outputs/` directory.
 
 ### 4. Final Interpretation
 Across all five benchmarks:
