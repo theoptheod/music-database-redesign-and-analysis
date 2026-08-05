@@ -283,7 +283,7 @@ This results in:
 * enforced foreign keys
 * more selective join paths
 
-####### EXPLAIN ANALYZE - Normalized Schema Summary
+###### EXPLAIN ANALYZE - Normalized Schema Summary
 Key improvements:
 * correct album–artist and album–track relationships
 * integer‑based revenue eliminates rounding errors
