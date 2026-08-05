@@ -116,7 +116,8 @@ They drive:
 A schema that cannot compute genre popularity accurately or efficiently is fundamentally limited.
 
 ##### Old Schema
-In the unnormalized schema, genre information is stored directly on the `track` table, and customer geography is represented using free‑text fields.  
+In the unnormalized schema, genre information is stored directly on the  
+`track` table, and customer geography is represented using free‑text fields.  
 This leads to:
 * simplified but inflexible genre relationships
 * inconsistent country values
