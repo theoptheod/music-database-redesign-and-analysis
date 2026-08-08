@@ -563,13 +563,13 @@ Full SQL queries and sample execution plans for each database are available in t
 A more detailed breakdown is available in <a href="/analysis/performance-comparison.md" target="_blank">Performance Comparison: Old vs. New Schema Technical Analysis</a>.
 
 ## Conclusions 
-The first phase of this project focused on rebuilding the legacy dataset into a clean, constraint‑driven, fully normalized PostgreSQL schema.  
-The goal was not to improve raw query performance, but to create a reliable analytical foundation that includes consistent dimensions,  
+The first phase of this project focused on rebuilding the legacy dataset into a clean, constraint‑driven, fully normalized PostgreSQL schema.
+The goal was not to improve raw query performance, but to create a reliable analytical foundation that includes consistent dimensions,
 enforced relationships, predictable null handling, and a structure that eliminates ambiguity during reporting. By resolving data‑quality issues,
 standardizing entities, and applying a strict ETL process, the new schema is now stable, trustworthy, and aligned with modern BI modeling practices.  
 
 ## Next Steps
-With the normalized database in place, the project now moves into its second phase: building an advanced Power BI dashboard.  
+With the normalized database in place, the project now moves into its second phase: building an advanced Power BI dashboard.
 This dashboard will take advantage of the cleaned dimensions, explicit foreign‑key relationships, and consistent entity definitions established in the ETL process.
 The goal is to deliver richer visualizations, more accurate metrics, and a BI experience that reflects the improved structure of the new schema.
 The work completed in Part 1 serves as the foundation for this next stage, ensuring that the analytical layer is built on top of well‑modeled data.
