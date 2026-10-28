@@ -22,7 +22,7 @@ Together, these rules create a stable, robust and audit‑safe data environment.
 * Geographic entities cannot be deleted while referenced by related entities.
 * Lookup tables (`employee_level`, `employee_title`, cannot be deleted while employees reference them.
 
-## Why RESTRICT is Used
+## Why RESTRICT Is Used
 * Prevents accidental loss of catalog or financial history.
 * Ensures referential integrity across all domains.
 * Supports auditability and compliance.
